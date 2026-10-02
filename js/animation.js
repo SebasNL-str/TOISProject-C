@@ -95,3 +95,25 @@ gsap.to('.sticky-card', {
         yoyo: true,
         ease: 'sine.inOut'
 });
+
+// 4. FASE 3: Scroll Horizontal (Pit Lane Slider)
+const trophyTrack = document.querySelector('.trophy-track');
+
+if (trophyTrack) {
+    const getScrollAmount = () => {
+        return -(trophyTrack.scrollWidth - window.innerWidth + 96);
+    };
+
+    gsap.to(trophyTrack, {
+        x: getScrollAmount,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '#trofies-section',
+            start: 'top top',
+            end: () => `+=${trophyTrack.scrollWidth}`,
+            pin: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+        }
+    });
+}
