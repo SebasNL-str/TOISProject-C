@@ -492,6 +492,82 @@
     </div>
   </section>
 
+  <!-- FASE 5: CURIOSIDADES, TRIVIAS & EASTER EGGS -->
+  <section id="curiosidades" class="relative bg-brand-dark text-white border-b border-neutral-800 py-24 px-6 md:px-12">
+
+    <!-- Encabezado de Sección -->
+    <div class="mb-16 border-b border-neutral-800 pb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+      <div>
+        <span class="text-xs font-mono text-brand-yellow uppercase tracking-widest block mb-2">// 04. ARCHIVE TRIVIA & EASTER EGGS</span>
+        <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
+          CURIOSIDADES DEL #95
+        </h2>
+      </div>
+      <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">[ PRESS 'K' TO REV ENGINE ]</span>
+    </div>
+
+    <!-- Grilla de Tarjetas de Trivia -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Card Trivia 01 -->
+      <div class="trivia-card bg-neutral-950 border border-neutral-800 rounded-2xl p-6 relative overflow-hidden group hover:border-brand-red transition-all">
+        <span class="font-mono text-xs text-brand-red font-bold block mb-3">// TRIVIA_01</span>
+        <h3 class="text-xl font-editorial font-bold text-white uppercase mb-3">Origen del Número 95</h3>
+        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+          Originalmente iba a llevar el número 57 (año de nacimiento de John Lasseter), pero se cambió a <strong>95</strong> en homenaje a 1995, año del estreno de <em>Toy Story</em>.
+        </p>
+        <span class="inline-block font-mono text-[10px] text-neutral-500 bg-neutral-900 px-2 py-1 rounded">PIXAR LORE</span>
+      </div>
+
+      <!-- Card Trivia 02 -->
+      <div class="trivia-card bg-neutral-950 border border-neutral-800 rounded-2xl p-6 relative overflow-hidden group hover:border-brand-yellow transition-all">
+        <span class="font-mono text-xs text-brand-yellow font-bold block mb-3">// TRIVIA_02</span>
+        <h3 class="text-xl font-editorial font-bold text-white uppercase mb-3">Diseño Híbrido Real</h3>
+        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+          No es un auto de producción real: combina proporciones del <strong>Chevrolet Corvette C6</strong>, el chasis de un <strong>Ford GT40</strong> y líneas agresivas del <strong>Dodge Viper</strong>.
+        </p>
+        <span class="inline-block font-mono text-[10px] text-neutral-500 bg-neutral-900 px-2 py-1 rounded">AERODYNAMICS</span>
+      </div>
+
+      <!-- Card Trivia 03 -->
+      <div class="trivia-card bg-neutral-950 border border-neutral-800 rounded-2xl p-6 relative overflow-hidden group hover:border-white transition-all">
+        <span class="font-mono text-xs text-neutral-400 font-bold block mb-3">// TRIVIA_03</span>
+        <h3 class="text-xl font-editorial font-bold text-white uppercase mb-3">Calcomanías de Faros</h3>
+        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+          En la primera película no tenía faros reales, solo calcomanías pegadas porque <em>"las pistas de carreras siempre están iluminadas"</em>. Los faros reales le fueron instalados en Cars 2.
+        </p>
+        <span class="inline-block font-mono text-[10px] text-neutral-500 bg-neutral-900 px-2 py-1 rounded">PIS CUP TECH</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOUND HUD & HUD FLOTANTE (COMPONENTE INTERACTIVO DE AUDIO) -->
+  <div id="sound-hud" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-neutral-900/90 border border-neutral-700/80 p-2 pr-4 rounded-full backdrop-blur-md shadow-2xl transition-all hover:scale-105">
+    <button id="btn-engine-rev" class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-white font-bold text-sm shadow-lg hover:bg-red-600 transition-colors">
+      🔊
+    </button>
+    <div class="font-mono text-xs text-left">
+      <span class="block text-white font-bold tracking-wider">ENGINE HUD</span>
+      <span class="block text-[10px] text-neutral-400">CLICK O 'K' PARA ACELERAR</span>
+    </div>
+  </div>
+
+  <!-- FOOTER EDITORIAL -->
+  <footer class="bg-neutral-950 text-neutral-500 py-12 px-6 md:px-12 font-mono text-xs border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-6">
+    <div>
+      <p class="text-neutral-300 font-bold mb-1">CARS EDITORIAL ARCHIVE © 2026</p>
+      <p class="text-[11px] text-neutral-600">PROYECTO INTERACTIVO DE HOMENAJE A DISNEY PIXAR'S CARS.</p>
+    </div>
+
+    <div class="flex items-center gap-6">
+      <button id="back-to-top" class="text-brand-yellow hover:underline uppercase tracking-widest">
+        ↑ VOLVER AL INICIO
+      </button>
+    </div>
+  </footer>
+
   <!-- Librerías JS: GSAP + ScrollTrigger + Lenis Smooth Scroll -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
