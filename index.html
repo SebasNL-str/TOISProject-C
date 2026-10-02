@@ -134,10 +134,138 @@
 
   </section>
 
-  <!-- PLACEHOLDER PARA FASE 2 -->
-  <section id="fase2-anchor" class="py-24 px-6 md:px-12 min-h-[40vh] flex flex-col justify-center items-center border-b border-neutral-800 bg-neutral-950/40">
-    <span class="text-xs font-mono text-neutral-500 tracking-widest uppercase mb-2">[ FASE 2 PRÓXIMAMENTE ]</span>
-    <h3 class="text-2xl font-editorial font-bold text-neutral-300">Sección Biografía & Trasfondo</h3>
+ <!-- FASE 2: BIOGRAFÍA & LÍNEA DE TIEMPO EDITORIAL (HYBRID) -->
+  <section id="biografia" class="relative py-24 px-6 md:px-12 border-b border-neutral-800 bg-brand-dark overflow-hidden">
+
+    <!-- Encabezado de Sección -->
+    <div class="mb-16 border-b border-neutral-800 pb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+      <div>
+        <span class="text-xs font-mono text-brand-red uppercase tracking-widest block mb-2">// 01. ORIGINS & EVOLUTION</span>
+        <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
+          LA HISTORIA DETRÁS DEL #95
+        </h2>
+      </div>
+      <p class="text-neutral-400 font-sans text-sm max-w-md">
+        Desde novato impulsivo hasta leyenda viviente de la Copa Pistón. Un recorrido por las etapas que definieron su carrera.
+      </p>
+    </div>
+
+    <!-- Layout Grid: Left Sticky + Right Timeline -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+      <!-- COLUMNA IZQUIERDA (STICKY) -->
+      <div class="lg:col-span-5 sticky top-28 self-start space-y-6">
+
+        <!-- Card Fija con Aspect Ratio Editorial -->
+        <div class="sticky-card relative rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 backdrop-blur-md overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-red/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <!-- Indicator Badge -->
+          <div class="flex justify-between items-center mb-6 font-mono text-xs text-neutral-400">
+            <span class="inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+              ARCHIVAL DATA
+            </span>
+            <span>CHASSIS #95</span>
+          </div>
+
+          <!-- Visual Placeholder -->
+          <div class="h-64 md:h-72 w-full rounded-xl border border-neutral-800 bg-brand-accent flex flex-col items-center justify-center p-4 text-center relative overflow-hidden group">
+            <span class="text-8xl font-black text-white/5 font-display absolute -bottom-4 -right-4 select-none">95</span>
+            <p class="text-neutral-300 font-mono text-xs font-bold relative z-10 mb-1">[ PLACEHOLDER: RENDER PERFIL ]</p>
+            <p class="text-[11px] text-neutral-500 max-w-xs relative z-10">
+              Esta visual reacciona o cambia sutilmente conforme avanzas por los capítulos del timeline.
+            </p>
+          </div>
+
+          <!-- Highlight Quote Box -->
+          <div class="mt-6 p-4 rounded-lg bg-neutral-950 border border-neutral-800/80">
+            <p class="text-xs font-mono text-brand-yellow mb-1">// ICONIC QUOTE</p>
+            <blockquote class="text-lg font-editorial font-bold text-white italic">
+              "No es una copa de plástico lo que importa... es a quién tienes al lado en la línea de meta."
+            </blockquote>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COLUMNA DERECHA (TIMELINE EDITORIAL) -->
+      <div class="lg:col-span-7 relative pl-6 md:pl-10 border-l border-neutral-800 space-y-16">
+
+        <!-- Línea de Progreso Animada (GSAP) -->
+        <div class="timeline-progress-line absolute left-0 top-0 w-[2px] bg-gradient-to-b from-brand-red via-brand-yellow to-neutral-800 h-full origin-top"></div>
+
+        <!-- Capítulo 01 -->
+        <article class="timeline-item relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-neutral-900 border-2 border-brand-red group-hover:scale-125 transition-transform"></div>
+
+          <header class="mb-3 font-mono text-xs text-brand-red uppercase tracking-widest">
+            <span>[ CHAPTER 01 ]</span> • <span>2006</span>
+          </header>
+          <h3 class="text-2xl md:text-3xl font-editorial font-bold text-white uppercase mb-3">
+            El Novato Sensación
+          </h3>
+          <p class="text-neutral-300 font-sans leading-relaxed text-sm md:text-base mb-4">
+            Ingresó a la Copa Pistón como un competidor talentoso pero arrogante. Apoyado por Rust-eze, su objetivo inicial era convertirse en el primer novato en ganar el trofeo y asegurar el codiciado patrocinio de Dinoco.
+          </p>
+          <div class="inline-block px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 font-mono text-xs rounded">
+            ESTADÍSTICA: 0 Copas Pistón • 14 Pole Positions
+          </div>
+        </article>
+
+        <!-- Capítulo 02 -->
+        <article class="timeline-item relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-neutral-900 border-2 border-brand-yellow group-hover:scale-125 transition-transform"></div>
+
+          <header class="mb-3 font-mono text-xs text-brand-yellow uppercase tracking-widest">
+            <span>[ CHAPTER 02 ]</span> • <span>RADIADOR SPRINGS</span>
+          </header>
+          <h3 class="text-2xl md:text-3xl font-editorial font-bold text-white uppercase mb-3">
+            El Desvío que lo Cambió Todo
+          </h3>
+          <p class="text-neutral-300 font-sans leading-relaxed text-sm md:text-base mb-4">
+            Tras perderse en la mítica Ruta 66, terminó destruyendo la calle principal de un pueblo olvidado. Bajo la tutela del ex-campeón Doc Hudson (Faboulous Hudson Hornet), aprendió la técnica de derrape en tierra y descubrió el valor de la comunidad sobre la gloria individual.
+          </p>
+          <!-- Callout Frase Destacada -->
+          <div class="my-6 p-6 border-l-2 border-brand-red bg-neutral-900/40 text-xl font-editorial font-bold uppercase text-white tracking-wide">
+            "Gira a la izquierda para ir a la derecha."
+          </div>
+        </article>
+
+        <!-- Capítulo 03 -->
+        <article class="timeline-item relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-neutral-900 border-2 border-neutral-600 group-hover:scale-125 transition-transform"></div>
+
+          <header class="mb-3 font-mono text-xs text-neutral-400 uppercase tracking-widest">
+            <span>[ CHAPTER 03 ]</span> • <span>DOMINIO ABSOLUTO</span>
+          </header>
+          <h3 class="text-2xl md:text-3xl font-editorial font-bold text-white uppercase mb-3">
+            La Era Dorada & Gran Prix Mundial
+          </h3>
+          <p class="text-neutral-300 font-sans leading-relaxed text-sm md:text-base mb-4">
+            Aseguró múltiples campeonatos seguidos en la Copa Pistón. Expandió sus horizontes compitiendo internacionalmente en el World Grand Prix frente a rivales de la talla de Francesco Bernoulli, consolidando su estatus como el corredor más versátil del planeta.
+          </p>
+        </article>
+
+        <!-- Capítulo 04 -->
+        <article class="timeline-item relative group">
+          <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-neutral-900 border-2 border-brand-red group-hover:scale-125 transition-transform"></div>
+
+          <header class="mb-3 font-mono text-xs text-brand-red uppercase tracking-widest">
+            <span>[ CHAPTER 04 ]</span> • <span>NUEVA GENERACIÓN</span>
+          </header>
+          <h3 class="text-2xl md:text-3xl font-editorial font-bold text-white uppercase mb-3">
+            Paso de Antorcha a Cruz Ramírez
+          </h3>
+          <p class="text-neutral-300 font-sans leading-relaxed text-sm md:text-base">
+            Con la llegada de corredores de alta tecnología como Jackson Storm, enfrentó el reto del envejecimiento deportivo. Tras un fuerte accidente, redefinió su rol asumiendo la mentoría de Cruz Ramírez, imitando la relación que una vez tuvo con Doc Hudson.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
   </section>
 
   <!-- Librerías JS: GSAP + ScrollTrigger + Lenis Smooth Scroll -->
