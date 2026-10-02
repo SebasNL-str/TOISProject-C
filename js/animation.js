@@ -117,3 +117,17 @@ if (trophyTrack) {
         }
     });
 }
+
+// 5. FASE 4: Animaciones para el Blueprint y la Galería
+gsap.from('#media-blueprint .grid > div', {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+        trigger: '#media-blueprint',
+        start: 'top 70%',
+        toggleActions: 'play none none reverse'
+    }
+});

@@ -377,6 +377,121 @@
     </div>
   </section>
 
+  <!-- FASE 4: MULTIMEDIA, BLUEPRINT & GALERÍA DE ARTWORK -->
+  <section id="media-blueprint" class="relative min-h-screen bg-brand-dark text-white border-b border-neutral-800 overflow-hidden py-24 px-6 md:px-12">
+
+    <!-- Background Video Loop con capa Blueprint (CAD Grid) -->
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-25 overflow-hidden">
+      <!-- Muestra de Video Loop / Canvas Background -->
+      <div class="w-full h-full bg-gradient-to-tr from-brand-dark via-neutral-900 to-brand-accent flex items-center justify-center">
+        <!-- SVG Grid de Fondo estilo Esquema CAD -->
+        <svg class="w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+      <!-- Gradiente superpuesto para mantener legibilidad -->
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+    </div>
+
+    <!-- Encabezado de Sección -->
+    <div class="relative z-10 mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-neutral-800 pb-8">
+      <div>
+        <span class="text-xs font-mono text-brand-red uppercase tracking-widest block mb-2">// 03. TECHNICAL SPECS & ARTWORK</span>
+        <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
+          TELEMETRÍA & GALERÍA
+        </h2>
+      </div>
+      <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">[ CAD REVISION: 2.0_FINAL ]</span>
+    </div>
+
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+      <!-- COLUMNA 1: FICHA TÉCNICA ESTILO BLUEPRINT (7 COLS) -->
+      <div class="lg:col-span-7 bg-neutral-950/80 border border-neutral-800 rounded-2xl p-6 md:p-8 backdrop-blur-xl relative">
+        <div class="flex justify-between items-center mb-6 pb-4 border-b border-neutral-800 font-mono text-xs">
+          <span class="text-brand-yellow font-bold">// SPECIFICATION BLUEPRINT</span>
+          <span class="text-neutral-500">SCALE: 1:1</span>
+        </div>
+
+        <!-- Diagrama / Visual del Chasis -->
+        <div class="relative h-64 md:h-80 rounded-xl bg-neutral-900/90 border border-neutral-800/80 flex flex-col items-center justify-center p-6 mb-8 group overflow-hidden">
+          <div class="absolute top-3 left-3 font-mono text-[10px] text-neutral-500">SCHEMATIC_REF #95-A</div>
+          <div class="absolute bottom-3 right-3 font-mono text-[10px] text-brand-red">CONFIG: COPAS PISTÓN HIGH-SPEED</div>
+
+          <span class="text-8xl font-black text-white/5 font-display absolute select-none">V8 750HP</span>
+          <p class="text-neutral-300 font-mono text-xs font-bold relative z-10 mb-2">[ PLACEHOLDER: BLUEPRINT / RENDER VECTORIAL ]</p>
+          <p class="text-[11px] text-neutral-400 max-w-sm text-center relative z-10 font-sans">
+            Aquí irá el plano esquemático o render de corte técnico mostrando la estructura aerodinámica y motor.
+          </p>
+        </div>
+
+        <!-- Matriz de Especificaciones TÉCNICAS -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 font-mono text-xs">
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
+            <span class="text-neutral-500 block text-[10px]">MOTOR</span>
+            <span class="text-white font-bold">V8 750 HP</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
+            <span class="text-neutral-500 block text-[10px]">0-60 MPH</span>
+            <span class="text-brand-yellow font-bold">3.2 SEG</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
+            <span class="text-neutral-500 block text-[10px]">VELOCIDAD MÁX</span>
+            <span class="text-brand-red font-bold">200+ MPH</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
+            <span class="text-neutral-500 block text-[10px]">CHASIS</span>
+            <span class="text-white font-bold">Tubular Acero</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
+            <span class="text-neutral-500 block text-[10px]">TRANSMISIÓN</span>
+            <span class="text-white font-bold">Manual 4-Velocidades</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
+            <span class="text-neutral-500 block text-[10px]">PATROCINADOR</span>
+            <span class="text-brand-yellow font-bold">Rust-eze</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMNA 2: GALERÍA LOOKBOOK & VIDEO CONTAINER (5 COLS) -->
+      <div class="lg:col-span-5 space-y-6">
+
+        <!-- Video Container inmersivo -->
+        <div class="rounded-2xl border border-neutral-800 bg-neutral-950 p-4 relative group">
+          <div class="flex justify-between items-center mb-3 font-mono text-xs text-neutral-400">
+            <span>[ VIDEO REEL ]</span>
+            <span class="text-brand-red animate-pulse">● LIVE CLIP</span>
+          </div>
+          <div class="relative h-48 md:h-56 rounded-xl bg-neutral-900 border border-neutral-800 overflow-hidden flex flex-col items-center justify-center p-4">
+            <span class="text-4xl mb-2">🎬</span>
+            <p class="text-xs font-mono text-neutral-300 font-bold">[ PLACEHOLDER: FRAGMENTO DE VIDEO / GIF ]</p>
+            <p class="text-[11px] text-neutral-500 text-center mt-1">Clip corto o loop MP4/WebM del auto acelerando en pista.</p>
+          </div>
+        </div>
+
+        <!-- Grilla de Artwork Oficial / Concept Art -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="h-36 rounded-xl border border-neutral-800 bg-neutral-900 p-4 flex flex-col justify-between hover:border-brand-red transition-colors">
+            <span class="font-mono text-[10px] text-neutral-500">ART_01.PNG</span>
+            <p class="font-mono text-xs text-neutral-300">[ CONCEPT ART ]</p>
+          </div>
+          <div class="h-36 rounded-xl border border-neutral-800 bg-neutral-900 p-4 flex flex-col justify-between hover:border-brand-yellow transition-colors">
+            <span class="font-mono text-[10px] text-neutral-500">ART_02.PNG</span>
+            <p class="font-mono text-xs text-neutral-300">[ CLAY MODEL ]</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- Librerías JS: GSAP + ScrollTrigger + Lenis Smooth Scroll -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
