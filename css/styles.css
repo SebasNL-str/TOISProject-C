@@ -24,15 +24,16 @@ html.lenis, html.lenis body {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
 }
 
+/* Optimización de rendimiento para animaciones de entrada */
 .reveal-on-scroll,
 .stagger-grid > * {
     will-change: transform, opacity;
 }
 
-/* Soporte para transiciones de sección y suavizado */
+/* Control limpio de secciones (sin romper el contexto de apilamiento del PIN) */
 section {
-    transform-origin: center top;
-    will-change: transform, opacity, filter;
+    position: relative;
+    z-index: 1;
 }
 
 /* Evita desbordamiento al encoger/escalar secciones */

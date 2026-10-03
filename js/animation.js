@@ -21,248 +21,155 @@ gsap.ticker.add((time) => {
 });
 gsap.ticker.lagSmoothing(0);
 
-// Animaciones de entrada y Scroll Parallax para la Fase 1
+// Executar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
-    // Revelado individual para títulos, textos o bloques
+
+    // A) Revelado suave para elementos individuales
     gsap.utils.toArray('.reveal-on-scroll').forEach((el) => {
         gsap.fromTo(
             el,
-            {
-                opacity: 0,
-                y: 35, // Desplazamiento inicial sutil
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1.1,
-                ease: 'power2.out', // Curva suave para evitar sensación tosca
-                scrollTrigger: {
-                    trigger: el,
-                    start: 'top 85%', // Se activa cuando el elemento entra al 85% del viewport
-                    toggleActions: 'play none none reverse', // Vuelve a ocultar suavemente al subir
-                },
-            }
-        );
-    });
-
-    // Revelado escalonado (Stagger) para Grillas de Tarjetas (Trofeos, Trivia, etc.)
-    gsap.utils.toArray('.stagger-grid').forEach((grid) => {
-        gsap.fromTo(
-            grid.children,
-            {
-                opacity: 0,
-                y: 45,
-            },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
                 y: 0,
                 duration: 0.9,
-                stagger: 0.15, // Intervalo entre cada tarjeta para fluidez visual
                 ease: 'power2.out',
                 scrollTrigger: {
-                    trigger: grid,
-                    start: 'top 80%',
+                    trigger: el,
+                    start: 'top 88%',
+                    toggleActions: 'play none none reverse',
+                    preventOverlaps: true,
+                    fastScrollEnd: true,
                 },
             }
         );
     });
 
-    // 1. Animación de Entrada (Page Load)
-    const heroTl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.2 } });
-
-    heroTl
-    .from('.hero-meta', {
-        y: -30,
-        opacity: 0,
-        delay: 0.2
-    })
-    .from('.hero-title', {
-        y: 80,
-        opacity: 0,
-        scale: 0.95
-    }, '-=0.8')
-    .from('.hero-subtitle', {
-        y: 60,
-        opacity: 0
-    }, '-=0.9')
-    .from('.hero-image-wrapper', {
-        scale: 0.8,
-        opacity: 0,
-        duration: 1.4,
-        ease: 'back.out(1.2)'
-    }, '-=1.0')
-    .from('.hero-footer', {
-        y: 30,
-        opacity: 0
-    }, '-=0.8');
-
-    // 2. Animación Parallax al hacer Scroll
-    gsap.to('.hero-title', {
-        yPercent: -25,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '#hero',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true
-        }
+    // B) Revelado escalonado para grillas (.stagger-grid)
+    gsap.utils.toArray('.stagger-grid').forEach((grid) => {
+        gsap.fromTo(
+            grid.children,
+            { opacity: 0, y: 35 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.12,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: grid,
+                    start: 'top 82%',
+                    toggleActions: 'play none none reverse',
+                    preventOverlaps: true,
+                    fastScrollEnd: true,
+                },
+            }
+        );
     });
 
-    gsap.to('.hero-image-wrapper', {
-        yPercent: -12,
-        scale: 1.04,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '#hero',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true
-        }
-    });
-
-
-    //MACRO-TRANSICIONES ENTRE SECCIONES
+    // C) MACRO-TRANSICIONES FLUIDAS ENTRE SECCIONES (Sin Blur/Scale que rompa el PIN)
     const sections = gsap.utils.toArray('section');
-
     sections.forEach((section, i) => {
-        // A) Efecto de Hundimiento y Escala al Salir (Scale-Down & Dim Out)
+        // Atenuación suave de opacidad al salir (evitamos scale/blur para no romper GPU layers)
         if (i < sections.length - 1) {
             gsap.to(section, {
-                scale: 0.94,
-                opacity: 0.35,
-                filter: 'blur(6px)',
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'bottom bottom', // Comienza cuando la parte inferior toca el borde inferior
-                        end: 'bottom top',    // Termina cuando la sección sale por completo
-                        scrub: true,
-                    },
+                opacity: 0.25,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'bottom 60%',
+                    end: 'bottom top',
+                    scrub: true,
+                },
             });
         }
 
-        // B) Zoom Cinemático y Parallax en los Encabezados de Sección
+        // Encabezados h2: Entrada cinematográfica progresiva
         const header = section.querySelector('h2');
-        const tag = section.querySelector('span');
-
         if (header) {
             gsap.fromTo(
                 header,
-                {
-                    y: 80,
-                    scale: 0.85,
-                    letterSpacing: '0.05em',
-                    opacity: 0
-                },
+                { y: 50, opacity: 0 },
                 {
                     y: 0,
-                    scale: 1,
-                    letterSpacing: '-0.02em',
                     opacity: 1,
+                    duration: 1,
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: section,
-                        start: 'top 80%',
-                        end: 'top 30%',
-                        scrub: 0.6, // Scrub suave sincronizado con Lenis
+                        start: 'top 85%',
+                        end: 'top 35%',
+                        scrub: 0.5,
                     },
                 }
             );
         }
-
-        // C) Iluminación de Bordes y Divisores de Sección al Entrar
-        const borderDivider = section.querySelector('.border-b, .border-t');
-        if (borderDivider) {
-            gsap.fromTo(
-                borderDivider,
-                { borderColor: 'rgba(255, 255, 255, 0.05)' },
-                        {
-                            borderColor: i % 2 === 0 ? 'rgba(234, 179, 8, 0.6)' : 'rgba(239, 68, 68, 0.6)', // Alterna entre Amarillo Dinoco y Rojo Rust-eze
-                        duration: 1,
-                        ease: 'power2.out',
-                        scrollTrigger: {
-                            trigger: section,
-                            start: 'top 70%',
-                            toggleActions: 'play none none reverse',
-                        },
-                        }
-            );
-        }
     });
-});
 
-// 3. FASE 2: Animaciones de Scroll para la Línea de Tiempo y Sticky Card
-
-// Revelado progresivo de los ítems de la línea de tiempo
-const timelineItems = gsap.utils.toArray('.timeline-item');
-
-timelineItems.forEach((item) => {
-    gsap.from(item, {
-        opacity: 0,
-        x: 40,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-            trigger: item,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
-        }
+    // D) FASE 2: Línea de Tiempo
+    const timelineItems = gsap.utils.toArray('.timeline-item');
+    timelineItems.forEach((item) => {
+        gsap.fromTo(
+            item,
+            { opacity: 0, x: 30 },
+            {
+                opacity: 1,
+                x: 0,
+                duration: 0.8,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse',
+                    preventOverlaps: true,
+                },
+            }
+        );
     });
-});
 
-// Animación del indicador de línea vertical de progreso
-gsap.from('.timeline-progress-line', {
-    scaleY: 0,
-    ease: 'none',
-    scrollTrigger: {
-        trigger: '#biografia',
-        start: 'top 60%',
-        end: 'bottom 80%',
-        scrub: true
+    // E) FASE 3: Scroll Horizontal de Trofeos (Pin fluido)
+    const trophyTrack = document.querySelector('.trophy-track');
+    if (trophyTrack) {
+        const getScrollAmount = () => -(trophyTrack.scrollWidth - window.innerWidth + 96);
+
+        gsap.to(trophyTrack, {
+            x: getScrollAmount,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#trofeos',
+                start: 'top top',
+                end: () => `+=${trophyTrack.scrollWidth}`,
+                pin: true,
+                scrub: 0.8, // Un toque de inercia para evitar tirones
+                invalidateOnRefresh: true,
+                anticipatePin: 1, // Previene parpadeos antes del pin
+            },
+        });
     }
-});
 
-// Efecto subtle pulse para la tarjeta Sticky en la columna izquierda
-gsap.to('.sticky-card', {
-    borderColor: 'rgba(229, 9, 20, 0.4)',
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-});
-
-// 4. FASE 3: Scroll Horizontal (Pit Lane Slider)
-const trophyTrack = document.querySelector('.trophy-track');
-
-if (trophyTrack) {
-    const getScrollAmount = () => {
-        return -(trophyTrack.scrollWidth - window.innerWidth + 96);
-    };
-
-    gsap.to(trophyTrack, {
-        x: getScrollAmount,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '#trofies-section',
-            start: 'top top',
-            end: () => `+=${trophyTrack.scrollWidth}`,
-            pin: true,
-            scrub: 1,
-            invalidateOnRefresh: true,
-        }
-    });
-}
-
-// 5. FASE 4: Animaciones para el Blueprint y la Galería
-gsap.from('#media-blueprint .grid > div', {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-        trigger: '#media-blueprint',
-        start: 'top 70%',
-        toggleActions: 'play none none reverse'
+    // F) FASE 4: Blueprint Grid
+    const blueprintItems = document.querySelectorAll('#media-blueprint .grid > div');
+    if (blueprintItems.length > 0) {
+        gsap.fromTo(
+            blueprintItems,
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '#media-blueprint',
+                    start: 'top 75%',
+                    toggleActions: 'play none none reverse',
+                },
+            }
+        );
     }
+
+    // Recalcular posiciones de ScrollTrigger al cargar todo correctamente
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 100);
 });
