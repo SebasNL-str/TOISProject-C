@@ -8,6 +8,9 @@ const lenis = new Lenis({
                         smoothWheel: true,
 });
 
+// Exportar globalmente para que main.js la utilice
+window.lenis = lenis;
+
 function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
