@@ -120,9 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ==========================================
-    // 8. MACRO-TRANSICIONES ENTRE SECCIONES (SECTION-TO-SECTION)
-    // ==========================================
+
+    //MACRO-TRANSICIONES ENTRE SECCIONES
     const sections = gsap.utils.toArray('section');
 
     sections.forEach((section, i) => {

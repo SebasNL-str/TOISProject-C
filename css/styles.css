@@ -23,3 +23,20 @@ html.lenis, html.lenis body {
 .hero-title {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
 }
+
+.reveal-on-scroll,
+.stagger-grid > * {
+    will-change: transform, opacity;
+}
+
+/* Soporte para transiciones de sección y suavizado */
+section {
+    transform-origin: center top;
+    will-change: transform, opacity, filter;
+}
+
+/* Evita desbordamiento al encoger/escalar secciones */
+body {
+    overflow-x: hidden;
+    background-color: #0d0d0d;
+}
