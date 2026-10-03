@@ -1,6 +1,71 @@
+// Register GSAP Plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// 1. Inicialización de Lenis Smooth Scroll
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                        smoothWheel: true,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// Sincronizar Lenis con ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
+
 // Animaciones de entrada y Scroll Parallax para la Fase 1
 document.addEventListener('DOMContentLoaded', () => {
-    gsap.registerPlugin(ScrollTrigger);
+    // Revelado individual para títulos, textos o bloques
+    gsap.utils.toArray('.reveal-on-scroll').forEach((el) => {
+        gsap.fromTo(
+            el,
+            {
+                opacity: 0,
+                y: 35, // Desplazamiento inicial sutil
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1.1,
+                ease: 'power2.out', // Curva suave para evitar sensación tosca
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 85%', // Se activa cuando el elemento entra al 85% del viewport
+                    toggleActions: 'play none none reverse', // Vuelve a ocultar suavemente al subir
+                },
+            }
+        );
+    });
+
+    // Revelado escalonado (Stagger) para Grillas de Tarjetas (Trofeos, Trivia, etc.)
+    gsap.utils.toArray('.stagger-grid').forEach((grid) => {
+        gsap.fromTo(
+            grid.children,
+            {
+                opacity: 0,
+                y: 45,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.9,
+                stagger: 0.15, // Intervalo entre cada tarjeta para fluidez visual
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: grid,
+                    start: 'top 80%',
+                },
+            }
+        );
+    });
 
     // 1. Animación de Entrada (Page Load)
     const heroTl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.2 } });
