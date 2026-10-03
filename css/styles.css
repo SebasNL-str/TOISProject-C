@@ -41,3 +41,67 @@ body {
     overflow-x: hidden;
     background-color: #0d0d0d;
 }
+
+/* --- Estilos Interactivos para Tarjetas y Contenedores --- */
+.card,
+.stat-card,
+.blueprint-card,
+.container-box {
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+    will-change: transform;
+}
+
+/* Elevación sutil al pasar el cursor (Hover 3D) */
+.card:hover,
+.stat-card:hover,
+.blueprint-card:hover,
+.container-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* --- Botón HUD del Motor (Círculo a Cápsula Expandible) --- */
+#btn-engine-rev {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 3.25rem; /* 52px - Estado Círculo */
+    height: 3.25rem;
+    padding: 0 0.85rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Estado Expandido al hacer Hover */
+#btn-engine-rev:hover {
+    width: 10.5rem; /* Se expande mostrando el texto completo */
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
+}
+
+/* Ocultar / Mostrar Texto dentro del Botón HUD */
+#btn-engine-rev .engine-text {
+    opacity: 0;
+    max-width: 0;
+    margin-left: 0;
+    overflow: hidden;
+    transition: opacity 0.25s ease 0.1s,
+                max-width 0.35s ease,
+                margin-left 0.25s ease;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#btn-engine-rev:hover .engine-text {
+    opacity: 1;
+    max-width: 100px;
+    margin-left: 0.6rem;
+}

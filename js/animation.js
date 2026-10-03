@@ -171,6 +171,41 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 
+    // G) Animación de entrada segura para Tarjetas y Contenedores
+    const interactiveCards = gsap.utils.toArray('.card, .stat-card, .blueprint-card, .container-box');
+
+    if (interactiveCards.length > 0) {
+        // Agrupar tarjetas por contenedor padre para que el stagger funcione por secciones
+        const cardGroups = new Set(interactiveCards.map(card => card.parentElement));
+
+        cardGroups.forEach(group => {
+            const cardsInGroup = group.querySelectorAll('.card, .stat-card, .blueprint-card, .container-box');
+
+            gsap.fromTo(
+                cardsInGroup,
+                {
+                    opacity: 0,
+                    y: 35,
+                    scale: 0.95
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.75,
+                    stagger: 0.1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: group,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse',
+                        preventOverlaps: true,
+                    },
+                }
+            );
+        });
+    }
+
     // Recalcular posiciones de ScrollTrigger al cargar todo correctamente
     setTimeout(() => {
         ScrollTrigger.refresh();

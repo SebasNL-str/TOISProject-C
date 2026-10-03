@@ -544,15 +544,24 @@
   </section>
 
   <!-- SOUND HUD & HUD FLOTANTE (COMPONENTE INTERACTIVO DE AUDIO) -->
-  <div id="sound-hud" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-neutral-900/90 border border-neutral-700/80 p-2 pr-4 rounded-full backdrop-blur-md shadow-2xl transition-all hover:scale-105">
-    <button id="btn-engine-rev" class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-black font-bold text-sm shadow-lg hover:bg-yellow-400 transition-colors">
-      🔊
-    </button>
-    <div class="font-mono text-xs text-left">
-      <span class="block text-white font-bold tracking-wider">ENGINE HUD</span>
-      <span class="block text-[10px] text-neutral-400">CLICK O 'K' PARA ACELERAR</span>
-    </div>
+<div id="sound-hud" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-neutral-900/90 border border-neutral-700/80 p-2 pr-4 rounded-full backdrop-blur-md shadow-2xl transition-all hover:border-yellow-500/40">
+
+  <!-- Botón HUD Expandible -->
+  <button id="btn-engine-rev" class="h-10 rounded-full bg-neutral-800 text-yellow-400 border border-neutral-700/80 flex items-center justify-start shadow-lg hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors focus:outline-none">
+    <!-- Icono del motor o rayo -->
+    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>
+    <!-- Texto revelado al expandir -->
+    <span class="engine-text">REV ENGINE</span>
+  </button>
+
+  <!-- Etiqueta del HUD -->
+  <div class="font-mono text-xs text-left select-none">
+    <span class="block text-white font-bold tracking-wider">ENGINE HUD</span>
+    <span class="block text-[10px] text-neutral-400">CLICK O 'K' PARA ACELERAR</span>
   </div>
+</div>
 
   <!-- FOOTER EDITORIAL -->
   <footer class="bg-neutral-950 text-neutral-500 py-12 px-6 md:px-12 font-mono text-xs border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-6">
