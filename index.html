@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRUZ RAMÍREZ ARCHIVE // Editorial Showcase</title>
+  <title>TOISRamirez Archive // Editorial Showcase</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -48,7 +48,7 @@
       <span>ISSUE #051</span>
     </div>
     <div class="text-sm font-editorial tracking-wider uppercase font-bold text-white">
-      CRUZ RAMÍREZ ARCHIVE
+      TOISRamirez Archive
     </div>
     <div class="text-xs font-mono uppercase tracking-widest text-neutral-400 hidden sm:block">
       [ DINOCO #51 ]
@@ -462,18 +462,27 @@
       <!-- COLUMNA 2: GALERÍA LOOKBOOK & VIDEO CONTAINER (5 COLS) -->
       <div class="lg:col-span-5 space-y-6">
 
-        <!-- Video Container inmersivo -->
-        <div class="rounded-2xl border border-neutral-800 bg-neutral-950 p-4 relative group">
-          <div class="flex justify-between items-center mb-3 font-mono text-xs text-neutral-400">
-            <span>[ VIDEO REEL ]</span>
-            <span class="text-brand-red animate-pulse">● LIVE CLIP</span>
-          </div>
-          <div class="relative h-48 md:h-56 rounded-xl bg-neutral-900 border border-neutral-800 overflow-hidden flex flex-col items-center justify-center p-4">
-            <span class="text-4xl mb-2">🎬</span>
-            <p class="text-xs font-mono text-neutral-300 font-bold">[ PLACEHOLDER: FLIP MANEUVER CLIP ]</p>
-            <p class="text-[11px] text-neutral-500 text-center mt-1">Fragmento de video del rebase acrobático sobre la pared en la Florida 500.</p>
-          </div>
-        </div>
+      <!-- Video Container inmersivo (con Controles) -->
+<div class="card rounded-2xl border border-neutral-800 bg-neutral-950 p-4 relative group">
+  <div class="flex justify-between items-center mb-3 font-mono text-xs text-neutral-400">
+    <span>[ VIDEO REEL ]</span>
+    <span class="text-brand-red animate-pulse">● LIVE CLIP</span>
+  </div>
+
+  <!-- Contenedor del reproductor -->
+  <div class="relative h-48 md:h-56 rounded-xl bg-neutral-900 border border-neutral-800 overflow-hidden">
+    <video
+      src="assets/videos/CRM.mp4"
+      poster="assets/img/miniatura-video.jpg"
+      controls
+      class="w-full h-full object-cover"
+    ></video>
+  </div>
+
+  <p class="text-[11px] text-neutral-500 text-center mt-3 font-mono">
+    Fragmento de video del rebase acrobático sobre la pared en la Florida 500.
+  </p>
+</div>
 
         <!-- Grilla de Artwork Oficial / Concept Art -->
         <div class="grid grid-cols-2 gap-4">

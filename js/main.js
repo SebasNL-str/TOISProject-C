@@ -1,53 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Web Audio API - Sintetizador del Rugido del Motor
-    const btnRev = document.getElementById('btn-engine-rev');
+    // 1. Instancia y configuración del archivo de audio real
+    const engineAudio = new Audio('assets/audio/CREngineF.mp3'); // Asegúrate de colocar la ruta correcta de tu archivo
+    engineAudio.volume = 0.8; // Control de volumen (0.0 a 1.0)
 
-    function playEngineSound() {
-        try {
-            const AudioCtx = window.AudioContext || window.webkitAudioContext;
-            const ctx = new AudioCtx();
+const btnRev = document.getElementById('btn-engine-rev');
 
-            // Desbloquear AudioContext si el navegador lo puso en estado suspendido
-            if (ctx.state === 'suspended') {
-                ctx.resume();
-            }
+function playEngineSound() {
+    try {
+        // Reinicia la reproducción al segundo 0 para permitir aceleraciones rápidas consecutivas
+        engineAudio.currentTime = 0;
 
-            // Oscilador para la frecuencia baja del motor
-            const osc = ctx.createOscillator();
-            const gain = ctx.createGain();
+        const playPromise = engineAudio.play();
 
-            osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(60, ctx.currentTime);
-
-            // Aceleración de frecuencia (Efecto REV)
-            osc.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.3);
-            osc.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 0.8);
-
-            // Envolvente de volumen
-            gain.gain.setValueAtTime(0.3, ctx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.8);
-
-            osc.connect(gain);
-            gain.connect(ctx.destination);
-
-            osc.start();
-            osc.stop(ctx.currentTime + 0.8);
-
-            // Efecto visual en el botón HUD
-            if (btnRev) {
-                btnRev.classList.add('scale-125', 'bg-brand-yellow');
-                setTimeout(() => btnRev.classList.remove('scale-125', 'bg-brand-yellow'), 300);
-            }
-        } catch (e) {
-            console.log('Web Audio no soportado o bloqueado por interacción del navegador.');
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.warn('La reproducción automática fue bloqueada o el archivo de audio no existe:', error);
+            });
         }
-    }
 
-    if (btnRev) {
-        btnRev.addEventListener('click', playEngineSound);
+        // Efecto visual en el botón HUD al acelerar
+        if (btnRev) {
+            btnRev.classList.add('scale-110', 'bg-brand-yellow');
+            setTimeout(() => btnRev.classList.remove('scale-110', 'bg-brand-yellow'), 300);
+        }
+    } catch (e) {
+        console.error('Error al intentar reproducir el archivo de audio:', e);
     }
+}
 
+if (btnRev) {
+    btnRev.addEventListener('click', playEngineSound);
+}
     // 2. Easter Egg de Teclado (Tecla 'K' para acelerar)
     window.addEventListener('keydown', (e) => {
         // Evitar que active el sonido si el usuario está escribiendo en un input o textarea
