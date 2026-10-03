@@ -378,128 +378,181 @@
   </section>
 
   <!-- FASE 4: MULTIMEDIA, BLUEPRINT & GALERÍA DE ARTWORK -->
-  <section id="media-blueprint" class="relative min-h-screen bg-brand-dark text-white border-b border-neutral-800 overflow-hidden py-24 px-6 md:px-12">
+<section id="media-blueprint" class="relative min-h-screen bg-brand-dark text-white border-b border-neutral-800 overflow-hidden py-24 px-6 md:px-12">
 
-    <!-- Background Video Loop con capa Blueprint (CAD Grid) -->
-    <div class="absolute inset-0 z-0 pointer-events-none opacity-25 overflow-hidden">
-      <!-- Muestra de Video Loop / Canvas Background -->
-      <div class="w-full h-full bg-gradient-to-tr from-brand-dark via-neutral-900 to-brand-accent flex items-center justify-center">
-        <!-- SVG Grid de Fondo estilo Esquema CAD -->
-        <svg class="w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-      <!-- Gradiente superpuesto para mantener legibilidad -->
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+  <!-- Background Video Loop con capa Blueprint (CAD Grid) -->
+  <div class="absolute inset-0 z-0 pointer-events-none opacity-25 overflow-hidden">
+    <div class="w-full h-full bg-gradient-to-tr from-brand-dark via-neutral-900 to-brand-accent flex items-center justify-center">
+      <!-- SVG Grid de Fondo estilo Esquema CAD -->
+      <svg class="w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
     </div>
+    <!-- Gradiente superpuesto para mantener legibilidad -->
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+  </div>
 
-    <!-- Encabezado de Sección -->
-    <div class="relative z-10 mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-neutral-800 pb-8">
-      <div>
-        <span class="text-xs font-mono text-brand-red uppercase tracking-widest block mb-2">// 03. TECHNICAL SPECS & ARTWORK</span>
-        <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
-          TELEMETRÍA & GALERÍA
-        </h2>
-      </div>
-      <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">[ CAD REVISION: 2017_CRS_51 ]</span>
+  <!-- Encabezado de Sección -->
+  <div class="relative z-10 mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-neutral-800 pb-8">
+    <div>
+      <span class="text-xs font-mono text-brand-red uppercase tracking-widest block mb-2">// 03. TECHNICAL SPECS & ARTWORK</span>
+      <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
+        TELEMETRÍA & GALERÍA
+      </h2>
     </div>
+    <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">[ CAD REVISION: 2017_CRS_51 ]</span>
+  </div>
 
-    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+  <!-- GRILLA PRINCIPAL (12 COLUMNAS) -->
+  <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-      <!-- COLUMNA 1: FICHA TÉCNICA ESTILO BLUEPRINT (7 COLS) -->
-      <div class="lg:col-span-7 bg-neutral-950/80 border border-neutral-800 rounded-2xl p-6 md:p-8 backdrop-blur-xl relative">
+    <!-- COLUMNA 1: PANEL TÉCNICO (7 COLS) -->
+    <!-- CORRECCIÓN: Añadido 'flex flex-col gap-6' para apilar Blueprint y Specs -->
+    <div class="lg:col-span-7 flex flex-col gap-6 min-w-0">
+
+      <!-- 1.1 Ficha Técnica Estilo Blueprint -->
+      <div class="bg-neutral-950/80 border border-neutral-800 rounded-2xl p-6 md:p-8 backdrop-blur-xl relative card">
         <div class="flex justify-between items-center mb-6 pb-4 border-b border-neutral-800 font-mono text-xs">
           <span class="text-brand-yellow font-bold">// SPECIFICATION BLUEPRINT - CRS COUPE</span>
           <span class="text-neutral-500">SCALE: 1:1</span>
         </div>
 
         <!-- Diagrama / Visual del Chasis -->
-        <div class="relative h-64 md:h-80 rounded-xl bg-neutral-900/90 border border-neutral-800/80 flex flex-col items-center justify-center p-6 mb-8 group overflow-hidden">
-          <div class="absolute top-3 left-3 font-mono text-[10px] text-neutral-500">SCHEMATIC_REF #51-CR</div>
-          <div class="absolute bottom-3 right-3 font-mono text-[10px] text-brand-red">CONFIG: DINOCO HIGH-AERO</div>
+        <div class="relative w-full aspect-[16/10] rounded-xl bg-neutral-900/90 border border-neutral-800/80 flex items-center justify-center p-4 mb-8 group overflow-hidden">
+          <!-- Superposiciones técnicas HUD -->
+          <div class="absolute top-3 left-3 font-mono text-[10px] text-neutral-500 z-20 pointer-events-none">SCHEMATIC_REF #51-CR</div>
+          <div class="absolute bottom-3 right-3 font-mono text-[10px] text-brand-red z-20 pointer-events-none">CONFIG: DINOCO HIGH-AERO</div>
 
-          <span class="text-8xl font-black text-white/5 font-display absolute select-none">V6 3.8L</span>
-          <p class="text-neutral-300 font-mono text-xs font-bold relative z-10 mb-2">[ PLACEHOLDER: BLUEPRINT / RENDER VECTORIAL #51 ]</p>
-          <p class="text-[11px] text-neutral-400 max-w-sm text-center relative z-10 font-sans">
-            Plano esquemático técnico mostrando la estructura aerodinámica de perfil bajo y chasis monocasco de la CRS Sports Coupe.
-          </p>
+          <!-- Texto de agua de fondo -->
+          <span class="text-8xl font-black text-white/5 font-display absolute select-none pointer-events-none">V6 3.8L</span>
+
+          <!-- Imagen del Plano (object-contain para no cortar) -->
+          <img
+            src="assets/images/CruzAC4.png"
+            alt="Plano esquemático técnico CRS Sports Coupe"
+            class="w-full h-full object-contain p-2 relative z-10 transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+            loading="lazy"
+          />
         </div>
 
-        <!-- Matriz de Especificaciones TÉCNICAS -->
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 font-mono text-xs">
-          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
-            <span class="text-neutral-500 block text-[10px]">MOTOR</span>
-            <span class="text-white font-bold">V6 3.8L DOHC 24V</span>
-          </div>
-          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
-            <span class="text-neutral-500 block text-[10px]">0-60 MPH</span>
-            <span class="text-brand-yellow font-bold">3.1 SEG</span>
-          </div>
-          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
-            <span class="text-neutral-500 block text-[10px]">VELOCIDAD MÁX</span>
-            <span class="text-brand-red font-bold">210 MPH</span>
-          </div>
-          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
-            <span class="text-neutral-500 block text-[10px]">CHASIS</span>
-            <span class="text-white font-bold">Monocasco Al-CFRP</span>
-          </div>
-          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
-            <span class="text-neutral-500 block text-[10px]">TRANSMISIÓN</span>
-            <span class="text-white font-bold">Secuencial 6-Vel Paddle</span>
-          </div>
-          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800">
-            <span class="text-neutral-500 block text-[10px]">PATROCINADOR</span>
-            <span class="text-brand-yellow font-bold">Dinoco / Rust-eze</span>
-          </div>
+        <!-- Pie de plano explicativo -->
+        <p class="text-[11px] text-neutral-400 text-center font-mono">
+          Plano esquemático técnico mostrando la estructura aerodinámica de perfil bajo y chasis monocasco de la CRS Sports Coupe.
+        </p>
+      </div> <!-- Fin Ficha Blueprint -->
+
+      <!-- 1.2 Matriz de Especificaciones TÉCNICAS -->
+      <!-- CORRECCIÓN: Ahora está anidada correctamente dentro de la Columna 1 -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 font-mono text-xs">
+        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+          <span class="text-neutral-500 block text-[10px]">MOTOR</span>
+          <span class="text-white font-bold">V6 3.8L DOHC 24V</span>
         </div>
-      </div>
+        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+          <span class="text-neutral-500 block text-[10px]">0-60 MPH</span>
+          <span class="text-brand-yellow font-bold">3.1 SEG</span>
+        </div>
+        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+          <span class="text-neutral-500 block text-[10px]">VELOCIDAD MÁX</span>
+          <span class="text-brand-red font-bold">210 MPH</span>
+        </div>
+        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+          <span class="text-neutral-500 block text-[10px]">CHASIS</span>
+          <span class="text-white font-bold">Monocasco Al-CFRP</span>
+        </div>
+        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+          <span class="text-neutral-500 block text-[10px]">TRANSMISIÓN</span>
+          <span class="text-white font-bold">Secuencial 6-Vel Paddle</span>
+        </div>
+        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+          <span class="text-neutral-500 block text-[10px]">PATROCINADOR</span>
+          <span class="text-brand-yellow font-bold">Dinoco / Rust-eze</span>
+        </div>
+      </div> <!-- Fin Matriz Specs -->
 
-      <!-- COLUMNA 2: GALERÍA LOOKBOOK & VIDEO CONTAINER (5 COLS) -->
-      <div class="lg:col-span-5 space-y-6">
+    </div> <!-- FIN COLUMNA 1 (7 COLS) -->
 
-      <!-- Video Container inmersivo (con Controles) -->
-<div class="card rounded-2xl border border-neutral-800 bg-neutral-950 p-4 relative group">
-  <div class="flex justify-between items-center mb-3 font-mono text-xs text-neutral-400">
+    <!-- COLUMNA 2: MULTIMEDIA COMPACTO (5 COLS) - TU CÓDIGO EXACTO -->
+    <div class="lg:col-span-5 space-y-4 min-w-0">
+
+      <!-- Video Container Inmersivo (Ajustado al 100% del contenedor) -->
+<div class="card rounded-2xl border border-neutral-800 bg-neutral-950 p-3.5 relative">
+  <div class="flex justify-between items-center mb-2 font-mono text-[11px] text-neutral-400">
     <span>[ VIDEO REEL ]</span>
     <span class="text-brand-red animate-pulse">● LIVE CLIP</span>
   </div>
 
-  <!-- Contenedor del reproductor -->
-  <div class="relative h-48 md:h-56 rounded-xl bg-neutral-900 border border-neutral-800 overflow-hidden">
+  <!-- Contenedor con aspecto 16:9 para adaptarse exactamente a la proporción del video -->
+  <div class="relative aspect-video w-full rounded-xl bg-black border border-neutral-800 overflow-hidden">
     <video
       src="assets/videos/CRM.mp4"
-      poster="assets/img/miniatura-video.jpg"
+      poster="assets/images/miniatura-video.jpg"
       controls
+      preload="metadata"
       class="w-full h-full object-cover"
     ></video>
   </div>
 
-  <p class="text-[11px] text-neutral-500 text-center mt-3 font-mono">
+  <p class="text-[10px] text-neutral-500 text-center mt-2 font-mono">
     Fragmento de video del rebase acrobático sobre la pared en la Florida 500.
   </p>
 </div>
 
-        <!-- Grilla de Artwork Oficial / Concept Art -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="h-36 rounded-xl border border-neutral-800 bg-neutral-900 p-4 flex flex-col justify-between hover:border-brand-red transition-colors">
-            <span class="font-mono text-[10px] text-neutral-500">ART_CR51_01.PNG</span>
-            <p class="font-mono text-xs text-neutral-300">[ CONCEPT ART ]</p>
+      <!-- Grilla de Artwork Oficial / Concept Art COMPACTA -->
+      <div class="grid grid-cols-2 gap-3 min-w-0">
+
+        <!-- Artwork 1: Concept Art -->
+        <div class="card h-36 rounded-xl border border-neutral-800 bg-neutral-950 overflow-hidden relative group hover:border-brand-red/80 transition-colors flex flex-col justify-between">
+          <div class="absolute top-1.5 left-1.5 z-20 bg-neutral-950/90 backdrop-blur-md px-1.5 py-0.5 rounded border border-neutral-800 font-mono text-[9px] text-neutral-400 pointer-events-none">
+            ART_CR51_01.PNG
           </div>
-          <div class="h-36 rounded-xl border border-neutral-800 bg-neutral-900 p-4 flex flex-col justify-between hover:border-brand-yellow transition-colors">
-            <span class="font-mono text-[10px] text-neutral-500">ART_CR51_02.PNG</span>
-            <p class="font-mono text-xs text-neutral-300">[ DINOCO LIVERY ]</p>
+
+          <div class="w-full h-full p-3 pt-6 flex items-center justify-center bg-neutral-900/40">
+            <img
+              src="assets/images/CruzAC.png"
+              alt="Concept Art CRS Coupe"
+              class="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="p-2 bg-neutral-950 border-t border-neutral-800/80 flex justify-between items-center z-10">
+            <p class="font-mono text-[10px] text-neutral-300 font-bold group-hover:text-brand-red transition-colors">[ CONCEPT ART ]</p>
           </div>
         </div>
 
-      </div>
+        <!-- Artwork 2: Dinoco Livery -->
+        <div class="card h-36 rounded-xl border border-neutral-800 bg-neutral-950 overflow-hidden relative group hover:border-brand-yellow/80 transition-colors flex flex-col justify-between">
+          <div class="absolute top-1.5 left-1.5 z-20 bg-neutral-950/90 backdrop-blur-md px-1.5 py-0.5 rounded border border-neutral-800 font-mono text-[9px] text-neutral-400 pointer-events-none">
+            ART_CR51_02.PNG
+          </div>
 
-    </div>
-  </section>
+          <div class="w-full h-full p-3 pt-6 flex items-center justify-center bg-neutral-900/40">
+            <img
+              src="assets/images/CRA.webp"
+              alt="Dinoco Livery CRS Coupe"
+              class="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="p-2 bg-neutral-950 border-t border-neutral-800/80 flex justify-between items-center z-10">
+            <p class="font-mono text-[10px] text-neutral-300 font-bold group-hover:text-brand-yellow transition-colors">[ DINOCO LIVERY ]</p>
+          </div>
+        </div>
+
+      </div> <!-- Fin Grilla Artwork -->
+
+    </div> <!-- FIN COLUMNA 2 (5 COLS) -->
+
+  </div> <!-- FIN GRILLA PRINCIPAL -->
+
+</section>
 
   <!-- FASE 5: CURIOSIDADES, TRIVIAS & EASTER EGGS -->
   <section id="curiosidades" class="relative bg-brand-dark text-white border-b border-neutral-800 py-24 px-6 md:px-12">
@@ -575,7 +628,7 @@
   <!-- FOOTER EDITORIAL -->
   <footer class="bg-neutral-950 text-neutral-500 py-12 px-6 md:px-12 font-mono text-xs border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-6">
     <div>
-      <p class="text-neutral-300 font-bold mb-1">CRUZ RAMÍREZ EDITORIAL ARCHIVE © 2026</p>
+      <p class="text-neutral-300 font-bold mb-1">TOISRamirez EDITORIAL ARCHIVE © 2026</p>
       <p class="text-[11px] text-neutral-600">PROYECTO INTERACTIVO DE HOMENAJE A DISNEY PIXAR'S CARS 3.</p>
     </div>
 
