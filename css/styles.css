@@ -46,20 +46,38 @@ body {
 .card,
 .stat-card,
 .blueprint-card,
-.container-box {
-    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-                box-shadow 0.35s ease,
-                border-color 0.35s ease;
+.container-box,
+.timeline-item {
+    position: relative;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease;
     will-change: transform;
 }
 
-/* Elevación sutil al pasar el cursor (Hover 3D) */
+/* --- Efecto Seleccionado / Spotlight (Estilo Sala de Trofeos) --- */
 .card:hover,
 .stat-card:hover,
 .blueprint-card:hover,
-.container-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.05);
+.container-box:hover,
+.timeline-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(234, 179, 8, 0.7) !important; /* Amarillo Marca */
+    box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(234, 179, 8, 0.25),           /* Resplandor Exterior */
+    inset 0 0 15px rgba(234, 179, 8, 0.08);     /* Luz Interior */
+}
+
+/* Indicador de Selección Activa */
+.card:active,
+.stat-card:active,
+.blueprint-card:active,
+.container-box:active,
+.timeline-item:active {
+    transform: translateY(-2px) scale(1.005);
+    box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.9),
+    0 0 30px rgba(234, 179, 8, 0.4);
 }
 
 /* --- Botón HUD del Motor (Círculo a Cápsula Expandible) --- */

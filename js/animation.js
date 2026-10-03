@@ -171,34 +171,35 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 
-    // G) Animación de entrada segura para Tarjetas y Contenedores
-    const interactiveCards = gsap.utils.toArray('.card, .stat-card, .blueprint-card, .container-box');
+    // G) Animación bidireccional continua para Tarjetas y Contenedores
+    const interactiveCards = gsap.utils.toArray('.card, .stat-card, .blueprint-card, .container-box, .timeline-item');
 
     if (interactiveCards.length > 0) {
-        // Agrupar tarjetas por contenedor padre para que el stagger funcione por secciones
+        // Agrupar por elemento padre para animación escalonada (stagger)
         const cardGroups = new Set(interactiveCards.map(card => card.parentElement));
 
         cardGroups.forEach(group => {
-            const cardsInGroup = group.querySelectorAll('.card, .stat-card, .blueprint-card, .container-box');
+            const cardsInGroup = group.querySelectorAll('.card, .stat-card, .blueprint-card, .container-box, .timeline-item');
 
             gsap.fromTo(
                 cardsInGroup,
                 {
                     opacity: 0,
-                    y: 35,
-                    scale: 0.95
+                    y: 40,
+                    scale: 0.94
                 },
                 {
                     opacity: 1,
                     y: 0,
                     scale: 1,
                     duration: 0.75,
-                    stagger: 0.1,
+                    stagger: 0.12,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: group,
                         start: 'top 85%',
-                        toggleActions: 'play none none reverse',
+                        end: 'bottom 15%',
+                        toggleActions: 'play reverse play reverse', // Re-anima siempre al subir y bajar
                         preventOverlaps: true,
                     },
                 }
