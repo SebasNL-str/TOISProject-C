@@ -119,6 +119,77 @@ document.addEventListener('DOMContentLoaded', () => {
             scrub: true
         }
     });
+
+    // ==========================================
+    // 8. MACRO-TRANSICIONES ENTRE SECCIONES (SECTION-TO-SECTION)
+    // ==========================================
+    const sections = gsap.utils.toArray('section');
+
+    sections.forEach((section, i) => {
+        // A) Efecto de Hundimiento y Escala al Salir (Scale-Down & Dim Out)
+        if (i < sections.length - 1) {
+            gsap.to(section, {
+                scale: 0.94,
+                opacity: 0.35,
+                filter: 'blur(6px)',
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'bottom bottom', // Comienza cuando la parte inferior toca el borde inferior
+                        end: 'bottom top',    // Termina cuando la sección sale por completo
+                        scrub: true,
+                    },
+            });
+        }
+
+        // B) Zoom Cinemático y Parallax en los Encabezados de Sección
+        const header = section.querySelector('h2');
+        const tag = section.querySelector('span');
+
+        if (header) {
+            gsap.fromTo(
+                header,
+                {
+                    y: 80,
+                    scale: 0.85,
+                    letterSpacing: '0.05em',
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    scale: 1,
+                    letterSpacing: '-0.02em',
+                    opacity: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 80%',
+                        end: 'top 30%',
+                        scrub: 0.6, // Scrub suave sincronizado con Lenis
+                    },
+                }
+            );
+        }
+
+        // C) Iluminación de Bordes y Divisores de Sección al Entrar
+        const borderDivider = section.querySelector('.border-b, .border-t');
+        if (borderDivider) {
+            gsap.fromTo(
+                borderDivider,
+                { borderColor: 'rgba(255, 255, 255, 0.05)' },
+                        {
+                            borderColor: i % 2 === 0 ? 'rgba(234, 179, 8, 0.6)' : 'rgba(239, 68, 68, 0.6)', // Alterna entre Amarillo Dinoco y Rojo Rust-eze
+                        duration: 1,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 70%',
+                            toggleActions: 'play none none reverse',
+                        },
+                        }
+            );
+        }
+    });
 });
 
 // 3. FASE 2: Animaciones de Scroll para la Línea de Tiempo y Sticky Card
