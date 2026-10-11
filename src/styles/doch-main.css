@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
+
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  color-scheme: dark;
+
+  --color-background: #080d18;
+  --color-surface: #101827;
+  --color-primary: #426dff;
+  --color-text: #f1f5ff;
+  --color-muted: #8995ab;
+
+  --font-display: "Arial", sans-serif;
+  --font-body: "Arial", sans-serif;
+
+  --page-padding: clamp(1.25rem, 5vw, 5rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  width: 100%;
+  padding: 1.5rem var(--page-padding);
+}
+
+.site-logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.1em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3rem);
+}
+
+.site-nav a,
+.header-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  color: var(--color-muted);
+  transition: color 200ms ease;
+}
+
+.site-nav a:hover {
+  color: var(--color-text);
+}
+
+.header-label {
+  color: var(--color-muted);
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 100svh;
+  min-height: 100vh;
+  overflow: hidden;
+
+  padding: 8rem var(--page-padding) 5rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 11rem);
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.09em;
+}
+
+.hero-quote {
+  position: absolute;
+  z-index: 3;
+  top: 78%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-description {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+.hero-author {
+  display: block;
+  margin-top: 0.65rem;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      ellipse at 72% 55%,
+      rgb(66 109 255 / 15%),
+      transparent 48%
+    );
+}
+
+.hero-footer {
+  position: absolute;
+  z-index: 3;
+  right: var(--page-padding);
+  bottom: 2rem;
+  left: var(--page-padding);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  color: var(--color-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.hero-footer a {
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    gap: 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .site-nav {
+    gap: 1rem;
+  }
+
+  .site-nav a,
+  .header-label {
+    font-size: 0.6rem;
+  }
+
+  .header-label {
+    display: none;
+  }
+
+  .hero {
+    justify-content: center;
+    padding-top: 7rem;
+    padding-bottom: 6rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 15vw, 7rem);
+  }
+
+  .hero-visual {
+    background:
+      radial-gradient(
+        ellipse at 65% 55%,
+        rgb(66 109 255 / 18%),
+        transparent 60%
+      );
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header {
+    gap: 0.75rem;
+  }
+
+  .site-logo {
+    font-size: 1.5rem;
+  }
+
+  .site-nav {
+    gap: 0.7rem;
+  }
+
+  .site-nav a {
+    font-size: 0.55rem;
+  }
+}
+
+.hero-eyebrow {
+  font-family: "Dancing Script", cursive !important;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+
+  .hero-footer {
+    font-size: 0.55rem;
+  }
+
+
+/* Bro quiere ser reactivo o algo asi */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.hero-car {
+  position: absolute;
+  z-index: 2;
+
+  width: min(62vw, 850px);
+  max-width: none;
+  height: auto;
+
+  left: 50%;
+  top: 54%;
+  transform: translate(-40%, -40%);
+
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  transform: translateY(-16rem);
+}
+
+/* Bro quiere ser reactivo o algo asi pt 2 */
+@media (max-width: 768px) {
+  .hero-car {
+    width: 85vw;
+    top: 57%;
+  }
+
+  .hero-content {
+    margin-top: -5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-car {
+    width: 92vw;
+    top: 58%;
+  }
+}
+
+#vanta-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.loader,
+.site-header,
+main {
+  position: relative;
+  z-index: 2;
+}

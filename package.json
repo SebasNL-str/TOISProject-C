@@ -1,0 +1,27 @@
+{
+  "name": "toisproject-c",
+  "version": "1.0.0",
+  "description": "Paginas tematizadas con personajes de cars by: Los 4 fantasticos",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebasNL-str/TOISProject-C.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SebasNL-str/TOISProject-C/issues"
+  },
+  "homepage": "https://github.com/SebasNL-str/TOISProject-C#readme",
+  "devDependencies": {
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  }
+}

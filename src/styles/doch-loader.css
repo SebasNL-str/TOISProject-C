@@ -1,0 +1,121 @@
+/* Pantalla de carga */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  isolation: isolate;
+
+  background: #050812;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Resplandor ambiental */
+.loader-glow {
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(
+    ellipse at 50% 54%,
+    rgb(55 100 220 / 24%) 0%,
+    rgb(25 55 125 / 16%) 30%,
+    rgb(10 24 55 / 8%) 52%,
+    transparent 72%
+  );
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+/* Deluz */
+.loader-beam {
+  position: absolute;
+  top: -30%;
+  bottom: -30%;
+  left: -40%;
+
+  width: 28%;
+  transform: skewX(-15deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(36 80 255 / 5%) 25%,
+    rgb(65 130 255 / 25%) 45%,
+    rgb(155 200 255 / 75%) 50%,
+    rgb(65 130 255 / 25%) 55%,
+    rgb(36 80 255 / 5%) 75%,
+    transparent 100%
+  );
+
+  filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Pasate Solar Flare */
+.loader-flash {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40%;
+
+  width: 2px;
+
+  background: #a8d1ff;
+
+  box-shadow:
+    0 0 8px rgb(120 175 255 / 90%),
+    0 0 24px rgb(66 109 255 / 80%),
+    0 0 65px rgb(36 80 255 / 40%);
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Doc neg*/
+.loader-car {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 52%;
+  width: min(78vw, 1050px);
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+
+  transform: none;
+  transform-origin: center center;
+
+  opacity: 0;
+  filter:
+    brightness(0.3)
+    saturate(0.75)
+    blur(3px)
+    drop-shadow(0 0 25px rgb(50 105 255 / 10%));
+
+  will-change: left, top, width, opacity, filter, transform;
+  pointer-events: none;
+}
+
+/* La luz pasa por encima del buga */
+.loader-beam,
+.loader-flash {
+  z-index: 2;
+}
+
+html.is-loading,
+html.is-loading body {
+  overflow: hidden;
+}
+
+/* Reactivo no se creo */
+@media (prefers-reduced-motion: reduce) {
+  .loader-beam,
+  .loader-flash {
+    filter: none;
+  }
+}
+
+
+
