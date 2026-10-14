@@ -116,9 +116,9 @@
                 <div class="grid-dos-columnas">
                     <div>
                         <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">"Fabulous Lightning McQueen"</p>
-                        <p>To honor his mentor's memory, McQueen decides to swap his iconic red paint job for an elegant dark blue, with the words "Fabulous Lightning McQueen" lettered on his sides[cite: 18].</p>
+                        <p>To honor his mentor's memory, McQueen decides to swap his iconic red paint job for an elegant dark blue, with the words "Fabulous Lightning McQueen" lettered on his sides.</p>
                         <br>
-                        <p>This design is an exact replica of the colors Doc Hudson wore when competing as "The Fabulous Hudson Hornet"[cite: 18]. By sporting this paint scheme while serving as crew chief for Cruz Ramirez (now racing as Dinoco's #51), Lightning demonstrates his maturity, proudly embracing his new role as a mentor and ensuring that Doc's legacy lives on at the racetrack[cite: 18].</p>
+                        <p>This design is an exact replica of the colors Doc Hudson wore when competing as "The Fabulous Hudson Hornet". By sporting this paint scheme while serving as crew chief for Cruz Ramirez (now racing as Dinoco's #51), Lightning demonstrates his maturity, proudly embracing his new role as a mentor and ensuring that Doc's legacy lives on at the racetrack.</p>
                     </div>
                     <div>
                         <img src="rayo-mcqueen/images/mcqueenviejo.jpg" alt="Fabulous Lightning McQueen in blue alongside Cruz Ramirez" class="imagen-fluida">
@@ -142,7 +142,7 @@
                 </div>
 
                 <div class="tabla-responsive">
-                    <tabla class="tabla-logros">
+                    <table class="tabla-logros">
                         <thead>
                             <tr>
                                 <th>Year</th>
@@ -163,7 +163,7 @@
                             <tr><td>2012</td><td>1st</td><td>36/36</td><td>5</td><td>6</td><td>19</td><td>27</td></tr>
                             <tr><td>2015</td><td>1st</td><td>36/36</td><td>5</td><td>7</td><td>20</td><td>22</td></tr>
                         </tbody>
-                    </tabla>
+                    </table>
                 </div>
             </div>
         </section>
@@ -172,7 +172,7 @@
         <section class="bg-gunmetal" style="text-align: center;">
             <div class="contenedor">
                 <h2>V8 Engine Experience</h2>
-                <p style="margin-bottom: 2rem; font-size: 1.4rem;">Click the button below to hear the raw power of the 95 engine.</p>
+                <p style="margin-bottom: 2rem; font-size: 1.4rem;">Click the button below to hear the raw power of the #95 engine.</p>
                 
                 <!-- Botón Interactivo -->
                 <button id="btn-motor" class="btn-audio">
@@ -192,13 +192,11 @@
         const audioV8 = document.getElementById('audio-v8');
 
         botonMotor.addEventListener('click', () => {
-            // Reinicia el audio si ya se estaba reproduciendo
             audioV8.currentTime = 0;
             audioV8.play().catch(error => {
                 console.log("Error al reproducir el audio: ", error);
             });
 
-            // Pequeño efecto visual en el botón al hacer clic
             botonMotor.style.transform = "scale(0.95)";
             setTimeout(() => {
                 botonMotor.style.transform = "scale(1)";
