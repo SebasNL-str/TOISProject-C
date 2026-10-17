@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rey - Strip Weathers | Dinoco Racing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f0f9ff;
+            background-image: radial-gradient(#bae6fd 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .font-comic {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 2px;
+        }
+        .text-outline {
+            text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        /* Animación de ola vertical */
+        @keyframes waveCup {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .cup-list {
+            display: inline-block;
+            animation: waveCup 1.5s infinite ease-in-out;
+            font-size: 1.8rem;
+            color: #facc15; 
+            filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.4));
+        }
+        .delay-1 { animation-delay: 0.0s; }
+        .delay-2 { animation-delay: 0.15s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.45s; }
+        .delay-5 { animation-delay: 0.6s; }
+        .delay-6 { animation-delay: 0.75s; }
+        .delay-7 { animation-delay: 0.9s; }
+    </style>
+</head>
+<body class="text-gray-800 relative overflow-x-hidden">
+
+    <!-- FONDO INTERACTIVO PARA LA TRAGEDIA (ROJO Y VERDE) -->
+    <div id="bg-overlay" class="fixed inset-0 z-0 opacity-0 transition-opacity duration-1000 bg-gradient-to-br from-red-900 via-gray-900 to-green-900"></div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="relative z-10">
+        
+        <!-- CABECERA TEMÁTICA DINOCO -->
+        <header class="bg-sky-500 border-b-8 border-sky-700 shadow-xl py-8 relative overflow-hidden">
+            <div class="container mx-auto text-center relative z-10">
+                <p class="text-white font-black tracking-[0.3em] uppercase mb-2 drop-shadow-md text-sm md:text-base">Dinoco Racing Presenta a su Leyenda</p>
+                <h1 class="text-6xl md:text-8xl text-white font-comic text-outline tracking-wider mb-2">
+                    "EL REY"
+                </h1>
+                <h2 class="text-3xl md:text-4xl text-yellow-400 font-black italic drop-shadow-md">
+                    STRIP WEATHERS
+                </h2>
+            </div>
+            <div class="absolute bottom-0 w-full h-4 bg-white/30 flex space-x-4"></div>
+        </header>
+
+        <main class="container mx-auto px-4 py-10">
+            
+            <!-- SECCIÓN DE INFO PRINCIPAL -->
+            <section class="bg-white rounded-3xl border-4 border-sky-900 shadow-[8px_8px_0px_0px_rgba(12,74,110,1)] overflow-hidden mb-16 flex flex-col md:flex-row transition-all duration-500">
+                
+                <!-- FONDO HERO -->
+                <div class="md:w-1/2 p-8 flex justify-center items-center relative overflow-hidden group bg-sky-50">
+                    <div class="absolute inset-0 bg-[radial-gradient(#0ea5e9_2px,transparent_2px)] [background-size:20px_20px] opacity-20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-700"></div>
+                    <div class="absolute w-3/4 h-3/4 bg-sky-400 rounded-full blur-[60px] opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-500"></div>
+                    
+                    <img id="img-hero" src="" alt="El Rey Cars" class="relative z-10 max-w-full h-auto drop-shadow-[0_15px_20px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:-translate-y-4 transition-all duration-500 cursor-pointer">
+                </div>
+
+                <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                    <div class="inline-block bg-yellow-400 text-sky-900 font-black px-4 py-1 rounded-full mb-4 border-2 border-sky-900 self-start">
+                        Número 43 - Equipo Dinoco
+                    </div>
+                    <h3 class="text-4xl font-comic text-sky-800 mb-6">El Campeón Indiscutible</h3>
+                    <p class="text-lg font-bold mb-4 leading-relaxed">
+                        Strip Weathers, mejor conocido como "El Rey", es una leyenda viviente en el universo de la Copa Pistón. Con una carrera intachable, se convirtió en el ídolo de generaciones y el corredor más respetado en la pista.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><i class="fas fa-flag-checkered text-sky-600 mr-3 text-xl"></i> <b class="mr-1">Basado en:</b> 1970 Plymouth Superbird</li>
+                        <li class="flex items-center"><i class="fas fa-car text-sky-600 mr-3 text-xl"></i> <b class="mr-1">Inspiración real:</b> Richard Petty (su voz original)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- LAS 7 COPAS SEPARADAS -->
+            <section class="bg-sky-500 rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 md:p-12 mb-16 relative mt-16 transition-all duration-500">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-sky-900 font-comic tracking-widest text-3xl px-8 py-2 border-4 border-black rounded-full z-10 whitespace-nowrap">
+                    LAS 7 COPAS PISTÓN
+                </div>
+                
+                <p class="text-white text-center font-bold text-xl mt-6 mb-10">
+                    Un récord que consolidó a Strip Weathers como la mayor leyenda de las carreras.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-6 border-4 border-sky-900 shadow-[4px_4px_0px_0px_rgba(12,74,110,1)] hover:-translate-y-2 transition-transform">
+                        <div class="flex items-center border-b-2 border-gray-200 pb-3 mb-3">
+                            <i class="fas fa-trophy cup-list delay-1 mr-4"></i>
+                            <h4 class="text-3xl font-black text-sky-900">1964</h4>
+                        </div>
+                        <p class="text-gray-700 font-bold">Su primera Copa, demostrando al mundo automovilístico de qué estaba hecho.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border-4 border-sky-900 shadow-[4px_4px_0px_0px_rgba(12,74,110,1)] hover:-translate-y-2 transition-transform">
+                        <div class="flex items-center border-b-2 border-gray-200 pb-3 mb-3">
+                            <i class="fas fa-trophy cup-list delay-2 mr-4"></i>
+                            <h4 class="text-3xl font-black text-sky-900">1967</h4>
+                        </div>
+                        <p class="text-gray-700 font-bold">Temporada récord, estableciendo un dominio inalcanzable en la pista.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border-4 border-sky-900 shadow-[4px_4px_0px_0px_rgba(12,74,110,1)] hover:-translate-y-2 transition-transform">
+                        <div class="flex items-center border-b-2 border-gray-200 pb-3 mb-3">
+                            <i class="fas fa-trophy cup-list delay-3 mr-4"></i>
+                            <h4 class="text-3xl font-black text-sky-900">1971</h4>
+                        </div>
+                        <p class="text-gray-700 font-bold">Consolidación oficial como la estrella principal e ícono del equipo Dinoco.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border-4 border-sky-900 shadow-[4px_4px_0px_0px_rgba(12,74,110,1)] hover:-translate-y-2 transition-transform">
+                        <div class="flex items-center border-b-2 border-gray-200 pb-3 mb-3">
+                            <i class="fas fa-trophy cup-list delay-4 mr-4"></i>
+                            <h4 class="text-3xl font-black text-sky-900">1972</h4>
+                        </div>
+                        <p class="text-gray-700 font-bold">Primera defensa exitosa del título en campeonatos consecutivos.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border-4 border-sky-900 shadow-[4px_4px_0px_0px_rgba(12,74,110,1)] hover:-translate-y-2 transition-transform">
+                        <div class="flex items-center border-b-2 border-gray-200 pb-3 mb-3">
+                            <i class="fas fa-trophy cup-list delay-5 mr-4"></i>
+                            <h4 class="text-3xl font-black text-sky-900">1974</h4>
+                        </div>
+                        <p class="text-gray-700 font-bold">Regreso triunfal y magistral superando a las nuevas generaciones de novatos.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border-4 border-sky-900 shadow-[4px_4px_0px_0px_rgba(12,74,110,1)] hover:-translate-y-2 transition-transform">
+                        <div class="flex items-center border-b-2 border-gray-200 pb-3 mb-3">
+                            <i class="fas fa-trophy cup-list delay-6 mr-4"></i>
+                            <h4 class="text-3xl font-black text-sky-900">1975</h4>
+                        </div>
+                        <p class="text-gray-700 font-bold">Dominio absoluto de principio a fin gracias a su revolucionario diseño aerodinámico.</p>
+                    </div>
+                    <div class="bg-yellow-400 rounded-2xl p-6 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform md:col-span-2 lg:col-span-3 flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-6">
+                        <i class="fas fa-trophy cup-list delay-7 text-6xl text-sky-900"></i>
+                        <div>
+                            <h4 class="text-4xl font-black text-black mb-2">1979 - La Séptima Corona</h4>
+                            <p class="text-gray-900 font-bold text-lg">Su séptima y última Copa, coronándose eternamente como "El Rey" indiscutible de las carreras. (Empate histórico).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-sm text-sky-200 mt-6 font-bold italic text-center opacity-80">
+                    *Nota: Los años rinden homenaje directo a los 7 campeonatos reales de NASCAR ganados por Richard Petty.
+                </p>
+            </section>
+
+            <!-- SECCIÓN FRASES EMBLEMÁTICAS -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 transition-all duration-500">
+                <div class="bg-yellow-400 rounded-3xl p-8 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform group">
+                    <i class="fas fa-quote-left text-4xl text-black/20 mb-4 block transform group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-black text-black uppercase mb-3 tracking-wider text-sm opacity-70 border-b-2 border-black/10 pb-2 inline-block">Consejo al Rayo McQueen</h4>
+                    <p class="text-2xl md:text-3xl font-black text-black italic">"Oye, chico. Eres un corredor con agallas... Tienes más talento en una sola tuerca que muchos autos en toda su carrocería... Pero eres un tonto."</p>
+                </div>
+                <div class="bg-sky-500 rounded-3xl p-8 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform text-white group">
+                    <i class="fas fa-quote-left text-4xl text-white/20 mb-4 block transform group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-black text-white uppercase mb-3 tracking-wider text-sm opacity-70 border-b-2 border-white/20 pb-2 inline-block">Sobre su equipo y Dinoco</h4>
+                    <p class="text-2xl md:text-3xl font-black italic">"Dinoco ha sido todo para mí. Pero nada de esto habría sido posible sin mi equipo... y sin esta linda dama de aquí."</p>
+                </div>
+            </section>
+
+            <!-- ============================================== -->
+            <!-- SECCIÓN: LOS RIVALES DE LA PISTA -->
+            <!-- ============================================== -->
+            <div class="text-center mb-8 mt-20">
+                <h2 class="text-5xl font-comic text-sky-900 inline-block bg-white px-8 py-2 border-4 border-sky-900 rounded-full shadow-[4px_4px_0px_0px_rgba(12,74,110,1)]">
+                    LOS RIVALES DE LA PISTA
+                </h2>
+            </div>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 px-2">
+                
+                <!-- Tarjeta Rayo McQueen (Color Rojo) -->
+                <div class="bg-red-600 rounded-3xl p-8 md:p-10 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform relative group">
+                    
+                    <!-- Imagen de Logo 95 sin marco blanco -->
+                    <div class="absolute -top-6 -right-2 md:-top-10 md:-right-6 w-28 h-28 md:w-36 md:h-36 z-20 flex justify-center items-center group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500 drop-shadow-2xl">
+                        <img id="logo-mcqueen" src="" alt="Logo 95" class="w-full h-full object-contain">
+                    </div>
+                    
+                    <h3 class="text-4xl font-comic text-yellow-400 mb-1 relative z-10 tracking-widest text-outline mt-2 md:mt-0">El Rayo McQueen</h3>
+                    <h4 class="font-black text-white uppercase mb-6 text-sm opacity-90 relative z-10 border-b-2 border-white/20 pb-2 inline-block">El Novato Sensación</h4>
+                    
+                    <p class="text-white font-bold text-lg leading-relaxed relative z-10">
+                        Un novato veloz, talentoso y muy arrogante que irrumpió en la temporada sin un equipo técnico real. Se convirtió en el rival directo de El Rey tras alcanzar un histórico empate a tres en la última carrera del año.
+                    </p>
+                    <p class="text-white font-bold text-lg leading-relaxed relative z-10 mt-4">
+                        Al inicio, el Rayo solo veía a Strip Weathers como un viejo estorbo al cual debía vencer para robarle el prestigioso patrocinio de Dinoco. Sin embargo, terminó aprendiendo de él el verdadero significado del respeto y el valor de competir limpio.
+                    </p>
+                </div>
+
+                <!-- Tarjeta Chick Hicks (Color Verde) -->
+                <div class="bg-green-600 rounded-3xl p-8 md:p-10 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-transform relative group">
+                    
+                    <!-- Imagen de Logo 86 sin marco blanco -->
+                    <div class="absolute -top-6 -right-2 md:-top-10 md:-right-6 w-28 h-28 md:w-36 md:h-36 z-20 flex justify-center items-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 drop-shadow-2xl">
+                        <img id="logo-chick" src="" alt="Logo 86" class="w-full h-full object-contain">
+                    </div>
+                    
+                    <h3 class="text-4xl font-comic text-black mb-1 relative z-10 tracking-widest text-outline text-white mt-2 md:mt-0">Chick Hicks</h3>
+                    <h4 class="font-black text-green-900 uppercase mb-6 text-sm relative z-10 border-b-2 border-black/20 pb-2 inline-block">El Eterno Segundón</h4>
+                    
+                    <p class="text-white font-bold text-lg leading-relaxed relative z-10">
+                        Un veterano amargado y tramposo que pasó toda su carrera compitiendo a la sombra de El Rey. Su rivalidad no nació de la admiración, sino de la pura envidia de nunca poder ser el número uno.
+                    </p>
+                    <p class="text-white font-bold text-lg leading-relaxed relative z-10 mt-4">
+                        Frustrado por quedar siempre en segundo lugar detrás de la leyenda, Chick adoptó un estilo de conducción sucio y agresivo. Estaba obsesionado con ganar la Copa Pistón y reclamar la gloria de Dinoco para él solo, sin importar a qué autos tuviera que destruir para lograrlo.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- ============================================== -->
+            <!-- COMPARATIVA IMÁGENES (BUG REPARADO: Sin overflow-hidden, con mt-6) -->
+            <!-- ============================================== -->
+            <div class="text-center mb-8 mt-20">
+                <h2 class="text-5xl font-comic text-sky-900 inline-block bg-white px-8 py-2 border-4 border-sky-900 rounded-full shadow-[4px_4px_0px_0px_rgba(12,74,110,1)]">
+                    EL CARRO: PELÍCULA VS REALIDAD
+                </h2>
+            </div>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 px-2">
+                <!-- Película -->
+                <div class="group bg-white rounded-3xl border-4 border-sky-900 shadow-[8px_8px_0px_0px_rgba(12,74,110,1)] hover:shadow-[12px_12px_0px_0px_rgba(12,74,110,1)] hover:-translate-y-2 transition-all duration-300 relative pt-10 mt-6">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-sky-500 text-white font-comic tracking-widest text-2xl px-6 py-2 border-4 border-sky-900 rounded-full z-10 whitespace-nowrap">
+                        En "Cars"
+                    </div>
+                    <!-- El contenedor de la imagen SI mantiene su overflow para no salirse, pero la tarjeta NO -->
+                    <div class="overflow-hidden aspect-[3/2] border-t-2 border-b-2 border-sky-100">
+                        <img id="img-peli" src="" alt="El Rey en Cars" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 bg-white rounded-b-2xl">
+                        <p class="font-bold text-center text-gray-700">El icónico diseño azul Dinoco con el enorme alerón trasero, preparado para conquistar la Copa Pistón.</p>
+                    </div>
+                </div>
+
+                <!-- Vida Real -->
+                <div class="group bg-white rounded-3xl border-4 border-sky-900 shadow-[8px_8px_0px_0px_rgba(250,204,21,1)] hover:shadow-[12px_12px_0px_0px_rgba(250,204,21,1)] hover:-translate-y-2 transition-all duration-300 relative pt-10 mt-6">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-sky-900 font-comic tracking-widest text-2xl px-6 py-2 border-4 border-sky-900 rounded-full z-10 whitespace-nowrap">
+                        En la Vida Real
+                    </div>
+                    <div class="overflow-hidden aspect-[3/2] border-t-2 border-b-2 border-sky-100">
+                        <img id="img-real" src="" alt="1970 Plymouth Superbird" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 bg-white rounded-b-2xl">
+                        <p class="font-bold text-center text-gray-700">El 1970 Plymouth Superbird conducido por Richard Petty. Su diseño aerodinámico fue tan rápido que la NASCAR lo prohibió al año siguiente.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================== -->
+            <!-- EXPLICACIÓN DEL CHOQUE -->
+            <!-- ============================================== -->
+            <div id="tragedia-section" class="relative mt-24 mb-16 transition-transform duration-700">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-red-700 text-white font-comic tracking-widest text-2xl px-8 py-2 border-4 border-red-900 rounded-full z-20 whitespace-nowrap shadow-md">
+                    La Tragedia en la Pista
+                </div>
+
+                <section class="bg-red-50 rounded-3xl border-4 border-red-900 shadow-[8px_8px_0px_0px_rgba(127,29,29,1)] overflow-hidden flex flex-col md:flex-row relative z-10">
+                    <div class="md:w-1/2 p-8 md:p-12 pt-16 flex flex-col justify-center">
+                        <h3 class="text-4xl font-comic text-red-800 mb-6 uppercase tracking-wider">El Accidente</h3>
+                        <p class="text-lg font-bold mb-4 leading-relaxed text-gray-800">
+                            Durante la carrera de desempate en Los Ángeles, El Rey estaba a punto de completar su última carrera antes del retiro. Sin embargo, el ambicioso Chick Hicks, frustrado por no poder rebasarlo limpiamente, decidió hacer trampa y lo golpeó por la parte trasera izquierda (la infame maniobra PIT).
+                        </p>
+                        <p class="text-lg font-bold leading-relaxed text-gray-800">
+                            El impacto hizo que Strip Weathers perdiera el control, volara por los aires y diera múltiples giros de campana violentos sobre el pasto central, dejándolo severamente destrozado. El silencio del público marcó uno de los momentos más tristes e impactantes de la película.
+                        </p>
+                    </div>
+                    
+                    <div class="md:w-1/2 bg-red-900 p-8 flex justify-center items-center border-t-4 md:border-t-0 md:border-l-4 border-red-900 group">
+                        <div class="w-full h-full flex items-center justify-center overflow-hidden rounded-xl border-4 border-black bg-black">
+                            <img id="img-choque" src="" alt="El Rey destruido tras el accidente" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SECCIÓN COMPARATIVA: VIDEOS DEL ACCIDENTE -->
+            <div class="bg-gray-900 rounded-[3rem] p-8 md:p-12 border-8 border-gray-800 shadow-2xl relative mt-20 mb-10 transition-transform duration-700">
+                <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black font-comic text-3xl px-8 py-3 border-4 border-black rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center w-[90%] md:w-auto z-20">
+                    LA COMPARATIVA HISTÓRICA
+                </div>
+                
+                <p class="text-white text-center font-bold text-lg mb-10 mt-6 max-w-3xl mx-auto">
+                    La terrible escena del choque en la película es un homenaje y recreación directa del escalofriante accidente real que sufrió Richard Petty en las 500 Millas de Daytona en 1988. ¡Mira los videos lado a lado!
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-black rounded-2xl border-4 border-gray-700 p-2 shadow-[0_0_20px_rgba(14,165,233,0.5)] flex flex-col">
+                        <h3 class="text-yellow-400 font-comic text-2xl text-center mb-2 tracking-widest">Choque en "Cars"</h3>
+                        <div class="w-full aspect-video rounded-xl overflow-hidden bg-gray-800 relative">
+                            <video id="vid-pelicula" controls class="w-full h-full object-cover">
+                                Tu navegador no soporta la reproducción de video nativo.
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="bg-black rounded-2xl border-4 border-gray-700 p-2 shadow-[0_0_20px_rgba(250,204,21,0.5)] flex flex-col">
+                        <h3 class="text-sky-400 font-comic text-2xl text-center mb-2 tracking-widest">Choque Real (Daytona 1988)</h3>
+                        <div class="w-full aspect-video rounded-xl overflow-hidden bg-gray-800 relative">
+                            <video id="vid-real" controls class="w-full h-full object-cover">
+                                Tu navegador no soporta la reproducción de video nativo.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- FOOTER TEMÁTICA DINOCO -->
+        <footer class="bg-sky-900 text-sky-200 py-8 text-center border-t-8 border-black transition-all duration-500">
+            <p class="font-black text-xl font-comic tracking-widest">¡Larga vida a El Rey!</p>
+            <p class="text-sm mt-2 font-bold">Un tributo no oficial a la Leyenda Dinoco 43.</p>
+        </footer>
+    </div>
+
+    <!-- SCRIPT DE CONFIGURACIÓN -->
+    <script>
+        // ==========================================
+        // PANEL DE CONTROL - RUTAS LOCALES
+        // ==========================================
+        const mediaConfig = {
+            imagenes: {
+                hero: "img/el_rey_hero.jpg", 
+                peli: "img/el_rey_peli.png", 
+                real: "img/el_rey_real.jpeg",
+                choque: "img/el_rey_choque1.png",
+                logoMcQueen: "img/mcqueen_logo.jpg",
+                logoChick: "img/logo_chick.jpeg"
+            },
+            videos: {
+                accidentePeli: "videos/accidente_cars.mp4", 
+                accidenteReal: "videos/accidente_1988.mp4" 
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Cargar imágenes
+            document.getElementById("img-hero").src = mediaConfig.imagenes.hero;
+            document.getElementById("img-peli").src = mediaConfig.imagenes.peli;
+            document.getElementById("img-real").src = mediaConfig.imagenes.real;
+            document.getElementById("img-choque").src = mediaConfig.imagenes.choque;
+            
+            // Cargar logos de rivales
+            document.getElementById("logo-mcqueen").src = mediaConfig.imagenes.logoMcQueen;
+            document.getElementById("logo-chick").src = mediaConfig.imagenes.logoChick;
+
+            // Cargar videos
+            document.getElementById("vid-pelicula").src = mediaConfig.videos.accidentePeli;
+            document.getElementById("vid-real").src = mediaConfig.videos.accidenteReal;
+
+            // ==========================================
+            // LÓGICA DEL FONDO DINÁMICO (ROJO Y VERDE)
+            // ==========================================
+            const tragediaSection = document.getElementById('tragedia-section');
+            const bgOverlay = document.getElementById('bg-overlay');
+
+            if (tragediaSection && bgOverlay) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            bgOverlay.classList.remove('opacity-0');
+                            bgOverlay.classList.add('opacity-100');
+                        } else {
+                            bgOverlay.classList.remove('opacity-100');
+                            bgOverlay.classList.add('opacity-0');
+                        }
+                    });
+                }, { threshold: 0.2 }); 
+
+                observer.observe(tragediaSection);
+            }
+        });
+    </script>
+</body>
+</html>
