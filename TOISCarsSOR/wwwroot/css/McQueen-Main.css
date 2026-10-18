@@ -1,0 +1,167 @@
+/* Ruta: css/style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap');
+
+:root {
+    --rojo-crayola: #ED254E;
+    --gunmetal: #002A32;
+    --negro-apple: #000000;
+    --blanco-humo: #F0F4F8;
+    --gris-borde: #33414a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--negro-apple);
+    color: var(--blanco-humo);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+/* --- CABECERA PRINCIPAL (Estilo Hero Apple) --- */
+header {
+    position: relative; /* ¡CRUCIAL! Convierte al header en la "caja de referencia" para la firma */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--negro-apple), var(--gunmetal));
+    padding: 2rem;
+}
+
+header h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--blanco-humo);
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.lema-principal {
+    font-size: 2rem;
+    color: var(--rojo-crayola);
+    font-weight: bold;
+}
+
+/* --- ESTILO PARA LA FIRMA --- */
+.firma-hero {
+    position: absolute; 
+    bottom: 40px;       
+    right: 50px;        
+    width: 250px;       
+    opacity: 0.7;       
+    filter: invert(1);  /* Convierte el negro de la firma original en blanco */
+    pointer-events: none; 
+}
+
+/* --- SECCIONES DE BORDE A BORDE --- */
+section {
+    padding: 8rem 2rem;
+    width: 100%;
+}
+
+.bg-oscuro { background-color: var(--negro-apple); }
+.bg-gunmetal { background-color: var(--gunmetal); }
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: white;
+}
+
+/* --- ESTRUCTURA GRID --- */
+.grid-dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* --- IMÁGENES PREMIUM --- */
+.imagen-fluida {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    object-fit: cover;
+}
+
+/* --- ESTILOS DE LISTA --- */
+.datos-lista {
+    list-style: none;
+}
+
+.datos-lista li {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--gris-borde);
+    padding-bottom: 1rem;
+}
+
+.datos-lista strong {
+    color: var(--rojo-crayola);
+    margin-right: 0.5rem;
+}
+
+/* --- TABLA DE ESTADÍSTICAS --- */
+.tabla-responsive {
+    overflow-x: auto;
+    margin-top: 3rem;
+}
+
+.tabla-logros {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.2rem;
+    color: var(--blanco-humo);
+}
+
+.tabla-logros th, .tabla-logros td {
+    padding: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.tabla-logros th {
+    color: var(--rojo-crayola);
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* --- ESTILO DEL BOTÓN DE AUDIO V8 --- */
+.btn-audio {
+    background-color: var(--rojo-crayola);
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.3rem;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(237, 37, 78, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-audio:hover {
+    background-color: #ff3360;
+    box-shadow: 0 15px 35px rgba(237, 37, 78, 0.6);
+    transform: translateY(-3px);
+}
