@@ -1,0 +1,10 @@
+
+services:
+  landing:
+    image: mcr.microsoft.com/dotnet/sdk:9.0
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    command: ["dotnet", "run", "--urls", "http://0.0.0.0:8080"]
