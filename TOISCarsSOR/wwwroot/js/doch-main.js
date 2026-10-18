@@ -1,5 +1,5 @@
 // Vibe-code mi pasion deosssss
-import gsap from "gsap";
+import { gsap } from "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js";
 
 const loader = document.querySelector(".loader");
 const glow = document.querySelector(".loader-glow");
