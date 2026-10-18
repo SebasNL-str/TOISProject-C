@@ -1,0 +1,79 @@
+@page
+@model IndexModel
+@{
+    Layout = null;
+    ViewData["Title"] = "TOIS Says Kachow: Doc Hudson";
+}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="~/css/styles/doch-main.css">
+  <link rel="stylesheet" href="~/css/doch-loader.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d18">
+  <meta
+    name="description"
+    content="Que vienen que vienen.">
+  <title>@ViewData["Title"]</title>
+</head>
+
+<body>
+  <script type="module" src="~/js/doch-main.js"></script>
+  <div id="vanta-bg" aria-hidden="true"></div> 
+
+  <div class="loader" aria-hidden="true">
+    <div class="loader-glow"></div>
+    <img
+      class="loader-car"
+      src="~/assets/images/Doc-Hudson-V1.png"
+      alt="ideay, no se"
+    />
+    <div class="loader-beam"></div>
+    <div class="loader-flash"></div>
+  </div>
+
+  <header class="site-header">
+
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="hero-eyebrow">El Fabuloso</p>
+        <h1 id="hero-title">HUDSON<br>HORNET</h1>
+      </div>
+
+      <div class="hero-quote">
+        <p class="hero-description">¿Eso es volar cual cohete o atacar como bolido? Me confundes.</p>
+        <span class="hero-author">- Doc Hudson, 2006</span>
+     </div> 
+      <div class="hero-visual">
+          <img
+          class="hero-car"
+          src="~/assets/images/Doc-Hudson-V1.png"
+          alt="El famosisimo Doc Hudson, va que si?">
+      </div>
+      <div class="hero-footer">
+      </div>
+    </section>
+
+    <section id="xo (ella tiene un concepto)" aria-label="no se historia de doc o algo asi">
+      <!-- WIP -->
+    </section>
+
+    <section id="detalles" aria-label="vehiculo real literal">
+      <!-- WIP -->
+    </section>
+
+    <section id="galeria" aria-label="Galeria en vivo y a todo color">
+      <!-- WIP -->
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.fog.min.js"></script>
+  <script type="module" src="~/js/doch-vanta.js"></script>
+</body>
+</html>
