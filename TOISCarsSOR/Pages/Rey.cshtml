@@ -29,7 +29,7 @@
             text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
         /* Animación de ola vertical */
-        @keyframes waveCup {
+        @@keyframes waveCup {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
@@ -341,20 +341,20 @@
         // ==========================================
         // PANEL DE CONTROL - RUTAS LOCALES
         // ==========================================
-        const mediaConfig = {
-            imagenes: {
-                hero: "img/el_rey_hero.jpg", 
-                peli: "img/el_rey_peli.png", 
-                real: "img/el_rey_real.jpeg",
-                choque: "img/el_rey_choque1.png",
-                logoMcQueen: "img/mcqueen_logo.jpg",
-                logoChick: "img/logo_chick.jpeg"
-            },
-            videos: {
-                accidentePeli: "videos/accidente_cars.mp4", 
-                accidenteReal: "videos/accidente_1988.mp4" 
-            }
-        };
+const mediaConfig = {
+    imagenes: {
+        hero: "/assets/images/el_rey_hero.jpg", 
+        peli: "/assets/images/el_rey_peli.png", 
+        real: "/assets/images/el_rey_real.jpeg",
+        choque: "/assets/images/el_rey_choque1.png",
+        logo1: "/assets/images/mcqueen_logo.jpg",
+        logo2: "/assets/images/logo_chick.jpeg"
+    },
+    videos: {
+        accidentePeli: "assets/videos/accidente_cars.mp4", 
+        accidenteReal: "assets/videos/accidente_1988.mp4" 
+    }
+};
 
         document.addEventListener("DOMContentLoaded", () => {
             // Cargar imágenes
