@@ -1,7 +1,3 @@
-/* =========================
- *  VARIABLES GLOBALES
- *  ========================= */
-
 :root {
     --gd-background: #0f1117;
     --gd-surface: rgba(10, 15, 30, 0.75);
@@ -19,11 +15,6 @@
     --footer-text: #f1f5f9;
     --footer-muted: rgba(241, 245, 249, 0.65);
 }
-
-
-/* =========================
- *  BASE
- *  ========================= */
 
 html {
     min-height: 100%;
@@ -49,25 +40,13 @@ body.site-body {
     sans-serif;
 }
 
-
-/* =========================
- *  CONTENIDO PRINCIPAL
- *  ========================= */
-
 .site-main {
     flex: 1 0 auto;
     width: 100%;
     min-width: 0;
 }
 
-
-/* =========================
- *  FOOTER
- *  ========================= */
-
 .site-footer {
-    /* El footer forma parte del documento.
-     *      No permanece fijo ni tapa el contenido. */
     position: relative;
     z-index: 2;
 
@@ -77,23 +56,16 @@ body.site-body {
 
     padding: 1rem 0 0.75rem;
 
-    /* Glassmorphism */
     background: var(--footer-background);
 
     -webkit-backdrop-filter: blur(16px) saturate(150%);
     backdrop-filter: blur(16px) saturate(150%);
 
-    /* Borde y sombra sutiles */
     border-top: 1px solid var(--footer-border);
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
 
     color: var(--footer-text);
 }
-
-
-/* =========================
- *  CONTENIDO DEL FOOTER
- *  ========================= */
 
 .footer-content {
     display: flex;
@@ -104,11 +76,6 @@ body.site-body {
 
     padding-bottom: 0.75rem;
 }
-
-
-/* =========================
- *  MARCA Y LOGO
- *  ========================= */
 
 .footer-brand {
     display: flex;
@@ -140,9 +107,6 @@ body.site-body {
     color: var(--gd-accent);
 }
 
-
-/* Imagen del logo de TOISphera */
-
 .site-logo-image3 {
     display: block;
 
@@ -163,10 +127,6 @@ body.site-body {
 .footer-logo:hover .site-logo-image3 {
     opacity: 0.9;
 }
-
-
-/* Compatibilidad con logos anteriores.
- *  Sin fondos, bordes ni burbujas. */
 
 .footer-logo-placeholder,
 .footer-logo-image {
@@ -198,11 +158,6 @@ body.site-body {
     object-fit: contain;
 }
 
-
-/* =========================
- *  DESCRIPCIÓN
- *  ========================= */
-
 .footer-description {
     max-width: 300px;
 
@@ -213,11 +168,6 @@ body.site-body {
     font-size: 0.75rem;
     line-height: 1.5;
 }
-
-
-/* =========================
- *  ENLACES DEL FOOTER
- *  ========================= */
 
 .footer-links {
     display: flex;
@@ -237,7 +187,6 @@ body.site-body {
 
     padding: 0.3rem 0;
 
-    /* Sin burbujas, tarjetas ni fondos */
     background: transparent;
     border: none;
     border-radius: 0;
@@ -254,9 +203,6 @@ body.site-body {
     opacity 0.2s ease;
 }
 
-
-/* Iconos Bootstrap */
-
 .footer-links a i {
     display: inline-block;
 
@@ -272,9 +218,6 @@ body.site-body {
     line-height: 1;
 }
 
-
-/* Hover sencillo, sin burbujas ni movimiento */
-
 .footer-links a:hover {
     background: transparent;
     border: none;
@@ -285,11 +228,6 @@ body.site-body {
 
     transform: none;
 }
-
-
-/* =========================
- *  COPYRIGHT Y DISCLAIMER
- *  ========================= */
 
 .footer-bottom {
     display: flex;
@@ -313,11 +251,6 @@ body.site-body {
     text-align: right;
 }
 
-
-/* =========================
- *  RESPONSIVE: TABLETS
- *  ========================= */
-
 @media (max-width: 768px) {
     .footer-content {
         gap: 1rem;
@@ -331,11 +264,6 @@ body.site-body {
         max-width: 240px;
     }
 }
-
-
-/* =========================
- *  RESPONSIVE: MÓVILES
- *  ========================= */
 
 @media (max-width: 576px) {
     .site-footer {
@@ -402,11 +330,6 @@ body.site-body {
     }
 }
 
-
-/* =========================
- *  RESPONSIVE: PANTALLAS PEQUEÑAS
- *  ========================= */
-
 @media (max-width: 360px) {
     .footer-content {
         gap: 0.7rem;
@@ -424,11 +347,6 @@ body.site-body {
         font-size: 0.62rem;
     }
 }
-
-
-/* =========================
- *  ACCESIBILIDAD
- *  ========================= */
 
 @media (prefers-reduced-motion: reduce) {
     html {

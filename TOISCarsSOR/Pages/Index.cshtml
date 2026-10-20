@@ -16,13 +16,16 @@
     <title>Inicio | Tu Marca</title>
 
     <link rel="stylesheet" href="css/landing.css">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
 
 <body>
 
     <main class="landing">
 
-        <header class="landing-header">
+        <header class="landing-header" data-aos="fade-up">
 
             <a href="~/Index.html"
                class="brand"
@@ -43,7 +46,7 @@
         <nav class="sections" aria-label="Secciones principales">
 
             <a href="~/DocHudson"
-               class="banner banner-1">
+               class="banner banner-1" data-aos="fade-up">
 
                 <div class="banner-content">
 
@@ -59,7 +62,7 @@
 
 
             <a href="~/McQueen"
-               class="banner banner-2">
+               class="banner banner-2" data-aos="fade-up">
 
                 <div class="banner-content">
 
@@ -74,7 +77,7 @@
 
 
             <a href="~/Rey"
-               class="banner banner-3">
+               class="banner banner-3" data-aos="fade-up">
 
                 <div class="banner-content">
 
@@ -89,7 +92,7 @@
 
 
             <a href="~/CruzRamirez"
-               class="banner banner-4">
+               class="banner banner-4" data-aos="fade-up">
 
                 <div class="banner-content">
 
@@ -103,7 +106,16 @@
             </a>
 
         </nav>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
     </main>
 
 </body>
