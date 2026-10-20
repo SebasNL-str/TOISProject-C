@@ -1,0 +1,225 @@
+/* Página de créditos */
+
+.credits-page {
+    --credits-accent: #8b5cf6;
+    --credits-text: #f1f5f9;
+    --credits-muted: #94a3b8;
+    --credits-border: rgba(255, 255, 255, 0.10);
+
+    min-height: 100%;
+    padding-bottom: 3rem;
+    color: var(--credits-text);
+}
+
+/* Encabezado */
+
+.credits-header {
+    max-width: 720px;
+    margin: 0 auto 3.5rem;
+}
+
+.credits-eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #a78bfa;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.credits-title {
+    margin-bottom: 1rem;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+}
+
+.credits-title span {
+    color: var(--credits-accent);
+}
+
+.credits-description {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--credits-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Tarjetas del equipo */
+
+.credits-team {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.credit-card {
+    height: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid var(--credits-border);
+    border-radius: 20px;
+
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        background 220ms ease;
+}
+
+.credit-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.055);
+    border-color: rgba(139, 92, 246, 0.45);
+}
+
+/* Fotografía local */
+
+.credit-avatar-wrapper {
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 1.4rem;
+    padding: 4px;
+
+    border: 1px solid rgba(167, 139, 250, 0.6);
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.12);
+}
+
+.credit-avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.credit-name {
+    margin-bottom: 0.4rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.credit-role {
+    margin-bottom: 1rem;
+    color: #a78bfa;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.credit-bio {
+    max-width: 280px;
+    margin: 0 auto;
+    color: var(--credits-muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+/* Créditos académicos */
+
+.project-credit {
+    max-width: 850px;
+    margin: 5rem auto 0;
+    padding: 2.5rem 1.5rem;
+
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--credits-border);
+    border-radius: 24px;
+}
+
+.project-credit-icon {
+    display: grid;
+    place-items: center;
+
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 1.25rem;
+
+    color: #c4b5fd;
+    background: rgba(139, 92, 246, 0.14);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 16px;
+    font-size: 1.5rem;
+}
+
+.project-credit-label {
+    color: var(--credits-muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.project-credit h2 {
+    margin: 1rem 0 0.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 500;
+}
+
+.project-subject {
+    margin-bottom: 1.75rem;
+    color: #c4b5fd;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.project-credit-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--credits-border);
+}
+
+.project-credit-details span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: var(--credits-muted);
+    font-size: 0.8rem;
+}
+
+.project-credit-details i {
+    color: #a78bfa;
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+    .credit-card {
+        transition: none;
+    }
+
+    .credit-card:hover {
+        transform: none;
+    }
+}
+
+/* Móviles */
+
+@media (max-width: 576px) {
+    .credits-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .credit-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .project-credit {
+        margin-top: 3.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .project-credit-details {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}

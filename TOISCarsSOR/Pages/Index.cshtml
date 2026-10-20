@@ -9,62 +9,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewData["Title"]</title>
 
-    <link rel="stylesheet" href="~/css/styles.css">
+    <meta name="description"
+          content="Explora nuestras cuatro secciones y descubre todo lo que tenemos para ti.">
+
+    <title>Inicio | Tu Marca</title>
+
+    <link rel="stylesheet" href="css/landing.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Directorio de Landing Pages</h1>
-        <p>Selecciona una de las páginas disponibles a continuación para explorar los diferentes proyectos del repositorio.</p>
-    </header>
+    <main class="landing">
 
-    <main>
-        <a href="~/McQueen" class="card">
-            <div>
-                <h2>Landing Page 1</h2>
-                <p>Descripción corta de la primera landing page o proyecto que tienes alojado.</p>
-            </div>
-            <div class="card-footer">
-                Visitar página <span>&rarr;</span>
-            </div>
-        </a>
+        <header class="landing-header">
 
-        <a href="~/CruzRamirez" class="card">
-            <div>
-                <h2>Landing Page 2</h2>
-                <p>Descripción corta de la segunda landing page con características diferentes.</p>
-            </div>
-            <div class="card-footer">
-                Visitar página <span>&rarr;</span>
-            </div>
-        </a>
+            <a href="~/Index.html"
+               class="brand"
+               aria-label="Volver al inicio">
 
-        <a href="~/DocHudson" class="card">
-            <div>
-                <h2>Landing Page 3</h2>
-                <p>Espacio reservado para una tercera opción o plantilla en desarrollo.</p>
-            </div>
-            <div class="card-footer">
-                Visitar página <span>&rarr;</span>
-            </div>
-        </a>
+                <img
+                    src="~/assets/images/toiscarsv2.png"
+                    alt="Logo de Tu Marca"
+                    class="brand-logo">
+            </a>
 
-        <a href="~/Rey" class="card">
-            <div>
-                <h2>Landing Page 3</h2>
-                <p>Espacio reservado para una tercera opción o plantilla en desarrollo.</p>
-            </div>
-            <div class="card-footer">
-                Visitar página <span>&rarr;</span>
-            </div>
-        </a>
+            <p class="brand-slogan">
+                Dos mundos, una misma ruta.
+            </p>
+
+        </header>
+
+        <nav class="sections" aria-label="Secciones principales">
+
+            <a href="~/DocHudson"
+               class="banner banner-1">
+
+                <div class="banner-content">
+
+                    <h2>Doc Hudson</h2>
+
+                    <p>
+                        El Fabuloso Hudson Hornet.
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <a href="~/McQueen"
+               class="banner banner-2">
+
+                <div class="banner-content">
+
+                    <h2>Lightning McQueen</h2>
+
+                    <p>
+                        Yo desayuno perdedores.
+                    </p>
+                </div>
+
+            </a>
+
+
+            <a href="~/Rey"
+               class="banner banner-3">
+
+                <div class="banner-content">
+
+                    <h2>Strip "The King" Weathers</h2>
+
+                    <p>
+                        Hola, compañero. Eres un corredor valiente.
+                    </p>
+                </div>
+
+            </a>
+
+
+            <a href="~/CruzRamirez"
+               class="banner banner-4">
+
+                <div class="banner-content">
+
+                    <h2>Cruz Ramírez</h2>
+
+                    <p>
+                        Normie.
+                    </p>
+                </div>
+
+            </a>
+
+        </nav>
+
     </main>
-
-    <footer>
-        <p>&copy; 2026 - Mi Repositorio de Proyectos</p>
-    </footer>
 
 </body>
 </html>

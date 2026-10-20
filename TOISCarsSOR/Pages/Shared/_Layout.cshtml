@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>@ViewData["Title"] - Tu marca</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <title>@ViewData["Title"]</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet"
@@ -28,59 +30,68 @@
         @RenderBody()
     </main>
 
-    <!-- Footer fijo con transparencia -->
+    <!-- Footer con transparencia -->
     <footer class="site-footer">
         <div class="container">
 
             <div class="footer-content">
 
-                <!-- Marca y placeholder del logo -->
+                <!-- Marca y logo del proyecto -->
                 <div class="footer-brand">
-                    <a asp-page="/Index" class="footer-logo">
-                        <div class="footer-logo-placeholder">
-                            <i class="bi bi-image"></i>
-                        </div>
 
-                        <span>Tu marca</span>
+                    <a asp-page="/Index" class="footer-logo">
+                        <img src="~/assets/images/toispherav1wc.png"
+                             asp-append-version="true"
+                             alt="Logo de TOISphera"
+                             class="site-logo-image3" />
                     </a>
 
                     <p class="footer-description">
-                        Una breve descripción de tu proyecto.
+                        Dos mundos, una misma ruta.
                     </p>
+
                 </div>
 
-                <!-- Enlaces -->
+                <!-- Enlaces del pie de página -->
                 <nav class="footer-links"
                      aria-label="Enlaces del pie de página">
 
-                    <a href="https://github.com/tu-usuario/tu-repositorio"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="Visitar repositorio en GitHub">
+                    <!-- Correo electrónico -->
+                    <a href="mailto:yatoortiz05@gmail.com"
+                       aria-label="Enviar correo electrónico">
 
-                        <i class="bi bi-github"></i>
-                        <span>GitHub</span>
+                        <i class="bi bi-envelope-fill"></i>
                     </a>
 
-                    <a asp-page="/Terms"
-                       aria-label="Términos y condiciones">
+                    <!-- Créditos -->
+                    <a asp-page="/Credits"
+                       aria-label="Ver créditos del proyecto">
+
+                        <i class="bi bi-people-fill"></i>
+                    </a>
+
+                    <!-- Términos y condiciones -->
+                    <a asp-page="/Disclaimer"
+                       aria-label="Consultar términos y condiciones">
 
                         <i class="bi bi-file-earmark-text"></i>
-                        <span>Términos y condiciones</span>
                     </a>
+
                 </nav>
             </div>
 
             <!-- Copyright y disclaimer -->
             <div class="footer-bottom">
+
                 <span>
-                    &copy; @DateTime.Now.Year Tu marca.
+                    &copy; @DateTime.Now.Year TOISphera.
                     Todos los derechos reservados.
                 </span>
 
                 <span class="footer-disclaimer">
                     Uso sujeto a los términos del sitio.
                 </span>
+
             </div>
 
         </div>
@@ -93,5 +104,4 @@
 
 </body>
 </html>
-
 

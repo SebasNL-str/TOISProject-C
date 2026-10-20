@@ -1,0 +1,126 @@
+@page
+@{
+    ViewData["Title"] = "Créditos";
+}
+
+<section class="credits-page">
+    <div class="container py-5">
+
+        <!-- Encabezado -->
+        <header class="credits-header text-center">
+            <span class="credits-eyebrow">DETRÁS DEL PROYECTO</span>
+
+            <h1 class="credits-title">
+                Conoce al <span>equipo</span>
+            </h1>
+
+            <p class="credits-description">
+                Este proyecto es el resultado del esfuerzo, la creatividad
+                y la colaboración de cada uno de sus integrantes.
+            </p>
+        </header>
+
+        <!-- Integrantes -->
+        <div class="row justify-content-center g-4 credits-team">
+
+            <!-- Integrante 1 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <article class="credit-card">
+                    <div class="credit-avatar-wrapper">
+                        <img
+                            src="~/images/team/integrante-1.jpg"
+                            asp-append-version="true"
+                            alt="Foto de Nombre del integrante 1"
+                            class="credit-avatar" />
+                    </div>
+
+                    <h2 class="credit-name">Nombre Apellido</h2>
+                    <p class="credit-role">Desarrollo web</p>
+
+                    <p class="credit-bio">
+                        Breve descripción de su participación
+                        en el desarrollo del proyecto.
+                    </p>
+                </article>
+            </div>
+
+            <!-- Integrante 2 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <article class="credit-card">
+                    <div class="credit-avatar-wrapper">
+                        <img
+                            src="~/images/team/integrante-2.jpg"
+                            asp-append-version="true"
+                            alt="Foto de Nombre del integrante 2"
+                            class="credit-avatar" />
+                    </div>
+
+                    <h2 class="credit-name">Nombre Apellido</h2>
+                    <p class="credit-role">Diseño e interfaz</p>
+
+                    <p class="credit-bio">
+                        Breve descripción de su participación
+                        en el desarrollo del proyecto.
+                    </p>
+                </article>
+            </div>
+
+            <!-- Integrante 3 -->
+            <div class="col-12 col-sm-6 col-lg-4">
+                <article class="credit-card">
+                    <div class="credit-avatar-wrapper">
+                        <img
+                            src="~/images/team/integrante-3.jpg"
+                            asp-append-version="true"
+                            alt="Foto de Nombre del integrante 3"
+                            class="credit-avatar" />
+                    </div>
+
+                    <h2 class="credit-name">Nombre Apellido</h2>
+                    <p class="credit-role">Documentación y pruebas</p>
+
+                    <p class="credit-bio">
+                        Breve descripción de su participación
+                        en el desarrollo del proyecto.
+                    </p>
+                </article>
+            </div>
+
+        </div>
+
+        <!-- Información académica -->
+        <section class="project-credit text-center">
+            <div class="project-credit-icon">
+                <i class="bi bi-mortarboard"></i>
+            </div>
+
+            <span class="project-credit-label">
+                UN PROYECTO ACADÉMICO
+            </span>
+
+            <h2>Desarrollado para la asignatura de Sistemas Operativos y Redes de Computadoras</h2>
+
+            <p class="project-subject">
+                Nombre de la asignatura
+            </p>
+
+            <div class="project-credit-details">
+                <span>
+                    <i class="bi bi-building"></i>
+                    Nombre de la universidad
+                </span>
+
+                <span>
+                    <i class="bi bi-person-workspace"></i>
+                    Docente: Danny Oswaldo Chavez Miranda
+                </span>
+
+                <span>
+                    <i class="bi bi-calendar3"></i>
+                    2026
+                </span>
+            </div>
+        </section>
+
+    </div>
+</section>

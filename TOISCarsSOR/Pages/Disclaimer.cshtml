@@ -1,0 +1,132 @@
+@page
+@{
+    ViewData["Title"] = "Disclaimer & Legal Notice";
+    var currentYear = DateTime.Now.Year;
+    var projectName = "Toisphera_Says_Kachow";
+    var creatorName = "Toisphera";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @projectName</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --badge-bg: #f1f5f9;
+            --badge-color: #475569;
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .disclaimer-container {
+            max-width: 720px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .disclaimer-badge {
+            display: inline-block;
+            background-color: var(--badge-bg);
+            color: var(--badge-color);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .disclaimer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 12px;
+        }
+
+        .disclaimer-content {
+            color: #334155;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .disclaimer-footer {
+            margin-top: 28px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .disclaimer-footer strong {
+            color: var(--text-color);
+        }
+
+        /* Support for ASP.NET Core Layout inclusion */
+        @@media print {
+            body {
+                background: #ffffff;
+            }
+            .disclaimer-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="disclaimer-container">
+        <span class="disclaimer-badge">Fan Project</span>
+        <h1 class="disclaimer-title">Disclaimer</h1>
+
+        <p class="disclaimer-content">
+            <strong>Disclaimer:</strong> <strong>@projectName</strong> is a fan-made project created by <strong>@creatorName</strong> in appreciation of Disney and Pixar’s Cars franchise. All related trademarks, characters, names, logos, and intellectual property belong to their respective owners. <strong>@projectName</strong> is an independent project and is not officially affiliated with, endorsed by, or sponsored by Disney, Pixar, or their parent companies unless explicitly stated otherwise. This project is intended to celebrate the Cars universe and its community.
+        </p>
+
+        <div class="disclaimer-footer">
+            &copy; @currentYear <strong>@projectName</strong> | <strong>@creatorName</strong>. All rights reserved to their respective owners.
+        </div>
+    </main>
+
+</body>
+</html>
