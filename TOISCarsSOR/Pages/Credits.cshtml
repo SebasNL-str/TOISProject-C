@@ -3,12 +3,23 @@
     ViewData["Title"] = "Créditos";
 }
 
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/credits.css"
+          asp-append-version="true" />
+}
+
 <section class="credits-page">
-    <div class="container py-5">
+
+    <div class="container credits-container">
 
         <!-- Encabezado -->
-        <header class="credits-header text-center">
-            <span class="credits-eyebrow">DETRÁS DEL PROYECTO</span>
+        <header class="credits-header text-center"
+                data-aos="fade-up">
+
+            <span class="credits-eyebrow">
+                DETRÁS DEL PROYECTO
+            </span>
 
             <h1 class="credits-title">
                 Conoce al <span>equipo</span>
@@ -17,110 +28,219 @@
             <p class="credits-description">
                 Este proyecto es el resultado del esfuerzo, la creatividad
                 y la colaboración de cada uno de sus integrantes.
+                Conoce a las personas que hicieron esto posible.
             </p>
+
         </header>
 
-        <!-- Integrantes -->
+
+        <!-- Integrantes del proyecto -->
         <div class="row justify-content-center g-4 credits-team">
 
             <!-- Integrante 1 -->
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-lg-4"
+                 data-aos="fade-up"
+                 data-aos-delay="100">
+
                 <article class="credit-card">
+
                     <div class="credit-avatar-wrapper">
                         <img
-                            src="~/images/team/integrante-1.jpg"
+                            src="~/assets/images/Arkhy.png"
                             asp-append-version="true"
-                            alt="Foto de Nombre del integrante 1"
-                            class="credit-avatar" />
+                            alt="Fotografía de Braulio"
+                            class="credit-avatar"
+                            loading="lazy" />
                     </div>
 
-                    <h2 class="credit-name">Nombre Apellido</h2>
-                    <p class="credit-role">Desarrollo web</p>
+                    <div class="credit-information">
 
-                    <p class="credit-bio">
-                        Breve descripción de su participación
-                        en el desarrollo del proyecto.
-                    </p>
+                        <span class="credit-member-number">
+                            INTEGRANTE 01
+                        </span>
+
+                        <h2 class="credit-name">
+                            Bradly Ortiz
+                        </h2>
+
+                        <p class="credit-role">
+                            Doc Hudson
+                        </p>
+
+                        <p class="credit-bio">
+                            Breve descripción de su participación
+                            en el desarrollo del proyecto.
+                        </p>
+
+                    </div>
+
                 </article>
+
             </div>
 
-            <!-- Integrante 2 -->
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-lg-4"
+                 data-aos="fade-up"
+                 data-aos-delay="200">
+
                 <article class="credit-card">
+
                     <div class="credit-avatar-wrapper">
                         <img
-                            src="~/images/team/integrante-2.jpg"
+                            src="~/assets/images/SebasNTR.png"
                             asp-append-version="true"
-                            alt="Foto de Nombre del integrante 2"
-                            class="credit-avatar" />
+                            alt="Fotografía de Cebras"
+                            class="credit-avatar"
+                            loading="lazy" />
                     </div>
 
-                    <h2 class="credit-name">Nombre Apellido</h2>
-                    <p class="credit-role">Diseño e interfaz</p>
+                    <div class="credit-information">
 
-                    <p class="credit-bio">
-                        Breve descripción de su participación
-                        en el desarrollo del proyecto.
-                    </p>
+                        <span class="credit-member-number">
+                            INTEGRANTE 02
+                        </span>
+
+                        <h2 class="credit-name">
+                            Jose Narvaez
+                        </h2>
+
+                        <p class="credit-role">
+                            Cruz Ramirez
+                        </p>
+
+                        <p class="credit-bio">
+                            Breve descripción de su participación
+                            en el desarrollo del proyecto.
+                        </p>
+
+                    </div>
+
                 </article>
+
             </div>
+
 
             <!-- Integrante 3 -->
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-lg-4"
+                 data-aos="fade-up"
+                 data-aos-delay="300">
+
                 <article class="credit-card">
+
                     <div class="credit-avatar-wrapper">
                         <img
-                            src="~/images/team/integrante-3.jpg"
+                            src="~/assets/images/Freedom.jpg"
                             asp-append-version="true"
-                            alt="Foto de Nombre del integrante 3"
-                            class="credit-avatar" />
+                            alt="Fotografía de Nombre Apellido"
+                            class="credit-avatar"
+                            loading="lazy" />
                     </div>
 
-                    <h2 class="credit-name">Nombre Apellido</h2>
-                    <p class="credit-role">Documentación y pruebas</p>
+                    <div class="credit-information">
 
-                    <p class="credit-bio">
-                        Breve descripción de su participación
-                        en el desarrollo del proyecto.
-                    </p>
+                        <span class="credit-member-number">
+                            INTEGRANTE 03
+                        </span>
+
+                        <h2 class="credit-name">
+                            Michael Brenes
+                        </h2>
+
+                        <p class="credit-role">
+                            Strip "El Rey" Weathers
+                        </p>
+
+                        <p class="credit-bio">
+                            Breve descripción de su participación
+                            en el desarrollo del proyecto.
+                        </p>
+
+                    </div>
+
                 </article>
+
+            </div>
+
+
+        <!-- Integrante 4 -->
+            <div class="col-12 col-sm-6 col-lg-4"
+                 data-aos="fade-up"
+                 data-aos-delay="300">
+
+                <article class="credit-card">
+
+                    <div class="credit-avatar-wrapper">
+                        <img
+                            src="~/assets/images/Yarathel.jpg"
+                            asp-append-version="true"
+                            alt="Fotografía de Nombre Apellido"
+                            class="credit-avatar"
+                            loading="lazy" />
+                    </div>
+
+                    <div class="credit-information">
+
+                        <span class="credit-member-number">
+                            INTEGRANTE INVITADO
+                        </span>
+
+                        <h2 class="credit-name">
+                            Yader Benavides
+                        </h2>
+
+                        <p class="credit-role">
+                            Lightning McQueen
+                        </p>
+
+                        <p class="credit-bio">
+                            Breve descripción de su participación
+                            en el desarrollo del proyecto.
+                        </p>
+
+                    </div>
+
+                </article>
+
             </div>
 
         </div>
 
+
         <!-- Información académica -->
-        <section class="project-credit text-center">
-            <div class="project-credit-icon">
-                <i class="bi bi-mortarboard"></i>
-            </div>
+        <section class="project-credit text-center"
+                 data-aos="fade-up">
 
             <span class="project-credit-label">
+                <i class="bi bi-mortarboard"></i>
                 UN PROYECTO ACADÉMICO
             </span>
 
-            <h2>Desarrollado para la asignatura de Sistemas Operativos y Redes de Computadoras</h2>
+            <h2 class="project-credit-title">
+                Sistemas Operativos y Redes de Computadoras
+            </h2>
 
-            <p class="project-subject">
-                Nombre de la asignatura
-            </p>
+            <div class="project-credit-divider"></div>
 
             <div class="project-credit-details">
-                <span>
+
+                <div class="project-detail">
                     <i class="bi bi-building"></i>
-                    Nombre de la universidad
-                </span>
+                    <span>Universidad Nacional de Ingenieria</span>
+                </div>
 
-                <span>
+                <div class="project-detail">
                     <i class="bi bi-person-workspace"></i>
-                    Docente: Danny Oswaldo Chavez Miranda
-                </span>
+                    <span>Tutor: Danny Oswaldo Chavez Miranda</span>
+                </div>
 
-                <span>
+                <div class="project-detail">
                     <i class="bi bi-calendar3"></i>
-                    2026
-                </span>
+                    <span>2026</span>
+                </div>
+
             </div>
+
         </section>
 
     </div>
+
 </section>
