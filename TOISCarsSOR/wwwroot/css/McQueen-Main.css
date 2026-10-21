@@ -174,3 +174,30 @@ h2 {
     box-shadow: 0 15px 35px rgba(237, 37, 78, 0.6);
     transform: translateY(-3px);
 }
+
+/* =========================================
+   ANIMACIONES GENERALES PARA IMÁGENES
+   ========================================= */
+
+/* 1. Efecto Hover (Interacción con el ratón) */
+.imagen-fluida {
+    /* Le da una transición súper suave estilo Apple (cubic-bezier) */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+}
+
+.imagen-fluida:hover {
+    transform: scale(1.03) translateY(-5px); /* Se acerca y flota */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada */
+}
+
+/* 2. Efecto Revelado al hacer Scroll (Fade-Up) */
+.revelar-scroll {
+    opacity: 0;
+    transform: translateY(40px); /* Empieza 40px más abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.revelar-scroll.visible {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su posición original */
+}

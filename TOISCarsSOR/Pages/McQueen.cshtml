@@ -1,5 +1,4 @@
 @page
-@model IndexModel
 @{
     ViewData["Title"] = "TOISphera Says Kachow: Lightning McQueen";
 }
@@ -14,10 +13,11 @@
 </head>
 <body>
 
+   <!-- CABECERA ORIGINAL (Sin rayos, elegante) -->
     <header>
-        <h1>Lightning Mcqueen</h1>
+        <h1>LightMcQueen</h1>
         <p class="lema-principal">Born to Race. Built to Win</p>
-        <img src="~/assets/images/signature.WEBP" alt="Lightning McQueen Signature" class="firma-hero">
+        <img src="~/assets/images/signature.webp" alt="Lightning McQueen Signature" class="firma-hero">
     </header>
 
     <main>
@@ -27,7 +27,7 @@
             <div class="contenedor">
                 <div class="grid-dos-columnas">
                     <div>
-                        <img src="~/assets/images/rusteze-logo.avif" alt="Rust-eze Official Logo" class="imagen-fluida" style="background: white; padding: 2rem;">
+                        <img src="~/assets/images/rusteze-logo.avif" alt="Rust-eze Official Logo" class="imagen-fluida revelar-scroll" style="background: white; padding: 2rem;">
                     </div>
                     <div>
                         <ul class="datos-lista">
@@ -53,7 +53,7 @@
                         <p>The rookie's arrival marked a new era of pure speed, replacing Bertie's long career and modernizing the brand for new generations of the Piston Cup.</p>
                     </div>
                     <div>
-                        <img src="~/assets/images/Bertie_Fast.WEBP" alt="Bertie Fast, McQueen's predecessor" class="imagen-fluida">
+                        <img src="~/assets/images/Bertie_Fast.WEBP" alt="Bertie Fast, McQueen's predecessor" class="imagen-fluida revelar-scroll">
                     </div>
                 </div>
             </div>
@@ -71,25 +71,63 @@
                         <p>Today, backed by his unwavering pit crew and respected by track rivals like Bobby Swift and Cal Weathers, he races knowing that true victory lies in the family he chose.</p>
                     </div>
                     <div>
-                        <img src="~/assets/images/Firefly.png" alt="Lightning McQueen" class="imagen-fluida">
+                        <img src="~/assets/images/Firefly.png" alt="Lightning McQueen" class="imagen-fluida revelar-scroll">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- WORLD GRAND PRIX (GLOBAL RACING STAGE) -->
-        <section class="bg-oscuro">
+        <!-- THE LUCKY STICKER -->
+        <section class="bg-gunmetal">
             <div class="contenedor">
-                <h2>World Grand Prix</h2>
+                <h2>The Lucky Sticker</h2>
                 <div class="grid-dos-columnas">
                     <div>
-                        <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">Conquering the Global Circuits.</p>
-                        <p>Stepping out of the Piston Cup comfort zone, Lightning McQueen accepted the ultimate international challenge: the <strong>World Grand Prix</strong>, an elite multi-nation racing tournament created to test alternative fuel across the globe.</p>
-                        <br>
-                        <p>Facing off against fierce open-wheel champions like Francesco Bernoulli on high-speed international tracks in Tokyo, Porto Corsa, and London, McQueen showcased his relentless grit, tactical versatility, and elite driving mastery on unfamiliar street circuits, cementing his status as a true global racing icon.</p>
+                        <img src="~/assets/images/insigniasuerte.webp" alt="Lightning McQueen Lucky Sticker" class="imagen-fluida revelar-scroll">
                     </div>
                     <div>
-                        <img src="~/assets/images/cars2.jpg" alt="Lightning McQueen in the World Grand Prix" class="imagen-fluida">
+                        <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">A symbol of confidence and speed.</p>
+                        <p>Since his rookie season, Lightning McQueen has proudly worn his iconic yellow and orange lightning bolt alongside the number 95. Originally equipped with fake headlight stickers because "the track is always lit," these decals became his signature look.</p>
+                        <br>
+                        <p>What started as the flashy design of an arrogant rookie quickly transformed into a legendary racing insignia. These stickers brought him luck through countless races, becoming a globally recognized emblem of a true Piston Cup champion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE GREAT PILEUP ESCAPE -->
+        <section class="bg-oscuro">
+            <div class="contenedor">
+                <h2>The Dinoco 400 Escape</h2>
+                <div class="grid-dos-columnas">
+                    <div>
+                        <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">Defying gravity on the track.</p>
+                        <p>During the opening race of his rookie season, the Dinoco 400, aggressive rival Chick Hicks intentionally triggered a catastrophic multi-car pileup in a desperate attempt to eliminate the competition.</p>
+                        <br>
+                        <p>Showcasing his raw talent and unparalleled reflexes, McQueen drove straight into the chaos. With his tongue out in deep concentration, he leaped into the air, bouncing off wrecked tires and dodging flying debris. He emerged completely unscathed, using the disastrous crash to take a massive lead.</p>
+                    </div>
+                    <div>
+                        <img src="~/assets/images/choqueliberado.jpg" alt="Lightning McQueen escaping the crash" class="imagen-fluida revelar-scroll">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE ANATOMY OF SPEED (NUEVA SECCIÓN) -->
+        <section class="bg-oscuro">
+            <div class="contenedor">
+                <h2>The Anatomy of Speed</h2>
+                <div class="grid-dos-columnas">
+                    <!-- Lore a la izquierda -->
+                    <div>
+                        <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">Engineered for absolute perfection.</p>
+                        <p>Beneath the flashy Rust-eze wrap and the famous number 95 lies a custom-built, highly aerodynamic stock car chassis designed to slice through the air with minimal resistance.</p>
+                        <br>
+                        <p>Every curve and contour of Lightning McQueen’s bodywork was meticulously crafted for track dominance. This striking top-down profile showcases his perfectly balanced weight distribution, wide racing stance, and sleek lines, proving that he isn't just a racer—he is a precision instrument of speed.</p>
+                    </div>
+                    <!-- Imagen a la derecha -->
+                    <div>
+                        <img src="~/assets/images/mcqueen2.jpg" alt="Lightning McQueen Top Down View" class="imagen-fluida revelar-scroll">
                     </div>
                 </div>
             </div>
@@ -98,10 +136,10 @@
         <!-- DRAGON LIGHTNING MCQUEEN -->
         <section class="bg-gunmetal">
             <div class="contenedor">
-                <h2>Lightning Mcqueen Japan</h2>
+                <h2>Dragon Edition</h2>
                 <div class="grid-dos-columnas">
                     <div>
-                        <img src="~/assets/images/dragon.jpg" alt="Dragon Lightning McQueen" class="imagen-fluida">
+                        <img src="~/assets/images/dragon.jpg" alt="Dragon Lightning McQueen Special Edition" class="imagen-fluida revelar-scroll">
                     </div>
                     <div>
                         <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">The Power of the Mythical Beast.</p>
@@ -113,19 +151,37 @@
             </div>
         </section>
 
+        <!-- WORLD GRAND PRIX -->
+        <section class="bg-oscuro">
+            <div class="contenedor">
+                <h2>World Grand Prix</h2>
+                <div class="grid-dos-columnas">
+                    <div>
+                        <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">Conquering the Global Circuits.</p>
+                        <p>Stepping out of the Piston Cup comfort zone, Lightning McQueen accepted the ultimate international challenge: the <strong>World Grand Prix</strong>, an elite multi-nation racing tournament created to test alternative fuel across the globe.</p>
+                        <br>
+                        <p>Facing off against fierce open-wheel champions like Francesco Bernoulli on high-speed international tracks in Tokyo, Porto Corsa, and London, McQueen showcased his relentless grit, tactical versatility, and elite driving mastery on unfamiliar street circuits, cementing his status as a true global racing icon.</p>
+                    </div>
+                    <div>
+                        <img src="~/assets/images/cars2.jpg" alt="Lightning McQueen in the World Grand Prix" class="imagen-fluida revelar-scroll">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- THE MENTOR: DOC HUDSON -->
         <section class="bg-gunmetal">
             <div class="contenedor">
                 <h2>The Mentor</h2>
                 <div class="grid-dos-columnas">
                     <div>
+                        <img src="~/assets/images/rayodoc.png" alt="Lightning McQueen and Doc Hudson drifting on dirt" class="imagen-fluida revelar-scroll">
+                    </div>
+                    <div>
                         <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">The Fabulous Hudson Hornet.</p>
                         <p>Doc Hudson was much more than the doctor and judge of Radiator Springs; he was a living racing legend who won three consecutive Piston Cups before an accident forced him off the track.</p>
                         <br>
                         <p>Upon meeting a young, arrogant McQueen, Doc became his mentor. He taught him how to drift on dirt, showed him that trophies "are just empty cups," and served as his crew chief. Under his wise guidance, Lightning not only learned to race with his heart but also dominated his early seasons, forging a father-son bond that McQueen would honor forever.</p>
-                    </div>
-                    <div>
-                        <img src="~/assets/images/rayodoc.png" alt="Lightning McQueen and Doc Hudson drifting on dirt" class="imagen-fluida">
                     </div>
                 </div>
             </div>
@@ -137,13 +193,13 @@
                 <h2>The Legacy Continues</h2>
                 <div class="grid-dos-columnas">
                     <div>
-                        <img src="~/assets/images/cruzrayo.png" alt="Lightning McQueen and Cruz Ramirez racing on dirt" class="imagen-fluida">
-                    </div>
-                    <div>
                         <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">From apprentice to master.</p>
                         <p>With the arrival of high-tech rookies and following a severe crash, McQueen realized that his glory days on the track were changing. That was when he met Cruz Ramirez, a brilliant trainer with a suppressed dream of becoming a racer.</p>
                         <br>
                         <p>Remembering everything Doc had done for him, Lightning made the noblest decision of his career: giving up his spot in the decisive Florida 500 race. Stepping into the role of crew chief, McQueen provided the coaching, strategy, and confidence Cruz needed to defeat her rivals and win her first Piston Cup, thereby bringing his own story full circle.</p>
+                    </div>
+                    <div>
+                        <img src="~/assets/images/cruzrayo.png" alt="Lightning McQueen and Cruz Ramirez racing on dirt" class="imagen-fluida revelar-scroll">
                     </div>
                 </div>
             </div>
@@ -155,13 +211,13 @@
                 <h2>A Tribute to Doc</h2>
                 <div class="grid-dos-columnas">
                     <div>
+                        <img src="~/assets/images/mcqueenviejo.jpg" alt="Fabulous Lightning McQueen in blue alongside Cruz Ramirez" class="imagen-fluida revelar-scroll">
+                    </div>
+                    <div>
                         <p style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--rojo-crayola);">"Fabulous Lightning McQueen"</p>
                         <p>To honor his mentor's memory, McQueen decides to swap his iconic red paint job for an elegant dark blue, with the words "Fabulous Lightning McQueen" lettered on his sides.</p>
                         <br>
                         <p>This design is an exact replica of the colors Doc Hudson wore when competing as "The Fabulous Hudson Hornet". By sporting this paint scheme while serving as crew chief for Cruz Ramirez (now racing as Dinoco's #51), Lightning demonstrates his maturity, proudly embracing his new role as a mentor and ensuring that Doc's legacy lives on at the racetrack.</p>
-                    </div>
-                    <div>
-                        <img src="~/assets/images/mcqueenviejo.jpg" alt="Fabulous Lightning McQueen in blue alongside Cruz Ramirez" class="imagen-fluida">
                     </div>
                 </div>
             </div>
@@ -173,7 +229,7 @@
                 <h2>Piston Cups</h2>
                 <div class="grid-dos-columnas" style="margin-bottom: 4rem;">
                     <div>
-                        <img src="~/assets/images/pistoncup.jpg" alt="Piston Cup Trophies" class="imagen-fluida">
+                        <img src="~/assets/images/pistoncup.jpg" alt="Piston Cup Trophies" class="imagen-fluida revelar-scroll">
                     </div>
                     <div>
                         <p style="font-size: 1.8rem;">7 Piston Cups.</p>
@@ -212,21 +268,21 @@
         <section class="bg-gunmetal" style="text-align: center;">
             <div class="contenedor">
                 <h2>V8 Engine Experience</h2>
-                <p style="margin-bottom: 2rem; font-size: 1.4rem;">Click the button below to hear the raw power of the 95 engine.</p>
+                <p style="margin-bottom: 2rem; font-size: 1.4rem;">Click the button below to hear the raw power of the #95 engine.</p>
                 
                 <button id="btn-motor" class="btn-audio">
                     🔥 Start V8 Engine (Ka-chow!)
                 </button>
 
-                <!-- Audio adaptado con la tilde (~) -->
                 <audio id="audio-v8" src="~/assets/audio/mcqueen-v8..mp3"></audio>
             </div>
         </section>
 
     </main>
 
-    <!-- Script de JavaScript -->
+    <!-- SCRIPTS DE LA PÁGINA -->
     <script>
+        // 1. Script para el Sonido del Motor V8
         const botonMotor = document.getElementById('btn-motor');
         const audioV8 = document.getElementById('audio-v8');
 
@@ -240,6 +296,26 @@
             setTimeout(() => {
                 botonMotor.style.transform = "scale(1)";
             }, 150);
+        });
+
+        // 2. Script para la animación de las imágenes al hacer scroll
+        document.addEventListener("DOMContentLoaded", function() {
+            const elementos = document.querySelectorAll('.revelar-scroll');
+
+            const observador = new IntersectionObserver((entradas) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');
+                        // Si quieres que el efecto se repita al subir y bajar, déjalo así. 
+                        // Si quieres que solo ocurra 1 vez, descomenta la línea de abajo:
+                        // observador.unobserve(entrada.target);
+                    }
+                });
+            }, {
+                threshold: 0.15 // El efecto se dispara cuando el 15% de la imagen aparece en pantalla
+            });
+
+            elementos.forEach(el => observador.observe(el));
         });
     </script>
 </body>
