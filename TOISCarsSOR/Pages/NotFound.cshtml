@@ -1,0 +1,122 @@
+@page
+@{
+    ViewData["Title"] = "TOISphera Says Kachow: Four O Four";
+}
+
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/disclaimer.css"
+          asp-append-version="true" />
+}
+
+<main class="disclaimer-page">
+    <div class="disclaimer-container" data-aos="zoom-out">
+
+        <section class="disclaimer-panel"
+                 aria-labelledby="disclaimer-heading">
+
+            <a href="~/Index"
+               class="brand"
+               aria-label="Volver al inicio">
+
+                <img
+                    src="~/assets/images/toiscarsv2.png"
+                    alt="TOISCarsLogo"
+                    class="brand-logo">
+            </a>
+
+            <div class="disclaimer-panel-heading">
+
+                <div class="disclaimer-symbol"
+                     aria-hidden="true">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                </div>
+
+                <div class="disclaimer-heading-content">
+
+                    <span class="disclaimer-label">
+                        ERROR
+                    </span>
+
+                    <h2 id="disclaimer-heading"
+                        class="disclaimer-panel-title">
+                        Something went wrong
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="disclaimer-content">
+
+                <p>
+                    We're sorry, but an unexpected error occurred
+                    while processing your request.
+                </p>
+
+                <p>
+                    The page or resource you requested may be
+                    temporarily unavailable, or something may
+                    have gone wrong on our end.
+                </p>
+
+                <p>
+                    <strong>TOISphera Says Kachow</strong>
+                    is working to provide you with the best
+                    possible experience. Please try again
+                    in a few moments.
+                </p>
+
+                <p>
+                    If the problem persists, please contact
+                    the project team for assistance.
+                </p>
+
+            </div>
+
+            <div class="disclaimer-divider"
+                 aria-hidden="true">
+            </div>
+
+            <div class="disclaimer-notes">
+
+                <div class="disclaimer-note">
+
+                    <span class="disclaimer-note-indicator"
+                          aria-hidden="true">
+                    </span>
+
+                    <div>
+                        <h3>Try again</h3>
+
+                        <p>
+                            Refresh the page or try your request
+                            again in a few moments.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="disclaimer-note">
+
+                    <span class="disclaimer-note-indicator"
+                          aria-hidden="true">
+                    </span>
+
+                    <div>
+                        <h3>Still having trouble?</h3>
+
+                        <p>
+                            Contact the project team if the
+                            problem continues.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+</main>
