@@ -8,6 +8,37 @@ body::-webkit-scrollbar {
     display: none;             
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    margin-bottom: 5px;
+}
+
+.brand-logo {
+    display: block;
+
+    width: 125px;
+    max-width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    flex-shrink: 0;
+
+    filter:
+        drop-shadow(
+            0 0 14px rgba(251, 191, 36, 0.16)
+        );
+}
+
 .credits-page {
     --credits-text: #fffaf0;
     --credits-muted: rgba(255, 237, 213, 0.70);

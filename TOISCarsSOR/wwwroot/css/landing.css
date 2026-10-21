@@ -362,11 +362,6 @@ img {
 }
 
 @media (hover: hover) and (pointer: fine) {
-
-    /*
-       Intensifica el brillo exterior de la card.
-    */
-
     .banner-frame:hover {
         filter:
             drop-shadow(0 0 1px #ffffff)
@@ -437,6 +432,29 @@ img {
 
     font-size: 0.8rem;
     line-height: 1.6;
+}
+
+.golden-hour {
+    display: inline-block;
+    margin: 0 0 1.25rem;
+
+    background: linear-gradient(
+        100deg,
+        #fde68a 0%,
+        #fbbf24 38%,
+        #fb923c 72%,
+        #ea580c 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    font-size: clamp(2.4rem, 6vw, 4.4rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 1.08;
 }
 
 @media (max-width: 1000px) {

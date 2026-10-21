@@ -1,12 +1,9 @@
 :root {
-    /* Background & surfaces */
 
     --gd-background: #100c08;
 
     --gd-surface: rgba(24, 17, 9, 0.72);
     --gd-surface-hover: rgba(35, 23, 10, 0.82);
-
-    /* Border & glass reflections */
 
     --gd-border: rgba(251, 191, 36, 0.20);
     --gd-border-strong: rgba(251, 191, 36, 0.42);
@@ -23,8 +20,6 @@
     --gd-accent-orange: #f97316;
     --gd-accent-deep: #c2410c;
 
-    /* Golden glow */
-
     --gd-glow:
         0 0 12px rgba(251, 191, 36, 0.09),
         0 0 26px rgba(249, 115, 22, 0.04);
@@ -33,8 +28,6 @@
         0 0 14px rgba(251, 191, 36, 0.20),
         0 0 30px rgba(249, 115, 22, 0.10);
 
-    /* Footer */
-
     --footer-background: rgba(17, 12, 7, 0.48);
 
     --footer-border: rgba(251, 191, 36, 0.26);
@@ -42,11 +35,6 @@
     --footer-text: #fffaf0;
     --footer-muted: rgba(255, 237, 213, 0.66);
 }
-
-
-/* =========================================================
-   2. DOCUMENTO
-   ========================================================= */
 
 html {
     min-height: 100%;
@@ -77,24 +65,12 @@ body.site-body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-/* =========================================================
-   3. CONTENIDO PRINCIPAL
-   Mantiene el footer al final de la página
-   ========================================================= */
-
 .site-main {
     flex: 1 0 auto;
 
     width: 100%;
     min-width: 0;
 }
-
-
-/* =========================================================
-   4. FOOTER — GLASSMORPHISM DORADO
-   Cristal semitransparente y borde cálido
-   ========================================================= */
 
 .site-footer {
     position: relative;
@@ -110,11 +86,6 @@ body.site-body {
 
     background: var(--footer-background);
 
-    /*
-       Desenfoque del contenido situado detrás.
-       El color mantiene la transparencia del cristal.
-    */
-
     -webkit-backdrop-filter: blur(16px) saturate(145%);
     backdrop-filter: blur(16px) saturate(145%);
 
@@ -127,11 +98,6 @@ body.site-body {
 
     color: var(--footer-text);
 }
-
-/*
-   Línea de luz superior.
-   Refuerza el efecto de cristal sin crear un borde grueso.
-*/
 
 .site-footer::before {
     content: "";
@@ -156,11 +122,6 @@ body.site-body {
     pointer-events: none;
 }
 
-
-/* =========================================================
-   5. CONTENIDO DEL FOOTER
-   ========================================================= */
-
 .footer-content {
     display: flex;
     align-items: center;
@@ -171,11 +132,6 @@ body.site-body {
     padding-bottom: 0.75rem;
 }
 
-
-/* =========================================================
-   6. MARCA
-   ========================================================= */
-
 .footer-brand {
     display: flex;
     flex-direction: column;
@@ -183,11 +139,6 @@ body.site-body {
 
     gap: 0.25rem;
 }
-
-
-/* =========================================================
-   7. ENLACE DEL LOGOTIPO
-   ========================================================= */
 
 .footer-logo {
     display: inline-flex;
@@ -211,11 +162,6 @@ body.site-body {
 .footer-logo:hover {
     color: var(--gd-accent-light);
 }
-
-
-/* =========================================================
-   8. IMAGEN DEL LOGOTIPO
-   ========================================================= */
 
 .site-logo-image3 {
     display: block;
@@ -242,12 +188,6 @@ body.site-body {
 .footer-logo:hover .site-logo-image3 {
     opacity: 0.92;
 }
-
-
-/* =========================================================
-   9. LOGOTIPOS ALTERNATIVOS Y PLACEHOLDERS
-   Se conservan las dimensiones y la estructura original
-   ========================================================= */
 
 .footer-logo-placeholder,
 .footer-logo-image {
@@ -283,11 +223,6 @@ body.site-body {
     object-fit: contain;
 }
 
-
-/* =========================================================
-   10. DESCRIPCIÓN DEL FOOTER
-   ========================================================= */
-
 .footer-description {
     max-width: 300px;
 
@@ -298,11 +233,6 @@ body.site-body {
     font-size: 0.75rem;
     line-height: 1.5;
 }
-
-
-/* =========================================================
-   11. ENLACES DEL FOOTER
-   ========================================================= */
 
 .footer-links {
     display: flex;
@@ -340,11 +270,6 @@ body.site-body {
         opacity 0.2s ease;
 }
 
-
-/* =========================================================
-   12. ICONOS DE LOS ENLACES
-   ========================================================= */
-
 .footer-links a i {
     display: inline-block;
 
@@ -368,12 +293,6 @@ body.site-body {
         filter 0.2s ease;
 }
 
-
-/* =========================================================
-   13. INTERACCIÓN DE LOS ENLACES
-   Sin cards ni botones con fondos genéricos
-   ========================================================= */
-
 .footer-links a:hover {
     background: transparent;
 
@@ -395,12 +314,6 @@ body.site-body {
         );
 }
 
-
-/* =========================================================
-   14. FOCO VISIBLE
-   Accesibilidad por teclado
-   ========================================================= */
-
 .footer-logo:focus-visible,
 .footer-links a:focus-visible {
     outline: 2px solid var(--gd-accent-light);
@@ -408,11 +321,6 @@ body.site-body {
 
     border-radius: 2px;
 }
-
-
-/* =========================================================
-   15. PIE INFERIOR DEL FOOTER
-   ========================================================= */
 
 .footer-bottom {
     display: flex;
@@ -432,19 +340,9 @@ body.site-body {
     line-height: 1.5;
 }
 
-
-/* =========================================================
-   16. AVISO / DISCLAIMER
-   ========================================================= */
-
 .footer-disclaimer {
     text-align: right;
 }
-
-
-/* =========================================================
-   17. TABLETS
-   ========================================================= */
 
 @media (max-width: 768px) {
 
@@ -460,11 +358,6 @@ body.site-body {
         max-width: 240px;
     }
 }
-
-
-/* =========================================================
-   18. MÓVILES
-   ========================================================= */
 
 @media (max-width: 576px) {
 
@@ -533,11 +426,6 @@ body.site-body {
     }
 }
 
-
-/* =========================================================
-   19. MÓVILES PEQUEÑOS
-   ========================================================= */
-
 @media (max-width: 360px) {
 
     .footer-content {
@@ -556,12 +444,6 @@ body.site-body {
         font-size: 0.62rem;
     }
 }
-
-
-/* =========================================================
-   20. MOVIMIENTO REDUCIDO
-   Preferencia de accesibilidad del sistema
-   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 

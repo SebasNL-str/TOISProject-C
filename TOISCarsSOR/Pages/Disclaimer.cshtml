@@ -1,132 +1,120 @@
 @page
 @{
-    ViewData["Title"] = "Disclaimer & Legal Notice";
-    var currentYear = DateTime.Now.Year;
-    var projectName = "Toisphera_Says_Kachow";
-    var creatorName = "Toisphera";
+    ViewData["Title"] = "Disclaimer";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - @projectName</title>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/disclaimer.css"
+          asp-append-version="true" />
+}
 
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --text-color: #1e293b;
-            --text-muted: #64748b;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --badge-bg: #f1f5f9;
-            --badge-color: #475569;
-            --radius: 12px;
-        }
+<main class="disclaimer-page">
+    <div class="disclaimer-container" data-aos="zoom-out">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        <section class="disclaimer-panel"
+                 aria-labelledby="disclaimer-heading">
 
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+            <div class="brand">
+                    <img
+                    src="~/assets/images/toiscarsv2.png"
+                    alt="Logo de Tu Marca"
+                    class="brand-logo">
+            </div>
 
-        .disclaimer-container {
-            max-width: 720px;
-            width: 100%;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        }
+            <div class="disclaimer-panel-heading">
+                <div class="disclaimer-symbol"
+                     aria-hidden="true">
+                    ©
+                </div>
 
-        .disclaimer-badge {
-            display: inline-block;
-            background-color: var(--badge-bg);
-            color: var(--badge-color);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 4px 10px;
-            border-radius: 6px;
-            margin-bottom: 16px;
-        }
+                <div class="disclaimer-heading-content">
 
-        .disclaimer-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 12px;
-        }
+                    <span class="disclaimer-label">
+                        DISCLAIMER
+                    </span>
 
-        .disclaimer-content {
-            color: #334155;
-            font-size: 1rem;
-            text-align: justify;
-        }
+                    <h2 id="disclaimer-heading"
+                        class="disclaimer-panel-title">
+                        Fan-made project disclaimer
+                    </h2>
 
-        .disclaimer-footer {
-            margin-top: 28px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            text-align: center;
-        }
+                </div>
 
-        .disclaimer-footer strong {
-            color: var(--text-color);
-        }
+            </div>
 
-        /* Support for ASP.NET Core Layout inclusion */
-        @@media print {
-            body {
-                background: #ffffff;
-            }
-            .disclaimer-container {
-                box-shadow: none;
-                border: none;
-                padding: 0;
-            }
-        }
-    </style>
-</head>
-<body>
+            <div class="disclaimer-content">
 
-    <main class="disclaimer-container">
-        <span class="disclaimer-badge">Fan Project</span>
-        <h1 class="disclaimer-title">Disclaimer</h1>
+                <p>
+                    <strong>TOISphera Says Kachow</strong>
+                    is a fan-made project created by TOISphera
+                    in appreciation of Disney and Pixar’s
+                    Cars franchise.
+                </p>
 
-        <p class="disclaimer-content">
-            <strong>Disclaimer:</strong> <strong>@projectName</strong> is a fan-made project created by <strong>@creatorName</strong> in appreciation of Disney and Pixar’s Cars franchise. All related trademarks, characters, names, logos, and intellectual property belong to their respective owners. <strong>@projectName</strong> is an independent project and is not officially affiliated with, endorsed by, or sponsored by Disney, Pixar, or their parent companies unless explicitly stated otherwise. This project is intended to celebrate the Cars universe and its community.
-        </p>
+                <p>
+                    All related trademarks, characters, names,
+                    logos, and intellectual property belong to
+                    their respective owners.
+                </p>
 
-        <div class="disclaimer-footer">
-            &copy; @currentYear <strong>@projectName</strong> | <strong>@creatorName</strong>. All rights reserved to their respective owners.
-        </div>
-    </main>
+                <p>
+                    <strong>TOISphera Says Kachow</strong>
+                    is an independent project and is not officially
+                    affiliated with, endorsed by, or sponsored by
+                    Disney, Pixar, or their parent companies unless
+                    explicitly stated otherwise.
+                </p>
 
-</body>
-</html>
+                <p>
+                    This project is intended to celebrate the
+                    Cars universe and its community.
+                </p>
+
+            </div>
+
+            <div class="disclaimer-divider"
+                 aria-hidden="true">
+            </div>
+
+            <div class="disclaimer-notes">
+
+                <div class="disclaimer-note">
+
+                    <span class="disclaimer-note-indicator"
+                          aria-hidden="true">
+                    </span>
+
+                    <div>
+                        <h3>Independent project</h3>
+
+                        <p>
+                            Created by TOISphera as a fan project.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="disclaimer-note">
+
+                    <span class="disclaimer-note-indicator"
+                          aria-hidden="true">
+                    </span>
+
+                    <div>
+                        <h3>Respective ownership</h3>
+
+                        <p>
+                            All intellectual property remains
+                            with its respective owners.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+</main>
