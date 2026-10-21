@@ -1,19 +1,28 @@
-html, body {
-    scrollbar-width: none;      
-    -ms-overflow-style: none;  
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-    display: none;             
+    display: none;
 }
 
 :root {
-    --background: #10131b;
-    --surface: #1b2230;
-    --text: #f4f6fb;
-    --muted: #a7b0c2;
-    --accent: #8baaff;
+    --background: #100c08;
+    --surface: #1b140c;
+
+    --text: #fffaf0;
+    --muted: #d3c3ab;
+
+    --accent: #fbbf24;
+    --accent-secondary: #f97316;
+    --accent-light: #fde68a;
+    --accent-orange: #fb923c;
+    --accent-deep: #c2410c;
+
+    --border-color: rgba(251, 191, 36, 0.85);
 
     --max-width: 1440px;
     --banner-gap: 12px;
@@ -33,10 +42,12 @@ html {
 body {
     min-height: 100vh;
 
+    background-color: var(--background);
+
     background-image:
         linear-gradient(
-            rgba(10, 13, 22, 0.55),
-            rgba(10, 13, 22, 0.75)
+            rgba(12, 8, 4, 0.55),
+            rgba(12, 8, 4, 0.78)
         ),
         url("../assets/images/wallpaperv1.jpg");
 
@@ -48,7 +59,9 @@ body {
     color: var(--text);
 
     font-family: Inter, "Segoe UI", Arial, sans-serif;
+
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -65,8 +78,8 @@ img {
     width: 100%;
     max-width: 1800px;
     min-height: 100vh;
-    margin-inline: auto;
 
+    margin-inline: auto;
     padding: 30px 20px;
 
     display: flex;
@@ -77,6 +90,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     text-align: center;
 
     margin-bottom: clamp(20px, 3vw, 40px);
@@ -93,11 +107,19 @@ img {
 .brand-logo {
     width: 225px;
     height: auto;
+
     object-fit: contain;
     flex-shrink: 0;
+
+    filter:
+        drop-shadow(
+            0 0 14px rgba(251, 191, 36, 0.16)
+        );
 }
 
 .brand-name {
+    color: var(--text);
+
     font-size: clamp(1.5rem, 3vw, 2.4rem);
     font-weight: 800;
     letter-spacing: 0.12em;
@@ -110,7 +132,8 @@ img {
     margin-top: 10px;
 
     color: var(--muted);
-    font-family: 'Poppins', sans-serif;
+
+    font-family: "Poppins", sans-serif;
     font-size: clamp(1.1rem, 2vw, 1.4rem);
     font-weight: 400;
     line-height: 1.8;
@@ -124,26 +147,61 @@ img {
     margin-top: 26px;
 
     border-radius: 10px;
-    background: var(--accent);
+
+    background: linear-gradient(
+        90deg,
+        var(--accent-light),
+        var(--accent),
+        var(--accent-secondary)
+    );
+
+    box-shadow:
+        0 0 8px rgba(251, 191, 36, 0.60),
+        0 0 20px rgba(249, 115, 22, 0.30);
 }
 
 .sections {
     display: grid;
+
     grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    gap: 2px;
+    gap: var(--banner-gap);
 
     align-items: stretch;
     width: 100%;
 }
 
+.banner-frame {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    filter:
+        drop-shadow(0 0 1px #fff7cc)
+        drop-shadow(0 0 2px rgba(253, 230, 138, 1))
+        drop-shadow(0 0 4px rgba(251, 191, 36, 0.95))
+        drop-shadow(0 0 8px rgba(251, 191, 36, 0.72))
+        drop-shadow(0 0 15px rgba(249, 115, 22, 0.42))
+        drop-shadow(0 0 25px rgba(234, 88, 12, 0.20));
+
+    transition: filter 280ms ease;
+}
+
 .banner {
     position: relative;
     isolation: isolate;
+
     overflow: hidden;
 
     display: flex;
     align-items: flex-end;
+
+    width: 100%;
+    height: 100%;
 
     min-width: 0;
     min-height: 600px;
@@ -162,9 +220,10 @@ img {
         0 100%
     );
 
-    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.35));
+    filter: none;
 
-    transition: filter 250ms ease;
+    transition:
+        filter 250ms ease;
 }
 
 .banner-1 {
@@ -183,28 +242,50 @@ img {
     background-image: url("../assets/images/inutilramirez-bannerR.jpg");
 }
 
-
-/* =========================================
-   7. CAPA OSCURA SOBRE LAS IMÁGENES
-========================================= */
-
 .banner::before {
     content: "";
 
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
 
     background: linear-gradient(
         to top,
-        rgba(5, 8, 15, 0.82) 0%,
-        rgba(5, 8, 15, 0.55) 35%,
-        rgba(5, 8, 15, 0.12) 75%,
-        rgba(5, 8, 15, 0.04) 100%
+        rgba(5, 8, 12, 0.90) 0%,
+        rgba(12, 9, 5, 0.68) 35%,
+        rgba(12, 9, 5, 0.24) 70%,
+        rgba(12, 9, 5, 0.08) 100%
     );
+
+    pointer-events: none;
+}
+
+.banner::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgba(253, 230, 138, 0.10) 0%,
+        transparent 24%,
+        transparent 64%,
+        rgba(249, 115, 22, 0.12) 100%
+    );
+
+    opacity: 0.8;
+
+    pointer-events: none;
+
+    transition: opacity 280ms ease;
 }
 
 .banner-content {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
     min-width: 0;
 
@@ -216,29 +297,44 @@ img {
 
     margin-bottom: 14px;
 
-    color: var(--accent);
+    color: var(--accent-light);
+
     font-size: 0.85rem;
     font-weight: 800;
     letter-spacing: 0.15em;
+
+    text-shadow:
+        0 0 10px rgba(251, 191, 36, 0.45),
+        0 0 20px rgba(249, 115, 22, 0.20);
 }
 
 .banner h2 {
+    color: var(--text);
+
     font-size: clamp(1.05rem, 1.5vw, 1.55rem);
     font-weight: 750;
     line-height: 1.25;
+
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.70);
 }
 
 .banner p {
     margin-top: 12px;
 
-    color: #d0d5df;
+    color: #f0e5d3;
+
     font-size: 0.875rem;
-    line-height: 1.6;
+    line-height: 1.7;
+
+    text-shadow:
+        0 1px 8px rgba(0, 0, 0, 0.70);
 }
 
 .banner-action {
     display: inline-flex;
     align-items: center;
+
     gap: 10px;
 
     margin-top: 22px;
@@ -246,31 +342,89 @@ img {
 
     border-bottom: 1px solid var(--accent);
 
-    color: #ffffff;
+    color: #fffaf0;
+
     font-size: 0.9rem;
     font-weight: 700;
+
+    transition:
+        color 200ms ease,
+        border-color 200ms ease,
+        text-shadow 200ms ease;
 }
 
 .banner-action span {
-    color: var(--accent);
-    transition: transform 200ms ease;
+    color: var(--accent-light);
+
+    transition:
+        transform 200ms ease,
+        color 200ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
 
-    .banner:hover {
+    /*
+       Intensifica el brillo exterior de la card.
+    */
+
+    .banner-frame:hover {
+        filter:
+            drop-shadow(0 0 1px #ffffff)
+            drop-shadow(0 0 3px #fff1a8)
+            drop-shadow(0 0 7px rgba(251, 191, 36, 1))
+            drop-shadow(0 0 14px rgba(249, 115, 22, 0.90))
+            drop-shadow(0 0 27px rgba(234, 88, 12, 0.48));
+    }
+
+    .banner-frame:hover .banner {
         filter: brightness(1.18);
     }
 
-    .banner:hover .banner-action span {
+    .banner-frame:hover .banner::after {
+        opacity: 1;
+    }
+
+    .banner-frame:hover .banner-action {
+        color: var(--accent-light);
+
+        border-bottom-color: var(--accent-light);
+
+        text-shadow:
+            0 0 12px rgba(251, 191, 36, 0.28);
+    }
+
+    .banner-frame:hover .banner-action span {
+        color: #fff1a8;
+
         transform: translate(3px, -3px);
     }
 }
 
 .banner:focus-visible,
 .brand:focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--accent-light);
     outline-offset: 5px;
+}
+
+.banner:focus-visible {
+    filter: brightness(1.12);
+}
+
+.banner-frame:focus-within {
+    filter:
+        drop-shadow(0 0 1px #fff7cc)
+        drop-shadow(0 0 3px #fde68a)
+        drop-shadow(0 0 7px rgba(251, 191, 36, 0.95))
+        drop-shadow(0 0 16px rgba(249, 115, 22, 0.55));
+}
+
+.banner-action:focus-visible {
+    outline: 2px solid var(--accent-light);
+    outline-offset: 5px;
+}
+
+.brand:focus-visible {
+    border-radius: 2px;
 }
 
 .landing-footer {
@@ -280,6 +434,7 @@ img {
     text-align: center;
 
     color: var(--muted);
+
     font-size: 0.8rem;
     line-height: 1.6;
 }
@@ -288,11 +443,13 @@ img {
 
     .sections {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
         gap: 20px;
     }
 
     .banner {
         min-height: 340px;
+
         padding: 30px;
     }
 
@@ -321,11 +478,13 @@ img {
 
     .sections {
         grid-template-columns: minmax(0, 1fr);
-        gap: 18px;
+
+        gap: 22px;
     }
 
     .banner {
         min-height: 280px;
+
         padding: 30px;
     }
 
@@ -335,6 +494,7 @@ img {
 
     .banner p {
         max-width: 360px;
+
         font-size: 0.9rem;
     }
 
@@ -350,16 +510,49 @@ img {
     }
 
     .sections {
-        gap: 14px;
+        gap: 18px;
     }
 
     .banner {
         min-height: 260px;
+
         padding: 26px;
     }
 
     .banner h2 {
         font-size: 1.3rem;
+    }
+}
+
+@media (hover: none) {
+
+    .banner-frame {
+        filter:
+            drop-shadow(0 0 1px #fff7cc)
+            drop-shadow(0 0 2px rgba(253, 230, 138, 1))
+            drop-shadow(0 0 4px rgba(251, 191, 36, 0.95))
+            drop-shadow(0 0 8px rgba(251, 191, 36, 0.72))
+            drop-shadow(0 0 15px rgba(249, 115, 22, 0.42))
+            drop-shadow(0 0 25px rgba(234, 88, 12, 0.20));
+    }
+
+    .banner-frame:hover .banner {
+        filter: none;
+    }
+
+    .banner-frame:hover .banner::after {
+        opacity: 0.8;
+    }
+
+    .banner-frame:hover .banner-action span {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
     }
 }
 
@@ -375,12 +568,8 @@ img {
         transition: none !important;
         animation: none !important;
     }
-}
 
-@media (max-width: 768px) {
-    body {
-        background-attachment: scroll;
+    .banner-frame:hover .banner-action span {
+        transform: none;
     }
 }
-
-

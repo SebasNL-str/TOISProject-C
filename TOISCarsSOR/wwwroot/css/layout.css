@@ -1,23 +1,56 @@
 :root {
-    --gd-background: #0f1117;
-    --gd-surface: rgba(10, 15, 30, 0.75);
-    --gd-border: rgba(255, 255, 255, 0.10);
+    /* Background & surfaces */
 
-    --gd-text: #f8f9fa;
-    --gd-text-muted: #9299a8;
+    --gd-background: #100c08;
 
-    --gd-accent: #0d6efd;
-    --gd-accent-hover: #0b5ed7;
+    --gd-surface: rgba(24, 17, 9, 0.72);
+    --gd-surface-hover: rgba(35, 23, 10, 0.82);
+
+    /* Border & glass reflections */
+
+    --gd-border: rgba(251, 191, 36, 0.20);
+    --gd-border-strong: rgba(251, 191, 36, 0.42);
+
+    --gd-glass-highlight: rgba(255, 237, 190, 0.08);
+
+    --gd-text: #fffaf0;
+    --gd-text-muted: #d6c6ae;
+
+    --gd-accent: #fbbf24;
+    --gd-accent-hover: #f59e0b;
+
+    --gd-accent-light: #fde68a;
+    --gd-accent-orange: #f97316;
+    --gd-accent-deep: #c2410c;
+
+    /* Golden glow */
+
+    --gd-glow:
+        0 0 12px rgba(251, 191, 36, 0.09),
+        0 0 26px rgba(249, 115, 22, 0.04);
+
+    --gd-glow-hover:
+        0 0 14px rgba(251, 191, 36, 0.20),
+        0 0 30px rgba(249, 115, 22, 0.10);
 
     /* Footer */
-    --footer-background: rgba(10, 15, 30, 0.40);
-    --footer-border: rgba(255, 255, 255, 0.12);
-    --footer-text: #f1f5f9;
-    --footer-muted: rgba(241, 245, 249, 0.65);
+
+    --footer-background: rgba(17, 12, 7, 0.48);
+
+    --footer-border: rgba(251, 191, 36, 0.26);
+
+    --footer-text: #fffaf0;
+    --footer-muted: rgba(255, 237, 213, 0.66);
 }
+
+
+/* =========================================================
+   2. DOCUMENTO
+   ========================================================= */
 
 html {
     min-height: 100%;
+
     scroll-behavior: smooth;
 }
 
@@ -29,28 +62,47 @@ body.site-body {
     margin: 0;
 
     background-color: var(--gd-background);
+
     color: var(--footer-text);
 
     font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+
+/* =========================================================
+   3. CONTENIDO PRINCIPAL
+   Mantiene el footer al final de la página
+   ========================================================= */
 
 .site-main {
     flex: 1 0 auto;
+
     width: 100%;
     min-width: 0;
 }
 
+
+/* =========================================================
+   4. FOOTER — GLASSMORPHISM DORADO
+   Cristal semitransparente y borde cálido
+   ========================================================= */
+
 .site-footer {
     position: relative;
+    isolation: isolate;
     z-index: 2;
 
     width: 100%;
+
     flex: 0 0 auto;
     margin-top: auto;
 
@@ -58,14 +110,56 @@ body.site-body {
 
     background: var(--footer-background);
 
-    -webkit-backdrop-filter: blur(16px) saturate(150%);
-    backdrop-filter: blur(16px) saturate(150%);
+    /*
+       Desenfoque del contenido situado detrás.
+       El color mantiene la transparencia del cristal.
+    */
+
+    -webkit-backdrop-filter: blur(16px) saturate(145%);
+    backdrop-filter: blur(16px) saturate(145%);
 
     border-top: 1px solid var(--footer-border);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 -4px 20px rgba(0, 0, 0, 0.16),
+        0 -1px 12px rgba(251, 191, 36, 0.045),
+        inset 0 1px 0 rgba(255, 237, 190, 0.045);
 
     color: var(--footer-text);
 }
+
+/*
+   Línea de luz superior.
+   Refuerza el efecto de cristal sin crear un borde grueso.
+*/
+
+.site-footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(253, 230, 138, 0.42) 20%,
+        rgba(251, 191, 36, 0.82) 50%,
+        rgba(249, 115, 22, 0.42) 80%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   5. CONTENIDO DEL FOOTER
+   ========================================================= */
 
 .footer-content {
     display: flex;
@@ -77,6 +171,11 @@ body.site-body {
     padding-bottom: 0.75rem;
 }
 
+
+/* =========================================================
+   6. MARCA
+   ========================================================= */
+
 .footer-brand {
     display: flex;
     flex-direction: column;
@@ -85,11 +184,17 @@ body.site-body {
     gap: 0.25rem;
 }
 
+
+/* =========================================================
+   7. ENLACE DEL LOGOTIPO
+   ========================================================= */
+
 .footer-logo {
     display: inline-flex;
     align-items: center;
 
     gap: 0.65rem;
+
     width: fit-content;
 
     color: var(--footer-text);
@@ -99,13 +204,18 @@ body.site-body {
     font-weight: 600;
 
     transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
+        color 0.2s ease,
+        opacity 0.2s ease;
 }
 
 .footer-logo:hover {
-    color: var(--gd-accent);
+    color: var(--gd-accent-light);
 }
+
+
+/* =========================================================
+   8. IMAGEN DEL LOGOTIPO
+   ========================================================= */
 
 .site-logo-image3 {
     display: block;
@@ -120,13 +230,24 @@ body.site-body {
     transform-origin: left center;
 
     transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(251, 191, 36, 0.08)
+        );
 }
 
 .footer-logo:hover .site-logo-image3 {
-    opacity: 0.9;
+    opacity: 0.92;
 }
+
+
+/* =========================================================
+   9. LOGOTIPOS ALTERNATIVOS Y PLACEHOLDERS
+   Se conservan las dimensiones y la estructura original
+   ========================================================= */
 
 .footer-logo-placeholder,
 .footer-logo-image {
@@ -134,14 +255,17 @@ body.site-body {
 
     width: 30px;
     height: 30px;
+
     flex-shrink: 0;
 
     padding: 0;
     margin: 0;
 
     background: transparent;
+
     border: none;
     border-radius: 0;
+
     box-shadow: none;
 }
 
@@ -151,12 +275,18 @@ body.site-body {
     justify-content: center;
 
     color: var(--footer-muted);
+
     font-size: 1.25rem;
 }
 
 .footer-logo-image {
     object-fit: contain;
 }
+
+
+/* =========================================================
+   10. DESCRIPCIÓN DEL FOOTER
+   ========================================================= */
 
 .footer-description {
     max-width: 300px;
@@ -168,6 +298,11 @@ body.site-body {
     font-size: 0.75rem;
     line-height: 1.5;
 }
+
+
+/* =========================================================
+   11. ENLACES DEL FOOTER
+   ========================================================= */
 
 .footer-links {
     display: flex;
@@ -188,8 +323,10 @@ body.site-body {
     padding: 0.3rem 0;
 
     background: transparent;
+
     border: none;
     border-radius: 0;
+
     box-shadow: none;
 
     color: var(--footer-muted);
@@ -199,9 +336,14 @@ body.site-body {
     line-height: 1.5;
 
     transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
+        color 0.2s ease,
+        opacity 0.2s ease;
 }
+
+
+/* =========================================================
+   12. ICONOS DE LOS ENLACES
+   ========================================================= */
 
 .footer-links a i {
     display: inline-block;
@@ -210,24 +352,67 @@ body.site-body {
     margin: 0;
 
     background: transparent;
+
     border: none;
     border-radius: 0;
-    box-shadow: none;
 
-    font-size: 1.05rem;
-    line-height: 1;
-}
-
-.footer-links a:hover {
-    background: transparent;
-    border: none;
     box-shadow: none;
 
     color: var(--gd-accent);
+
+    font-size: 1.05rem;
+    line-height: 1;
+
+    transition:
+        color 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* =========================================================
+   13. INTERACCIÓN DE LOS ENLACES
+   Sin cards ni botones con fondos genéricos
+   ========================================================= */
+
+.footer-links a:hover {
+    background: transparent;
+
+    border: none;
+    box-shadow: none;
+
+    color: var(--gd-accent-light);
     opacity: 1;
 
     transform: none;
 }
+
+.footer-links a:hover i {
+    color: var(--gd-accent-light);
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(251, 191, 36, 0.32)
+        );
+}
+
+
+/* =========================================================
+   14. FOCO VISIBLE
+   Accesibilidad por teclado
+   ========================================================= */
+
+.footer-logo:focus-visible,
+.footer-links a:focus-visible {
+    outline: 2px solid var(--gd-accent-light);
+    outline-offset: 5px;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   15. PIE INFERIOR DEL FOOTER
+   ========================================================= */
 
 .footer-bottom {
     display: flex;
@@ -239,19 +424,30 @@ body.site-body {
 
     padding-top: 0.65rem;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 1px solid rgba(251, 191, 36, 0.13);
 
-    color: rgba(241, 245, 249, 0.55);
+    color: rgba(255, 237, 213, 0.48);
 
     font-size: 0.68rem;
     line-height: 1.5;
 }
 
+
+/* =========================================================
+   16. AVISO / DISCLAIMER
+   ========================================================= */
+
 .footer-disclaimer {
     text-align: right;
 }
 
+
+/* =========================================================
+   17. TABLETS
+   ========================================================= */
+
 @media (max-width: 768px) {
+
     .footer-content {
         gap: 1rem;
     }
@@ -265,7 +461,13 @@ body.site-body {
     }
 }
 
+
+/* =========================================================
+   18. MÓVILES
+   ========================================================= */
+
 @media (max-width: 576px) {
+
     .site-footer {
         padding: 0.9rem 0 0.7rem;
 
@@ -292,6 +494,7 @@ body.site-body {
 
     .footer-description {
         max-width: 100%;
+
         font-size: 0.72rem;
     }
 
@@ -330,7 +533,13 @@ body.site-body {
     }
 }
 
+
+/* =========================================================
+   19. MÓVILES PEQUEÑOS
+   ========================================================= */
+
 @media (max-width: 360px) {
+
     .footer-content {
         gap: 0.7rem;
     }
@@ -348,14 +557,22 @@ body.site-body {
     }
 }
 
+
+/* =========================================================
+   20. MOVIMIENTO REDUCIDO
+   Preferencia de accesibilidad del sistema
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
+
     html {
         scroll-behavior: auto;
     }
 
     .footer-logo,
     .footer-links a,
+    .footer-links a i,
     .site-logo-image3 {
-        transition: none;
+        transition: none !important;
     }
 }
