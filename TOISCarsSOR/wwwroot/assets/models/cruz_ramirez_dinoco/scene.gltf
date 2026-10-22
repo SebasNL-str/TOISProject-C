@@ -1,0 +1,853 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 9945,
+      "max": [
+        1.0325119495391846,
+        2.223871946334839,
+        1.3411321640014648
+      ],
+      "min": [
+        -1.0325119495391846,
+        -2.2218821048736572,
+        0.06574796885251999
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 119340,
+      "componentType": 5126,
+      "count": 9945,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 9945,
+      "max": [
+        0.99658203125,
+        0.9966468811035156
+      ],
+      "min": [
+        0.0002493858337402344,
+        0.00244140625
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 42942,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 238680,
+      "componentType": 5126,
+      "count": 32,
+      "max": [
+        1.0414201021194458,
+        1.087949514389038,
+        -1.7647747993469238
+      ],
+      "min": [
+        -1.0414201021194458,
+        0.9858751893043518,
+        -2.19411301612854
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 239064,
+      "componentType": 5126,
+      "count": 32,
+      "max": [
+        0.7871934771537781,
+        0.9858176112174988,
+        0.09426721930503845
+      ],
+      "min": [
+        -0.7871934771537781,
+        -0.7512940764427185,
+        -0.9197460412979126
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 79560,
+      "componentType": 5126,
+      "count": 32,
+      "max": [
+        -0.010772705078125,
+        0.978607177734375
+      ],
+      "min": [
+        -0.99072265625,
+        0.577880859375
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 171768,
+      "componentType": 5125,
+      "count": 108,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 239448,
+      "componentType": 5126,
+      "count": 356,
+      "max": [
+        0.9383732676506042,
+        1.9953383207321167,
+        1.234463095664978
+      ],
+      "min": [
+        -0.9403166174888611,
+        -2.062178373336792,
+        0.7124383449554443
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 243720,
+      "componentType": 5126,
+      "count": 356,
+      "max": [
+        0.9883934855461121,
+        0.9296087026596069,
+        0.9942131638526917
+      ],
+      "min": [
+        -0.9883934259414673,
+        -0.7515460252761841,
+        -0.9936058521270752
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 79816,
+      "componentType": 5126,
+      "count": 356,
+      "max": [
+        2.98974609375,
+        1.683593988418579
+      ],
+      "min": [
+        0.017578000202775,
+        -0.03759801387786865
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 172200,
+      "componentType": 5125,
+      "count": 1536,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 247992,
+      "componentType": 5126,
+      "count": 63,
+      "max": [
+        0.8452248573303223,
+        1.415872573852539,
+        0.879145085811615
+      ],
+      "min": [
+        -0.8452248573303223,
+        1.0134004354476929,
+        0.3310248851776123
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 248748,
+      "componentType": 5126,
+      "count": 63,
+      "max": [
+        0.41522398591041565,
+        0.8415231108665466,
+        0.6700722575187683
+      ],
+      "min": [
+        -0.41522398591041565,
+        0.7422959208488464,
+        0.46666210889816284
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 82664,
+      "componentType": 5126,
+      "count": 63,
+      "max": [
+        0.9912109375,
+        0.976409912109375
+      ],
+      "min": [
+        0.011322021484375,
+        0.01123046875
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 178344,
+      "componentType": 5125,
+      "count": 264,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 249504,
+      "componentType": 5126,
+      "count": 74,
+      "max": [
+        0.799691915512085,
+        -1.8010480403900146,
+        0.8397477269172668
+      ],
+      "min": [
+        -0.799691915512085,
+        -1.827491044998169,
+        0.7681806683540344
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 250392,
+      "componentType": 5126,
+      "count": 74,
+      "max": [
+        0.8439041376113892,
+        -0.47177332639694214,
+        0.616419792175293
+      ],
+      "min": [
+        -0.843904435634613,
+        -0.998534619808197,
+        -0.8494300842285156
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 83168,
+      "componentType": 5126,
+      "count": 74,
+      "max": [
+        0.9840589761734009,
+        0.9804689884185791
+      ],
+      "min": [
+        0.024204999208450317,
+        0.014702022075653076
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 179400,
+      "componentType": 5125,
+      "count": 360,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 251280,
+      "componentType": 5126,
+      "count": 4848,
+      "max": [
+        0.015960032120347023,
+        0.011566270142793655,
+        0.023601282387971878
+      ],
+      "min": [
+        -0.015647267922759056,
+        0.0007569938898086548,
+        -0.023934707045555115
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 309456,
+      "componentType": 5126,
+      "count": 4848,
+      "max": [
+        1.0,
+        0.9999760389328003,
+        0.9999758005142212
+      ],
+      "min": [
+        -1.0,
+        -0.9999759197235107,
+        -0.9999759197235107
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 83760,
+      "componentType": 5126,
+      "count": 4848,
+      "max": [
+        0.9975589513778687,
+        0.9989997744560242
+      ],
+      "min": [
+        0.0017755916342139244,
+        0.004064798355102539
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 180840,
+      "componentType": 5125,
+      "count": 14976,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "DinseyPixarCarsModels (https://sketchfab.com/DinseyPixarCarsModels)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/cruz-ramirez-dinoco-b993e1006e6f462faf80fa33c8d83241",
+      "title": "Cruz Ramirez (Dinoco)"
+    },
+    "generator": "Sketchfab-17.3.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 240744,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 122544,
+      "byteOffset": 240744,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 367632,
+      "byteOffset": 363288,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 730920,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Material.044_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Material.044_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Material.045_baseColor.png"
+    },
+    {
+      "uri": "textures/Material.047_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Material.047_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Material.048_baseColor.png"
+    },
+    {
+      "uri": "textures/Material.050_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Material.050_metallicRoughness.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Material.044",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.1,
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.045",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8211145618000169
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Material.046",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.10506,
+          0.10506,
+          0.10506,
+          0.4
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.0
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.047",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicFactor": 0.1,
+        "metallicRoughnessTexture": {
+          "index": 4
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.048",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 5
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8211145618000169
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.050",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 6
+        },
+        "metallicFactor": 0.3,
+        "metallicRoughnessTexture": {
+          "index": 7
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Cruz Body_Material.044_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Cruz Eye_Material.045_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Cruz Glass_Material.046_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 9,
+            "POSITION": 8,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Cruz Taillights_Material.047_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 13,
+            "POSITION": 12,
+            "TEXCOORD_0": 14
+          },
+          "indices": 15,
+          "material": 3,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Cruz_Headlights_Material.048_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 17,
+            "POSITION": 16,
+            "TEXCOORD_0": 18
+          },
+          "indices": 19,
+          "material": 4,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Cruz_Wheels_Material.050_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 21,
+            "POSITION": 20,
+            "TEXCOORD_0": 22
+          },
+          "indices": 23,
+          "material": 5,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "86dcc188c56540ffa670782f746f86f0.fbx"
+    },
+    {
+      "children": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.8212996916465727e-05,
+        -99.99999999999602,
+        0.0,
+        0.0,
+        99.99999999999602,
+        -2.8212996916465727e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Cruz Body"
+    },
+    {
+      "mesh": 0,
+      "name": "Cruz Body_Material.044_0"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        90.69896697998047,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        90.17647552490209,
+        -6.80813528626089e-06,
+        0.0,
+        0.0,
+        6.80813528626089e-06,
+        90.17647552490209,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Cruz Eye"
+    },
+    {
+      "mesh": 1,
+      "name": "Cruz Eye_Material.045_0"
+    },
+    {
+      "children": [
+        8
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.8212996916465727e-05,
+        -99.99999999999602,
+        0.0,
+        0.0,
+        99.99999999999602,
+        -2.8212996916465727e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Cruz Glass"
+    },
+    {
+      "mesh": 2,
+      "name": "Cruz Glass_Material.046_0"
+    },
+    {
+      "children": [
+        10
+      ],
+      "matrix": [
+        90.69896697998047,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        90.17647552490209,
+        -6.80813528626089e-06,
+        0.0,
+        0.0,
+        6.80813528626089e-06,
+        90.17647552490209,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Cruz Taillights"
+    },
+    {
+      "mesh": 3,
+      "name": "Cruz Taillights_Material.047_0"
+    },
+    {
+      "children": [
+        12
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.8212996916465727e-05,
+        -99.99999999999602,
+        0.0,
+        0.0,
+        99.99999999999602,
+        -2.8212996916465727e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Cruz_Headlights"
+    },
+    {
+      "mesh": 4,
+      "name": "Cruz_Headlights_Material.048_0"
+    },
+    {
+      "children": [
+        14
+      ],
+      "matrix": [
+        6563.07275390625,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        6964.03662109373,
+        -0.0005257701492185176,
+        0.0,
+        0.0,
+        0.0005257701492185176,
+        6964.03662109373,
+        0.0,
+        0.0,
+        -3.9999313354492188,
+        9.67737102508545,
+        1.0
+      ],
+      "name": "Cruz_Wheels"
+    },
+    {
+      "mesh": 5,
+      "name": "Cruz_Wheels_Material.050_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    },
+    {
+      "sampler": 0,
+      "source": 6
+    },
+    {
+      "sampler": 0,
+      "source": 7
+    }
+  ]
+}

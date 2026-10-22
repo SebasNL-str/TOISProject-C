@@ -1,5 +1,14 @@
-/* Requisitos e integración de Lenis Smooth Scroll */
-html.lenis, html.lenis body {
+/* ==========================================
+ *  VARIABLES Y CONFIGURACIÓN GLOBAL
+ *  ========================================== */
+:root {
+    --brand-yellow: #FFD100;
+    --brand-yellow-rgb: 255, 209, 0;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.lenis,
+html.lenis body {
     height: auto;
 }
 
@@ -19,6 +28,17 @@ html.lenis, html.lenis body {
     pointer-events: none;
 }
 
+body {
+    overflow-x: hidden;
+    background-color: #070D14;
+}
+
+/* Control limpio de secciones */
+section {
+    position: relative;
+    z-index: 1;
+}
+
 /* Efecto de borde para la tipografía gigante */
 .hero-title {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
@@ -30,43 +50,33 @@ html.lenis, html.lenis body {
     will-change: transform, opacity;
 }
 
-/* Control limpio de secciones (sin romper el contexto de apilamiento del PIN) */
-section {
-    position: relative;
-    z-index: 1;
-}
-
-/* Evita desbordamiento al encoger/escalar secciones */
-body {
-    overflow-x: hidden;
-    background-color: #0d0d0d;
-}
-
-/* --- Estilos Interactivos para Tarjetas y Contenedores --- */
+/* ==========================================
+ *  ESTILOS INTERACTIVOS (TARJETAS Y CONTENEDORES)
+ *  ========================================== */
 .card,
 .stat-card,
 .blueprint-card,
 .container-box,
 .timeline-item {
     position: relative;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    transition: transform 0.35s var(--ease-out-expo),
     box-shadow 0.35s ease,
     border-color 0.35s ease,
     background-color 0.35s ease;
     will-change: transform;
 }
 
-/* --- Efecto Seleccionado / Spotlight (Estilo Sala de Trofeos) --- */
+/* Efecto Spotlight / Hover */
 .card:hover,
 .stat-card:hover,
 .blueprint-card:hover,
 .container-box:hover,
 .timeline-item:hover {
     transform: translateY(-6px) scale(1.02);
-    border-color: rgba(234, 179, 8, 0.7) !important; /* Amarillo Marca */
+    border-color: rgba(234, 179, 8, 0.7) !important;
     box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.8),
-    0 0 25px rgba(234, 179, 8, 0.25),           /* Resplandor Exterior */
-    inset 0 0 15px rgba(234, 179, 8, 0.08);     /* Luz Interior */
+    0 0 25px rgba(234, 179, 8, 0.25),
+    inset 0 0 15px rgba(234, 179, 8, 0.08);
 }
 
 /* Indicador de Selección Activa */
@@ -80,46 +90,46 @@ body {
     0 0 30px rgba(234, 179, 8, 0.4);
 }
 
-/* --- Botón HUD del Motor (Círculo a Cápsula Expandible) --- */
+/* ==========================================
+ *  BOTÓN HUD DEL MOTOR (EXPANDIBLE)
+ *  ========================================== */
 #btn-engine-rev {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 3.25rem; /* 52px - Estado Círculo */
-    height: 3.25rem;
-    padding: 0 0.85rem;
-    border-radius: 9999px;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                background-color 0.3s ease,
-                box-shadow 0.3s ease;
+display: inline-flex;
+align-items: center;
+justify-content: flex-start;
+width: 3.25rem; /* 52px - Estado Círculo */
+height: 3.25rem;
+padding: 0 0.85rem;
+border-radius: 9999px;
+overflow: hidden;
+white-space: nowrap;
+cursor: pointer;
+transition: width 0.4s var(--ease-out-expo),
+background-color 0.3s ease,
+box-shadow 0.3s ease;
 }
 
-/* Estado Expandido al hacer Hover */
 #btn-engine-rev:hover {
-    width: 10.5rem; /* Se expande mostrando el texto completo */
-    box-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
+width: 10.5rem;
+box-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
 }
 
-/* Ocultar / Mostrar Texto dentro del Botón HUD */
 #btn-engine-rev .engine-text {
-    opacity: 0;
-    max-width: 0;
-    margin-left: 0;
-    overflow: hidden;
-    transition: opacity 0.25s ease 0.1s,
-                max-width 0.35s ease,
-                margin-left 0.25s ease;
-    font-weight: 600;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+opacity: 0;
+max-width: 0;
+margin-left: 0;
+overflow: hidden;
+transition: opacity 0.25s ease 0.1s,
+max-width 0.35s ease,
+margin-left 0.25s ease;
+font-weight: 600;
+font-size: 0.875rem;
+text-transform: uppercase;
+letter-spacing: 0.05em;
 }
 
 #btn-engine-rev:hover .engine-text {
-    opacity: 1;
-    max-width: 100px;
-    margin-left: 0.6rem;
+opacity: 1;
+max-width: 100px;
+margin-left: 0.6rem;
 }
