@@ -1,48 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ----------------------------------------------------
+    // 1. MOTOR AUDIO & EASTER EGG (TECLA 'K')
+    // ----------------------------------------------------
+    const engineAudio = new Audio('assets/audio/CREngineF.mp3');
+    engineAudio.volume = 0.8;
+    const btnRev = document.getElementById('btn-engine-rev');
 
-    // 1. Instancia y configuración del archivo de audio real
-    const engineAudio = new Audio('assets/audio/CREngineF.mp3'); // Asegúrate de colocar la ruta correcta de tu archivo
-    engineAudio.volume = 0.8; // Control de volumen (0.0 a 1.0)
+    function playEngineSound() {
+        try {
+            engineAudio.currentTime = 0;
+            const playPromise = engineAudio.play();
 
-const btnRev = document.getElementById('btn-engine-rev');
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.warn('Reproducción automática bloqueada o archivo no encontrado:', error);
+                });
+            }
 
-function playEngineSound() {
-    try {
-        // Reinicia la reproducción al segundo 0 para permitir aceleraciones rápidas consecutivas
-        engineAudio.currentTime = 0;
-
-        const playPromise = engineAudio.play();
-
-        if (playPromise !== undefined) {
-            playPromise.catch(error => {
-                console.warn('La reproducción automática fue bloqueada o el archivo de audio no existe:', error);
-            });
+            if (btnRev) {
+                btnRev.classList.add('scale-110', 'bg-brand-yellow');
+                setTimeout(() => btnRev.classList.remove('scale-110', 'bg-brand-yellow'), 300);
+            }
+        } catch (e) {
+            console.error('Error al reproducir audio:', e);
         }
-
-        // Efecto visual en el botón HUD al acelerar
-        if (btnRev) {
-            btnRev.classList.add('scale-110', 'bg-brand-yellow');
-            setTimeout(() => btnRev.classList.remove('scale-110', 'bg-brand-yellow'), 300);
-        }
-    } catch (e) {
-        console.error('Error al intentar reproducir el archivo de audio:', e);
     }
-}
 
-if (btnRev) {
-    btnRev.addEventListener('click', playEngineSound);
-}
-    // 2. Easter Egg de Teclado (Tecla 'K' para acelerar)
+    if (btnRev) {
+        btnRev.addEventListener('click', playEngineSound);
+    }
+
     window.addEventListener('keydown', (e) => {
-        // Evitar que active el sonido si el usuario está escribiendo en un input o textarea
         if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
-
         if (e.key === 'k' || e.key === 'K') {
             playEngineSound();
         }
     });
 
-    // 3. Botón "Volver al Inicio" con la instancia global de Lenis Smooth Scroll
+    // ----------------------------------------------------
+    // 2. BOTÓN "VOLVER AL INICIO" (LENIS / SMOOTH SCROLL)
+    // ----------------------------------------------------
     const backToTopBtn = document.getElementById('back-to-top');
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', () => {
@@ -54,6 +51,9 @@ if (btnRev) {
         });
     }
 
+    // ----------------------------------------------------
+    // 3. LÍNEA DE TIEMPO (TIMELINE STICKY: SCROLL + HOVER)
+    // ----------------------------------------------------
     const timelineItems = document.querySelectorAll('.timeline-item');
     const timelineImages = document.querySelectorAll('.timeline-img');
     const phaseLabel = document.getElementById('timeline-phase-label');
@@ -66,7 +66,10 @@ if (btnRev) {
     ];
 
     function setActiveChapter(activeIndex) {
-        // Alternar imágenes activas con suave opacidad y escala
+        // Validar que el índice sea válido
+        if (activeIndex < 0 || activeIndex >= timelineImages.length) return;
+
+        // Alternar imágenes activas con opacidad y escala fluida
         timelineImages.forEach((img, i) => {
             if (i === activeIndex) {
                 img.classList.remove('opacity-0', 'scale-95');
@@ -83,20 +86,23 @@ if (btnRev) {
         }
     }
 
-    // 1. Cambio por Scroll (GSAP ScrollTrigger)
+    // Sincronización precisa mediante ScrollTrigger (onToggle)
     if (typeof ScrollTrigger !== 'undefined' && timelineItems.length > 0) {
         timelineItems.forEach((item, index) => {
             ScrollTrigger.create({
                 trigger: item,
-                start: 'top center+=50',
-                end: 'bottom center-=50',
-                onEnter: () => setActiveChapter(index),
-                                 onEnterBack: () => setActiveChapter(index),
+                start: 'top center+=100',
+                end: 'bottom center-=100',
+                onToggle: (self) => {
+                    if (self.isActive) {
+                        setActiveChapter(index);
+                    }
+                }
             });
         });
     }
 
-    // 2. Cambio por interacción con el mouse (Hover)
+    // Interacción instantánea por Hover del mouse
     timelineItems.forEach((item, index) => {
         item.addEventListener('mouseenter', () => {
             setActiveChapter(index);

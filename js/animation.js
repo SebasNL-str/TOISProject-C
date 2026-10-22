@@ -24,7 +24,7 @@ gsap.ticker.add((time) => {
 });
 gsap.ticker.lagSmoothing(0);
 
-// Executar cuando el DOM esté listo
+// Ejecutar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
 
     // A) Revelado suave para elementos individuales
@@ -70,10 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     });
 
-    // C) MACRO-TRANSICIONES FLUIDAS ENTRE SECCIONES (Sin Blur/Scale que rompa el PIN)
+    // C) MACRO-TRANSICIONES FLUIDAS ENTRE SECCIONES
     const sections = gsap.utils.toArray('section');
     sections.forEach((section, i) => {
-        // Atenuación suave de opacidad al salir (evitamos scale/blur para no romper GPU layers)
         if (i < sections.length - 1) {
             gsap.to(section, {
                 opacity: 0.25,
@@ -87,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Encabezados h2: Entrada cinematográfica progresiva
         const header = section.querySelector('h2');
         if (header) {
             gsap.fromTo(
@@ -109,28 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // D) FASE 2: Línea de Tiempo
-    const timelineItems = gsap.utils.toArray('.timeline-item');
-    timelineItems.forEach((item) => {
-        gsap.fromTo(
-            item,
-            { opacity: 0, x: 30 },
-            {
-                opacity: 1,
-                x: 0,
-                duration: 0.8,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 85%',
-                    toggleActions: 'play none none reverse',
-                    preventOverlaps: true,
-                },
-            }
-        );
-    });
-
-    // E) FASE 3: Scroll Horizontal de Trofeos (Pin fluido)
+    // D) FASE 3: Scroll Horizontal de Trofeos (Pin fluido)
     const trophyTrack = document.querySelector('.trophy-track');
     if (trophyTrack) {
         const getScrollAmount = () => -(trophyTrack.scrollWidth - window.innerWidth + 96);
@@ -143,39 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: 'top top',
                 end: () => `+=${trophyTrack.scrollWidth}`,
                 pin: true,
-                scrub: 0.8, // Un toque de inercia para evitar tirones
+                scrub: 0.8,
                 invalidateOnRefresh: true,
-                anticipatePin: 1, // Previene parpadeos antes del pin
+                anticipatePin: 1,
             },
         });
     }
 
-    // F) FASE 4: Blueprint Grid
-    const blueprintItems = document.querySelectorAll('#media-blueprint .grid > div');
-    if (blueprintItems.length > 0) {
-        gsap.fromTo(
-            blueprintItems,
-            { opacity: 0, y: 40 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: '#media-blueprint',
-                    start: 'top 75%',
-                    toggleActions: 'play none none reverse',
-                },
-            }
-        );
-    }
-
-    // G) Animación bidireccional continua para Tarjetas y Contenedores
+    // E) ANIMACIÓN UNIFICADA DE COMPONENTES Y TARJETAS
+    // Agrupa .card, .stat-card, .blueprint-card, .container-box y .timeline-item sin solapamientos
     const interactiveCards = gsap.utils.toArray('.card, .stat-card, .blueprint-card, .container-box, .timeline-item');
 
     if (interactiveCards.length > 0) {
-        // Agrupar por elemento padre para animación escalonada (stagger)
         const cardGroups = new Set(interactiveCards.map(card => card.parentElement));
 
         cardGroups.forEach(group => {
@@ -185,21 +141,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 cardsInGroup,
                 {
                     opacity: 0,
-                    y: 40,
-                    scale: 0.94
+                    y: 35,
+                    scale: 0.96
                 },
                 {
                     opacity: 1,
                     y: 0,
                     scale: 1,
                     duration: 0.75,
-                    stagger: 0.12,
+                    stagger: 0.1,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: group,
                         start: 'top 85%',
-                        end: 'bottom 15%',
-                        toggleActions: 'play reverse play reverse', // Re-anima siempre al subir y bajar
+                        toggleActions: 'play none none reverse',
                         preventOverlaps: true,
                     },
                 }
