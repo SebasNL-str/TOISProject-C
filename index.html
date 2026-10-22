@@ -89,51 +89,67 @@
       </div>
     </div>
 
-   <!-- Composición Tipográfica + Visor 3D Interactivo -->
-    <div class="relative my-auto py-12 z-10 flex flex-col justify-center items-center select-none w-full">
-      <h1 class="hero-title text-[15vw] leading-[0.8] font-display font-black tracking-tighter uppercase text-center text-neutral-800/80">
-        CRUZ
-      </h1>
-      <h2 class="hero-subtitle text-[12vw] leading-[0.8] font-editorial font-bold tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-neutral-200 to-brand-red -mt-[3vw]">
-        RAMÍREZ
-      </h2>
+   <!-- Composición Tipográfica + Visor de Modelos 3D Independientes -->
+<div class="relative my-auto py-12 z-10 flex flex-col justify-center items-center select-none w-full">
+  <h1 class="hero-title text-[15vw] leading-[0.8] font-display font-black tracking-tighter uppercase text-center text-neutral-800/80">
+    CRUZ
+  </h1>
+  <h2 class="hero-subtitle text-[12vw] leading-[0.8] font-editorial font-bold tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-neutral-200 to-brand-red -mt-[3vw]">
+    RAMÍREZ
+  </h2>
 
-      <!-- Contenedor del Modelo 3D Flotante -->
-      <div class="hero-image-wrapper absolute inset-0 m-auto w-[90%] md:w-[75%] max-w-[950px] h-[320px] md:h-[480px] flex items-center justify-center pointer-events-auto z-10">
-        <div class="relative w-full h-full flex flex-col items-center justify-center">
+  <!-- Contenedor del Modelo 3D Flotante -->
+  <div class="hero-image-wrapper absolute inset-0 m-auto w-[90%] md:w-[75%] max-w-[950px] h-[320px] md:h-[480px] flex items-center justify-center pointer-events-auto z-10">
+    <div class="relative w-full h-full flex flex-col items-center justify-center">
 
-          <!-- Efecto Glow de fondo dinámico -->
-          <div id="hero-3d-glow" class="absolute inset-0 bg-gradient-to-t from-brand-yellow/20 via-brand-red/10 to-transparent rounded-full blur-3xl opacity-70 pointer-events-none transition-all duration-700"></div>
+      <!-- Efecto Glow de fondo dinámico -->
+      <div id="hero-3d-glow" class="absolute inset-0 bg-gradient-to-t from-brand-yellow/20 via-brand-red/10 to-transparent rounded-full blur-3xl opacity-70 pointer-events-none transition-all duration-700"></div>
 
-          <!-- Visor 3D de Google -->
-          <model-viewer
-            id="cruz-3d-model"
-            src="assets/models/cruz-dinoco.glb"
-            alt="Modelo 3D de Cruz Ramírez"
-            auto-rotate
-            camera-controls
-            touch-action="pan-y"
-            shadow-intensity="1.5"
-            exposure="1"
-            camera-orbit="45deg 75deg 105%"
-            field-of-view="30deg"
-            class="w-full h-full cursor-grab active:cursor-grabbing z-10 bg-transparent"
-          >
-          </model-viewer>
+      <!-- Modelo 1: Dinoco #51 (Visible por defecto) -->
+      <model-viewer
+        id="model-dinoco"
+        src="assets/models/cruz_ramirez_dinoco/scene.gltf"
+        alt="Cruz Ramírez - Dinoco Livery"
+        auto-rotate
+        camera-controls
+        touch-action="pan-y"
+        shadow-intensity="1.5"
+        exposure="1"
+        camera-orbit="45deg 75deg 105%"
+        field-of-view="30deg"
+        class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing z-10 bg-transparent transition-opacity duration-500 opacity-100"
+      >
+      </model-viewer>
 
-          <!-- Selector HUD de Livrea (Rust-eze vs Dinoco) -->
-          <div class="absolute bottom-2 z-20 flex items-center gap-2 bg-neutral-950/90 border border-neutral-800 p-1.5 rounded-full backdrop-blur-md font-mono text-[11px]">
-            <button id="btn-livery-rusteze" class="px-3 py-1 rounded-full text-neutral-400 hover:text-white transition-all font-bold focus:outline-none">
-              [ RUST-EZE #06 ]
-            </button>
-            <button id="btn-livery-dinoco" class="px-3 py-1 rounded-full bg-brand-yellow text-black font-bold shadow-lg transition-all focus:outline-none">
-              [ DINOCO #51 ]
-            </button>
-          </div>
+      <!-- Modelo 2: Rust-eze #06 (Oculto inicialmente) -->
+      <model-viewer
+        id="model-rusteze"
+        src="assets/models/cruz_ramirez/scene.gltf"
+        alt="Cruz Ramírez - Rust-eze Trainer"
+        auto-rotate
+        camera-controls
+        touch-action="pan-y"
+        shadow-intensity="1.5"
+        exposure="1"
+        camera-orbit="45deg 75deg 105%"
+        field-of-view="30deg"
+        class="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing z-10 bg-transparent transition-opacity duration-500 opacity-0 pointer-events-none"
+      >
+      </model-viewer>
 
-        </div>
+      <!-- Selector HUD de Livrea -->
+      <div class="absolute bottom-2 z-20 flex items-center gap-2 bg-neutral-950/90 border border-neutral-800 p-1.5 rounded-full backdrop-blur-md font-mono text-[11px]">
+        <button id="btn-livery-rusteze" class="px-3 py-1 rounded-full text-neutral-400 hover:text-white transition-all font-bold focus:outline-none">
+          [ RUST-EZE #06 ]
+        </button>
+        <button id="btn-livery-dinoco" class="px-3 py-1 rounded-full bg-brand-yellow text-black font-bold shadow-lg transition-all focus:outline-none">
+          [ DINOCO #51 ]
+        </button>
       </div>
+
     </div>
+  </div>
+</div>
 
   </section>
 

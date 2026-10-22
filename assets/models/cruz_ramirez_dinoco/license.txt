@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cruz Ramirez (Dinoco)
+* source:	https://sketchfab.com/3d-models/cruz-ramirez-dinoco-b993e1006e6f462faf80fa33c8d83241
+* author:	DinseyPixarCarsModels (https://sketchfab.com/DinseyPixarCarsModels)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cruz Ramirez (Dinoco)" (https://sketchfab.com/3d-models/cruz-ramirez-dinoco-b993e1006e6f462faf80fa33c8d83241) by DinseyPixarCarsModels (https://sketchfab.com/DinseyPixarCarsModels) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
