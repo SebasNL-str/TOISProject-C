@@ -53,4 +53,53 @@ if (btnRev) {
             }
         });
     }
+
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineImages = document.querySelectorAll('.timeline-img');
+    const phaseLabel = document.getElementById('timeline-phase-label');
+
+    const phasesText = [
+        "01 // RUST-EZE",
+        "02 // THUNDER HOLLOW",
+        "03 // FLORIDA 500",
+        "04 // DINOCO #51"
+    ];
+
+    function setActiveChapter(activeIndex) {
+        // Alternar imágenes activas con suave opacidad y escala
+        timelineImages.forEach((img, i) => {
+            if (i === activeIndex) {
+                img.classList.remove('opacity-0', 'scale-95');
+                img.classList.add('opacity-100', 'scale-100');
+            } else {
+                img.classList.remove('opacity-100', 'scale-100');
+                img.classList.add('opacity-0', 'scale-95');
+            }
+        });
+
+        // Actualizar etiqueta HUD
+        if (phaseLabel && phasesText[activeIndex]) {
+            phaseLabel.textContent = phasesText[activeIndex];
+        }
+    }
+
+    // 1. Cambio por Scroll (GSAP ScrollTrigger)
+    if (typeof ScrollTrigger !== 'undefined' && timelineItems.length > 0) {
+        timelineItems.forEach((item, index) => {
+            ScrollTrigger.create({
+                trigger: item,
+                start: 'top center+=50',
+                end: 'bottom center-=50',
+                onEnter: () => setActiveChapter(index),
+                                 onEnterBack: () => setActiveChapter(index),
+            });
+        });
+    }
+
+    // 2. Cambio por interacción con el mouse (Hover)
+    timelineItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', () => {
+            setActiveChapter(index);
+        });
+    });
 });
