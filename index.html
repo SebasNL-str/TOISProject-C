@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOISRamirez Archive // Editorial Showcase</title>
 
-  <!-- Tailwind CSS -->
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN Config -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
             brand: {
-              red: '#0080C6',      /* Azul Dinoco (Color principal de acento) */
+              red: '#0080C6',      /* Azul Dinoco (Acento principal) */
               yellow: '#FFD100',   /* Amarillo Cruz Ramírez */
               dark: '#070D14',     /* Azul Noche Profundo */
               accent: '#0F1A24',   /* Azul Marino Grafito */
@@ -30,12 +36,7 @@
     }
   </script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- Estilos Custom -->
+  <!-- Estilos Personalizados -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-brand-dark text-brand-cream overflow-x-hidden antialiased selection:bg-brand-yellow selection:text-black">
@@ -47,19 +48,19 @@
       <span>•</span>
       <span>ISSUE #051</span>
     </div>
-    <div class="text-sm font-editorial tracking-wider uppercase font-bold text-white">
+    <a href="#hero" class="text-sm font-editorial tracking-wider uppercase font-bold text-white hover:text-brand-yellow transition-colors">
       TOISRamirez Archive
-    </div>
+    </a>
     <div class="text-xs font-mono uppercase tracking-widest text-neutral-400 hidden sm:block">
       [ DINOCO #51 ]
     </div>
   </header>
 
-  <!-- FASE 1: HERO SECTION - EDITORIAL MAGAZINE -->
+  <!-- FASE 1: HERO SECTION -->
   <section id="hero" class="relative min-h-screen w-full flex flex-col justify-between pt-28 pb-12 px-6 md:px-12 border-b border-neutral-800 overflow-hidden">
 
-    <!-- Grid Lines (Líneas de Guía de Maquetación) -->
-    <div class="absolute inset-0 pointer-events-none grid grid-cols-4 md:grid-cols-12 opacity-10">
+    <!-- Grid Lines (Guías de Maquetación) -->
+    <div class="absolute inset-0 pointer-events-none grid grid-cols-4 md:grid-cols-12 opacity-10" aria-hidden="true">
       <div class="border-r border-neutral-400 h-full"></div>
       <div class="border-r border-neutral-400 h-full hidden md:block"></div>
       <div class="border-r border-neutral-400 h-full"></div>
@@ -86,7 +87,7 @@
       </div>
     </div>
 
-    <!-- Composición Tipográfica + Image Placeholder -->
+    <!-- Composición Tipográfica + Render Placeholder -->
     <div class="relative my-auto py-12 z-0 flex flex-col justify-center items-center select-none">
       <h1 class="hero-title text-[15vw] leading-[0.8] font-display font-black tracking-tighter uppercase text-center text-neutral-800/80">
         CRUZ
@@ -95,7 +96,7 @@
         RAMÍREZ
       </h2>
 
-      <!-- Tarjeta / Placeholder Flotante del Auto -->
+      <!-- Tarjeta Flotante -->
       <div class="hero-image-wrapper absolute inset-0 m-auto w-[90%] md:w-[65%] max-w-[850px] h-[280px] md:h-[420px] flex items-center justify-center z-10 pointer-events-none">
         <div class="relative w-full h-full flex items-center justify-center">
           <div class="absolute inset-0 bg-gradient-to-t from-brand-red/30 via-brand-yellow/10 to-transparent rounded-full blur-3xl opacity-60"></div>
@@ -111,7 +112,7 @@
       </div>
     </div>
 
-    <!-- Footer de la Hero Section -->
+    <!-- Footer Hero -->
     <div class="hero-footer z-10 flex flex-col md:flex-row justify-between items-end gap-6 pt-6 border-t border-neutral-800/80">
       <div class="max-w-md">
         <p class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// INTRODUCCIÓN EDITORIAL</p>
@@ -134,7 +135,7 @@
 
   </section>
 
-  <!-- FASE 2: BIOGRAFÍA & LÍNEA DE TIEMPO EDITORIAL (HYBRID) -->
+  <!-- FASE 2: BIOGRAFÍA & LÍNEA DE TIEMPO EDITORIAL -->
   <section id="biografia" class="relative py-24 px-6 md:px-12 border-b border-neutral-800 bg-brand-dark overflow-hidden">
 
     <!-- Encabezado de Sección -->
@@ -153,57 +154,54 @@
     <!-- Layout Grid: Left Sticky + Right Timeline -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-      <!-- COLUMNA IZQUIERDA (STICKY & CENTRADO) -->
-<div class="lg:col-span-5 sticky top-28 self-start space-y-6">
+      <!-- COLUMNA IZQUIERDA (STICKY) -->
+      <div class="lg:col-span-5 sticky top-28 self-start space-y-6">
 
-  <!-- Card Fija con Contenido Centrado -->
-  <div class="sticky-card relative rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 backdrop-blur-md overflow-hidden flex flex-col items-center text-center">
-    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="sticky-card relative rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 backdrop-blur-md overflow-hidden flex flex-col items-center text-center">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 rounded-full blur-2xl pointer-events-none"></div>
 
-    <!-- Indicator Badge -->
-    <div class="w-full flex justify-between items-center mb-6 font-mono text-xs text-neutral-400">
-      <span class="inline-flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-brand-yellow animate-pulse"></span>
-        ARCHIVAL DATA
-      </span>
-      <span>CHASSIS #51</span>
-    </div>
+          <!-- Indicator Badge -->
+          <div class="w-full flex justify-between items-center mb-6 font-mono text-xs text-neutral-400">
+            <span class="inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-yellow animate-pulse"></span>
+              ARCHIVAL DATA
+            </span>
+            <span>CHASSIS #51</span>
+          </div>
 
-    <!-- Visual Centrado con Aspect Ratio Proporcional -->
-    <div class="relative w-full aspect-[4/3] max-w-md rounded-xl border border-neutral-800 bg-neutral-950 flex items-center justify-center overflow-hidden shadow-2xl group my-2">
-      <span class="text-8xl font-black text-white/5 font-display absolute -bottom-4 -right-4 select-none pointer-events-none z-0">51</span>
+          <!-- Visual Centrado con Aspect Ratio Proporcional -->
+          <div class="relative w-full aspect-[4/3] max-w-md rounded-xl border border-neutral-800 bg-neutral-950 flex items-center justify-center overflow-hidden shadow-2xl group my-2">
+            <span class="text-8xl font-black text-white/5 font-display absolute -bottom-4 -right-4 select-none pointer-events-none z-0">51</span>
 
-      <!-- Contenedor de Imágenes (Capas de Opacidad) -->
-      <div class="absolute inset-0 w-full h-full">
-        <img src="assets/images/CRE.jpg" alt="Capítulo 1: Rust-eze Center" class="timeline-img absolute inset-0 w-full h-full object-cover opacity-100 transition-all duration-500 scale-100" data-index="0" />
-        <img src="assets/images/COCHO.jpg" alt="Capítulo 2: Thunder Hollow" class="timeline-img absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-500 scale-100" data-index="1" />
-        <img src="assets/images/CRV.jpg" alt="Capítulo 3: Florida 500" class="timeline-img absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-500 scale-100" data-index="2" />
-        <img src="assets/images/CRD.webp" alt="Capítulo 4: Era Dinoco" class="timeline-img absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-500 scale-100" data-index="3" />
+            <!-- Contenedor de Imágenes (Capas de Opacidad) -->
+            <div class="absolute inset-0 w-full h-full">
+              <img src="assets/images/CRE.jpg" alt="Capítulo 1: Rust-eze Center" class="timeline-img absolute inset-0 w-full h-full object-cover opacity-100 transition-all duration-500 scale-100" data-index="0" />
+              <img src="assets/images/COCHO.jpg" alt="Capítulo 2: Thunder Hollow" class="timeline-img absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-500 scale-100" data-index="1" loading="lazy" />
+              <img src="assets/images/CRV.jpg" alt="Capítulo 3: Florida 500" class="timeline-img absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-500 scale-100" data-index="2" loading="lazy" />
+              <img src="assets/images/CRD.webp" alt="Capítulo 4: Era Dinoco" class="timeline-img absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-500 scale-100" data-index="3" loading="lazy" />
+            </div>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent pointer-events-none z-10"></div>
+
+            <div class="absolute bottom-3 left-3 z-20 font-mono text-[10px] text-brand-yellow bg-neutral-950/90 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800 pointer-events-none">
+              [ PHASE: <span id="timeline-phase-label">01 // RUST-EZE</span> ]
+            </div>
+          </div>
+
+          <!-- Highlight Quote Box -->
+          <div class="w-full mt-6 p-4 rounded-lg bg-neutral-950 border border-neutral-800/80 text-center">
+            <p class="text-xs font-mono text-brand-yellow mb-1">// ICONIC QUOTE</p>
+            <blockquote class="text-base md:text-lg font-editorial font-bold text-white italic">
+              "Usa lo que tienes alrededor. Siente la pista, no la pantalla."
+            </blockquote>
+          </div>
+        </div>
+
       </div>
-
-      <!-- Sombra e Indicador HUD -->
-      <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent pointer-events-none z-10"></div>
-
-      <div class="absolute bottom-3 left-3 z-20 font-mono text-[10px] text-brand-yellow bg-neutral-950/90 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800 pointer-events-none">
-        [ PHASE: <span id="timeline-phase-label">01 // RUST-EZE</span> ]
-      </div>
-    </div>
-
-    <!-- Highlight Quote Box Centrado -->
-    <div class="w-full mt-6 p-4 rounded-lg bg-neutral-950 border border-neutral-800/80 text-center">
-      <p class="text-xs font-mono text-brand-yellow mb-1">// ICONIC QUOTE</p>
-      <blockquote class="text-base md:text-lg font-editorial font-bold text-white italic">
-        "Usa lo que tienes alrededor. Siente la pista, no la pantalla."
-      </blockquote>
-    </div>
-  </div>
-
-</div>
 
       <!-- COLUMNA DERECHA (TIMELINE EDITORIAL) -->
       <div class="lg:col-span-7 relative pl-6 md:pl-10 border-l border-neutral-800 space-y-16">
 
-        <!-- Línea de Progreso Animada (GSAP) -->
         <div class="timeline-progress-line absolute left-0 top-0 w-[2px] bg-gradient-to-b from-brand-yellow via-brand-red to-neutral-800 h-full origin-top"></div>
 
         <!-- Capítulo 01 -->
@@ -237,7 +235,6 @@
           <p class="text-neutral-300 font-sans leading-relaxed text-sm md:text-base mb-4">
             Tras quedar atrapada en una carrera de demolición bajo el seudónimo de "Verónica", sobrevivió al barro y a Miss Fritter, aprendiendo el valor de la improvisación y la resistencia real fuera de las pantallas.
           </p>
-          <!-- Callout Frase Destacada -->
           <div class="my-6 p-6 border-l-2 border-brand-yellow bg-neutral-900/40 text-xl font-editorial font-bold uppercase text-white tracking-wide">
             "Costura por costura, vuelta por vuelta."
           </div>
@@ -279,331 +276,315 @@
 
   </section>
 
- <!-- FASE 3: SALA DE TROFEOS - PIT LANE HORIZONTAL SLIDER -->
-<section id="trofeos" class="relative bg-neutral-950 text-white overflow-hidden py-20 border-b border-neutral-800">
+  <!-- FASE 3: SALA DE TROFEOS - PIT LANE SLIDER -->
+  <section id="trofeos" class="relative bg-neutral-950 text-white overflow-hidden py-20 border-b border-neutral-800">
 
-  <!-- Encabezado de Sección -->
-  <div class="px-6 md:px-12 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
-    <div>
-      <span class="text-xs font-mono text-brand-yellow uppercase tracking-widest block mb-2">// 02. PALMARÉS & VICTORIAS</span>
-      <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
-        SALA DE TROFEOS
-      </h2>
+    <!-- Encabezado -->
+    <div class="px-6 md:px-12 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+      <div>
+        <span class="text-xs font-mono text-brand-yellow uppercase tracking-widest block mb-2">// 02. PALMARÉS & VICTORIAS</span>
+        <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
+          SALA DE TROFEOS
+        </h2>
+      </div>
+      <div class="flex items-center gap-2 font-mono text-xs text-neutral-400 bg-neutral-900 px-4 py-2 rounded-full border border-neutral-800">
+        <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
+        <span>DESPLÁZATE HACIA ABAJO PARA RECORRER EL PIT LANE →</span>
+      </div>
     </div>
-    <div class="flex items-center gap-2 font-mono text-xs text-neutral-400 bg-neutral-900 px-4 py-2 rounded-full border border-neutral-800">
-      <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
-      <span>DESPLÁZATE HACIA ABAJO PARA RECORRER EL PIT LANE →</span>
+
+    <!-- Track Horizontal -->
+    <div class="trophy-wrapper relative w-full overflow-hidden">
+      <div class="trophy-track flex gap-8 px-6 md:px-12 w-max items-center py-6">
+
+        <!-- Trofeo 01 -->
+        <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
+          <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
+            <span>[ TROPHY #01 ]</span>
+            <span class="text-brand-yellow font-bold">2017</span>
+          </div>
+
+          <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+            <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">#01</span>
+            <img
+              src="assets/images/Florida500.webp"
+              alt="Copa Florida 500"
+              class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105 cursor-zoom-in"
+              data-caption="Copa Florida 500 - Primer triunfo profesional en el circuito de Florida."
+              loading="lazy"
+            />
+          </div>
+
+          <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Copa Florida 500</h3>
+          <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+            Su primera victoria profesional como corredora oficial tras realizar el histórico rebase sobre Jackson Storm.
+          </p>
+          <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
+            <span>CIRCUITO: Florida Speedway</span>
+            <span>TIEMPO: RECORD</span>
+          </div>
+        </div>
+
+        <!-- Trofeo 02 -->
+        <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
+          <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
+            <span>[ TROPHY #02 ]</span>
+            <span class="text-brand-yellow font-bold">2017</span>
+          </div>
+
+          <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+            <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">#51</span>
+            <img
+              src="assets/images/Dinoco.jpg"
+              alt="Consagración Dinoco #51"
+              class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105 cursor-zoom-in"
+              data-caption="Consagración Dinoco #51 - Debut oficial portando el dorsal #51."
+              loading="lazy"
+            />
+          </div>
+
+          <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Consagración Dinoco #51</h3>
+          <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+            Su debut oficial como la piloto titular de la escudería Dinoco, portando el legendario dorsal #51 con el aval de Tex Dinoco.
+          </p>
+          <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
+            <span>EQUIPO: Dinoco Racing</span>
+            <span>ESTATUS: Piloto Oficial</span>
+          </div>
+        </div>
+
+        <!-- Trofeo 03 -->
+        <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-red transition-all duration-300">
+          <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
+            <span>[ SPECIAL AWARD ]</span>
+            <span class="text-brand-red font-bold">2016</span>
+          </div>
+
+          <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+            <span class="text-6xl font-black text-brand-red/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">RRC</span>
+            <img
+              src="assets/images/Desnuda.webp"
+              alt="Excelencia en Telemetría"
+              class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105 cursor-zoom-in"
+              data-caption="Reconocimiento por optimización de rendimiento en simuladores RRC."
+              loading="lazy"
+            />
+          </div>
+
+          <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Excelencia en Telemetría</h3>
+          <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+            Reconocimiento en el Rust-eze Racing Center por lograr un 100% de optimización de rendimiento en simuladores virtuales.
+          </p>
+          <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
+            <span>ROL: Chief Trainer</span>
+            <span>TECNOLOGÍA: VirtualSim v4</span>
+          </div>
+        </div>
+
+        <!-- Trofeo 04 -->
+        <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
+          <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
+            <span>[ TROPHY #03 ]</span>
+            <span class="text-brand-yellow font-bold">2018</span>
+          </div>
+
+          <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+            <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">ROOKIE</span>
+            <img
+              src="assets/images/Copa.webp"
+              alt="Novata del Año - Copa Pistón"
+              class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105 cursor-zoom-in"
+              data-caption="Premio Novata del Año - Copa Pistón."
+              loading="lazy"
+            />
+          </div>
+
+          <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Novata del Año - Copa Pistón</h3>
+          <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+            Dominio absoluto en circuitos ovalados y urbanos durante su primera temporada completa en la categoría profesional.
+          </p>
+          <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
+            <span>ESTATUS: Campeona Novata</span>
+            <span>PUNTOS: RECORD T3</span>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-
-  <!-- Pista Horizontal (Track) para GSAP Pinning -->
-  <div class="trophy-wrapper relative w-full overflow-hidden">
-    <div class="trophy-track flex gap-8 px-6 md:px-12 w-max items-center py-6">
-
-      <!-- Card Trofeo 01: Copa Florida 500 -->
-      <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
-        <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
-          <span>[ TROPHY #01 ]</span>
-          <span class="text-brand-yellow font-bold">2017</span>
-        </div>
-
-        <!-- Contenedor con Imagen -->
-        <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
-          <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">#01</span>
-          <img
-            src="assets/images/Florida500.webp"
-            alt="Copa Florida 500"
-            class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
-            data-caption="Copa Florida 500 - Primer triunfo profesional en el circuito de Florida."
-            loading="lazy"
-          />
-        </div>
-
-        <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Copa Florida 500</h3>
-        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
-          Su primera victoria profesional como corredora oficial tras realizar el histórico rebase sobre Jackson Storm.
-        </p>
-        <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
-          <span>CIRCUITO: Florida Speedway</span>
-          <span>TIEMPO: RECORD</span>
-        </div>
-      </div>
-
-      <!-- Card Trofeo 02: Consagración Dinoco #51 -->
-      <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
-        <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
-          <span>[ TROPHY #02 ]</span>
-          <span class="text-brand-yellow font-bold">2017</span>
-        </div>
-
-        <!-- Contenedor con Imagen -->
-        <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
-          <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">#51</span>
-          <img
-            src="assets/images/Dinoco.jpg"
-            alt="Consagración Dinoco #51"
-            class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
-            data-caption="Consagración Dinoco #51 - Debut oficial portando el dorsal #51."
-            loading="lazy"
-          />
-        </div>
-
-        <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Consagración Dinoco #51</h3>
-        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
-          Su debut oficial como la piloto titular de la escudería Dinoco, portando el legendario dorsal #51 con el aval de Tex Dinoco.
-        </p>
-        <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
-          <span>EQUIPO: Dinoco Racing</span>
-          <span>ESTATUS: Piloto Oficial</span>
-        </div>
-      </div>
-
-      <!-- Card Trofeo 03: Excelencia en Telemetría -->
-      <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-red transition-all duration-300">
-        <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
-          <span>[ SPECIAL AWARD ]</span>
-          <span class="text-brand-red font-bold">2016</span>
-        </div>
-
-        <!-- Contenedor con Imagen -->
-        <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
-          <span class="text-6xl font-black text-brand-red/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">RRC</span>
-          <img
-            src="assets/images/Desnuda.webp"
-            alt="Excelencia en Telemetría"
-            class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
-            data-caption="Reconocimiento por optimización de rendimiento en simuladores RRC."
-            loading="lazy"
-          />
-        </div>
-
-        <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Excelencia en Telemetría</h3>
-        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
-          Reconocimiento en el Rust-eze Racing Center por lograr un 100% de optimización de rendimiento en simuladores virtuales.
-        </p>
-        <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
-          <span>ROL: Chief Trainer</span>
-          <span>TECNOLOGÍA: VirtualSim v4</span>
-        </div>
-      </div>
-
-      <!-- Card Trofeo 04: Novata del Año -->
-      <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
-        <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
-          <span>[ TROPHY #03 ]</span>
-          <span class="text-brand-yellow font-bold">2018</span>
-        </div>
-
-        <!-- Contenedor con Imagen -->
-        <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
-          <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">ROOKIE</span>
-          <img
-            src="assets/images/Copa.webp"
-            alt="Novata del Año - Copa Pistón"
-            class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
-            data-caption="Premio Novata del Año - Copa Pistón."
-            loading="lazy"
-          />
-        </div>
-
-        <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Novata del Año - Copa Pistón</h3>
-        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
-          Dominio absoluto en circuitos ovalados y urbanos durante su primera temporada completa en la categoría profesional.
-        </p>
-        <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
-          <span>ESTATUS: Campeona Novata</span>
-          <span>PUNTOS: RECORD T3</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- FASE 4: MULTIMEDIA, BLUEPRINT & GALERÍA DE ARTWORK -->
-<section id="media-blueprint" class="relative min-h-screen bg-brand-dark text-white border-b border-neutral-800 overflow-hidden py-24 px-6 md:px-12">
+  <section id="media-blueprint" class="relative min-h-screen bg-brand-dark text-white border-b border-neutral-800 overflow-hidden py-24 px-6 md:px-12">
 
-  <!-- Background Video Loop con capa Blueprint (CAD Grid) -->
-  <div class="absolute inset-0 z-0 pointer-events-none opacity-25 overflow-hidden">
-    <div class="w-full h-full bg-gradient-to-tr from-brand-dark via-neutral-900 to-brand-accent flex items-center justify-center">
-      <!-- SVG Grid de Fondo estilo Esquema CAD -->
-      <svg class="w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-        <defs>
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-25 overflow-hidden" aria-hidden="true">
+      <div class="w-full h-full bg-gradient-to-tr from-brand-dark via-neutral-900 to-brand-accent flex items-center justify-center">
+        <svg class="w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
     </div>
-    <!-- Gradiente superpuesto para mantener legibilidad -->
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
-  </div>
 
-  <!-- Encabezado de Sección -->
-  <div class="relative z-10 mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-neutral-800 pb-8">
-    <div>
-      <span class="text-xs font-mono text-brand-red uppercase tracking-widest block mb-2">// 03. TECHNICAL SPECS & ARTWORK</span>
-      <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
-        TELEMETRÍA & GALERÍA
-      </h2>
+    <!-- Encabezado -->
+    <div class="relative z-10 mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-neutral-800 pb-8">
+      <div>
+        <span class="text-xs font-mono text-brand-red uppercase tracking-widest block mb-2">// 03. TECHNICAL SPECS & ARTWORK</span>
+        <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
+          TELEMETRÍA & GALERÍA
+        </h2>
+      </div>
+      <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">[ CAD REVISION: 2017_CRS_51 ]</span>
     </div>
-    <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">[ CAD REVISION: 2017_CRS_51 ]</span>
-  </div>
 
-  <!-- GRILLA PRINCIPAL (12 COLUMNAS) -->
-  <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <!-- Grilla Principal (12 Cols) -->
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-    <!-- COLUMNA 1: PANEL TÉCNICO (7 COLS) -->
-    <!-- CORRECCIÓN: Añadido 'flex flex-col gap-6' para apilar Blueprint y Specs -->
-    <div class="lg:col-span-7 flex flex-col gap-6 min-w-0">
+      <!-- COLUMNA 1: PANEL TÉCNICO (7 COLS) -->
+      <div class="lg:col-span-7 flex flex-col gap-6 min-w-0">
 
-      <!-- 1.1 Ficha Técnica Estilo Blueprint -->
-      <div class="bg-neutral-950/80 border border-neutral-800 rounded-2xl p-6 md:p-8 backdrop-blur-xl relative card">
-        <div class="flex justify-between items-center mb-6 pb-4 border-b border-neutral-800 font-mono text-xs">
-          <span class="text-brand-yellow font-bold">// SPECIFICATION BLUEPRINT - CRS COUPE</span>
-          <span class="text-neutral-500">SCALE: 1:1</span>
-        </div>
-
-        <!-- Diagrama / Visual del Chasis -->
-        <div class="relative w-full aspect-[16/10] rounded-xl bg-neutral-900/90 border border-neutral-800/80 flex items-center justify-center p-4 mb-8 group overflow-hidden">
-          <!-- Superposiciones técnicas HUD -->
-          <div class="absolute top-3 left-3 font-mono text-[10px] text-neutral-500 z-20 pointer-events-none">SCHEMATIC_REF #51-CR</div>
-          <div class="absolute bottom-3 right-3 font-mono text-[10px] text-brand-red z-20 pointer-events-none">CONFIG: DINOCO HIGH-AERO</div>
-
-          <!-- Texto de agua de fondo -->
-          <span class="text-8xl font-black text-white/5 font-display absolute select-none pointer-events-none">V6 3.8L</span>
-
-          <!-- Imagen del Plano (object-contain para no cortar) -->
-          <img
-            src="assets/images/CruzAC.png"
-            alt="Plano esquemático técnico CRS Sports Coupe"
-            class="w-full h-full object-contain p-2 relative z-10 transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
-            loading="lazy"
-          />
-        </div>
-
-        <!-- Pie de plano explicativo -->
-        <p class="text-[11px] text-neutral-400 text-center font-mono">
-          Plano esquemático técnico mostrando la estructura aerodinámica de perfil bajo y chasis monocasco de la CRS Sports Coupe.
-        </p>
-      </div> <!-- Fin Ficha Blueprint -->
-
-      <!-- 1.2 Matriz de Especificaciones TÉCNICAS -->
-      <!-- CORRECCIÓN: Ahora está anidada correctamente dentro de la Columna 1 -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 font-mono text-xs">
-        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
-          <span class="text-neutral-500 block text-[10px]">MOTOR</span>
-          <span class="text-white font-bold">V6 3.8L DOHC 24V</span>
-        </div>
-        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
-          <span class="text-neutral-500 block text-[10px]">0-60 MPH</span>
-          <span class="text-brand-yellow font-bold">3.1 SEG</span>
-        </div>
-        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
-          <span class="text-neutral-500 block text-[10px]">VELOCIDAD MÁX</span>
-          <span class="text-brand-red font-bold">210 MPH</span>
-        </div>
-        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
-          <span class="text-neutral-500 block text-[10px]">CHASIS</span>
-          <span class="text-white font-bold">Monocasco Al-CFRP</span>
-        </div>
-        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
-          <span class="text-neutral-500 block text-[10px]">TRANSMISIÓN</span>
-          <span class="text-white font-bold">Secuencial 6-Vel Paddle</span>
-        </div>
-        <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
-          <span class="text-neutral-500 block text-[10px]">PATROCINADOR</span>
-          <span class="text-brand-yellow font-bold">Dinoco / Rust-eze</span>
-        </div>
-      </div> <!-- Fin Matriz Specs -->
-
-    </div> <!-- FIN COLUMNA 1 (7 COLS) -->
-
-    <!-- COLUMNA 2: MULTIMEDIA COMPACTO (5 COLS) - TU CÓDIGO EXACTO -->
-    <div class="lg:col-span-5 space-y-4 min-w-0">
-
-      <!-- Video Container Inmersivo (Ajustado al 100% del contenedor) -->
-<div class="card rounded-2xl border border-neutral-800 bg-neutral-950 p-3.5 relative">
-  <div class="flex justify-between items-center mb-2 font-mono text-[11px] text-neutral-400">
-    <span>[ VIDEO REEL ]</span>
-    <span class="text-brand-red animate-pulse">● LIVE CLIP</span>
-  </div>
-
-  <!-- Contenedor con aspecto 16:9 para adaptarse exactamente a la proporción del video -->
-  <div class="relative aspect-video w-full rounded-xl bg-black border border-neutral-800 overflow-hidden">
-    <video
-      src="assets/videos/CRM.mp4"
-      poster="assets/images/miniatura-video.jpg"
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="metadata"
-      class="w-full h-full object-cover"
-    ></video>
-  </div>
-
-  <p class="text-[10px] text-neutral-500 text-center mt-2 font-mono">
-    Fragmento de video del rebase acrobático sobre la pared en la Florida 500.
-  </p>
-</div>
-
-      <!-- Grilla de Artwork Oficial / Concept Art COMPACTA -->
-      <div class="grid grid-cols-2 gap-3 min-w-0">
-
-        <!-- Artwork 1: Concept Art -->
-        <div class="card h-36 rounded-xl border border-neutral-800 bg-neutral-950 overflow-hidden relative group hover:border-brand-red/80 transition-colors flex flex-col justify-between">
-          <div class="absolute top-1.5 left-1.5 z-20 bg-neutral-950/90 backdrop-blur-md px-1.5 py-0.5 rounded border border-neutral-800 font-mono text-[9px] text-neutral-400 pointer-events-none">
-            ART_CR51_01.PNG
+        <!-- 1.1 Ficha Blueprint -->
+        <div class="bg-neutral-950/80 border border-neutral-800 rounded-2xl p-6 md:p-8 backdrop-blur-xl relative card">
+          <div class="flex justify-between items-center mb-6 pb-4 border-b border-neutral-800 font-mono text-xs">
+            <span class="text-brand-yellow font-bold">// SPECIFICATION BLUEPRINT - CRS COUPE</span>
+            <span class="text-neutral-500">SCALE: 1:1</span>
           </div>
 
-          <div class="w-full h-full p-3 pt-6 flex items-center justify-center bg-neutral-900/40">
+          <div class="relative w-full aspect-[16/10] rounded-xl bg-neutral-900/90 border border-neutral-800/80 flex items-center justify-center p-4 mb-8 group overflow-hidden">
+            <div class="absolute top-3 left-3 font-mono text-[10px] text-neutral-500 z-20 pointer-events-none">SCHEMATIC_REF #51-CR</div>
+            <div class="absolute bottom-3 right-3 font-mono text-[10px] text-brand-red z-20 pointer-events-none">CONFIG: DINOCO HIGH-AERO</div>
+
+            <span class="text-8xl font-black text-white/5 font-display absolute select-none pointer-events-none">V6 3.8L</span>
+
             <img
-              src="assets/images/CruzAC5.png"
-              alt="Concept Art CRS Coupe"
-              class="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
+              src="assets/images/CruzAC.png"
+              alt="Plano esquemático técnico CRS Sports Coupe"
+              class="lightbox-trigger w-full h-full object-contain p-2 relative z-10 transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] cursor-zoom-in"
+              data-caption="Plano esquemático técnico - Estructura aerodinámica CRS Sports Coupe."
               loading="lazy"
             />
           </div>
 
-          <div class="p-2 bg-neutral-950 border-t border-neutral-800/80 flex justify-between items-center z-10">
-            <p class="font-mono text-[10px] text-neutral-300 font-bold group-hover:text-brand-red transition-colors">[ CONCEPT ART ]</p>
+          <p class="text-[11px] text-neutral-400 text-center font-mono">
+            Plano esquemático técnico mostrando la estructura aerodinámica de perfil bajo y chasis monocasco de la CRS Sports Coupe.
+          </p>
+        </div>
+
+        <!-- 1.2 Matriz de Especificaciones -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 font-mono text-xs">
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+            <span class="text-neutral-500 block text-[10px]">MOTOR</span>
+            <span class="text-white font-bold">V6 3.8L DOHC 24V</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+            <span class="text-neutral-500 block text-[10px]">0-60 MPH</span>
+            <span class="text-brand-yellow font-bold">3.1 SEG</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+            <span class="text-neutral-500 block text-[10px]">VELOCIDAD MÁX</span>
+            <span class="text-brand-red font-bold">210 MPH</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+            <span class="text-neutral-500 block text-[10px]">CHASIS</span>
+            <span class="text-white font-bold">Monocasco Al-CFRP</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+            <span class="text-neutral-500 block text-[10px]">TRANSMISIÓN</span>
+            <span class="text-white font-bold">Secuencial 6-Vel Paddle</span>
+          </div>
+          <div class="p-3 bg-neutral-900/60 rounded border border-neutral-800 card">
+            <span class="text-neutral-500 block text-[10px]">PATROCINADOR</span>
+            <span class="text-brand-yellow font-bold">Dinoco / Rust-eze</span>
           </div>
         </div>
 
-        <!-- Artwork 2: Dinoco Livery -->
-        <div class="card h-36 rounded-xl border border-neutral-800 bg-neutral-950 overflow-hidden relative group hover:border-brand-yellow/80 transition-colors flex flex-col justify-between">
-          <div class="absolute top-1.5 left-1.5 z-20 bg-neutral-950/90 backdrop-blur-md px-1.5 py-0.5 rounded border border-neutral-800 font-mono text-[9px] text-neutral-400 pointer-events-none">
-            ART_CR51_02.PNG
+      </div>
+
+      <!-- COLUMNA 2: MULTIMEDIA COMPACTO (5 COLS) -->
+      <div class="lg:col-span-5 space-y-4 min-w-0">
+
+        <!-- Video Reel -->
+        <div class="card rounded-2xl border border-neutral-800 bg-neutral-950 p-3.5 relative">
+          <div class="flex justify-between items-center mb-2 font-mono text-[11px] text-neutral-400">
+            <span>[ VIDEO REEL ]</span>
+            <span class="text-brand-red animate-pulse">● LIVE CLIP</span>
           </div>
 
-          <div class="w-full h-full p-3 pt-6 flex items-center justify-center bg-neutral-900/40">
-            <img
-              src="assets/images/CRA.webp"
-              alt="Dinoco Livery CRS Coupe"
-              class="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-            />
+          <div class="relative aspect-video w-full rounded-xl bg-black border border-neutral-800 overflow-hidden">
+            <video
+              src="assets/videos/CRM.mp4"
+              poster="assets/images/miniatura-video.jpg"
+              controls
+              muted
+              playsinline
+              preload="metadata"
+              class="w-full h-full object-cover"
+            ></video>
           </div>
 
-          <div class="p-2 bg-neutral-950 border-t border-neutral-800/80 flex justify-between items-center z-10">
-            <p class="font-mono text-[10px] text-neutral-300 font-bold group-hover:text-brand-yellow transition-colors">[ DINOCO LIVERY ]</p>
-          </div>
+          <p class="text-[10px] text-neutral-500 text-center mt-2 font-mono">
+            Fragmento de video del rebase acrobático sobre la pared en la Florida 500.
+          </p>
         </div>
 
-      </div> <!-- Fin Grilla Artwork -->
+        <!-- Artwork / Concept Art -->
+        <div class="grid grid-cols-2 gap-3 min-w-0">
 
-    </div> <!-- FIN COLUMNA 2 (5 COLS) -->
+          <div class="card h-36 rounded-xl border border-neutral-800 bg-neutral-950 overflow-hidden relative group hover:border-brand-red/80 transition-colors flex flex-col justify-between">
+            <div class="absolute top-1.5 left-1.5 z-20 bg-neutral-950/90 backdrop-blur-md px-1.5 py-0.5 rounded border border-neutral-800 font-mono text-[9px] text-neutral-400 pointer-events-none">
+              ART_CR51_01.PNG
+            </div>
 
-  </div> <!-- FIN GRILLA PRINCIPAL -->
+            <div class="w-full h-full p-3 pt-6 flex items-center justify-center bg-neutral-900/40">
+              <img
+                src="assets/images/CruzAC5.png"
+                alt="Concept Art CRS Coupe"
+                class="lightbox-trigger max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105 cursor-zoom-in"
+                data-caption="Concept Art CRS Coupe - Bocetos e Ilustración de diseño inicial."
+                loading="lazy"
+              />
+            </div>
 
-</section>
+            <div class="p-2 bg-neutral-950 border-t border-neutral-800/80 flex justify-between items-center z-10">
+              <p class="font-mono text-[10px] text-neutral-300 font-bold group-hover:text-brand-red transition-colors">[ CONCEPT ART ]</p>
+            </div>
+          </div>
 
-  <!-- FASE 5: CURIOSIDADES, TRIVIAS & EASTER EGGS -->
+          <div class="card h-36 rounded-xl border border-neutral-800 bg-neutral-950 overflow-hidden relative group hover:border-brand-yellow/80 transition-colors flex flex-col justify-between">
+            <div class="absolute top-1.5 left-1.5 z-20 bg-neutral-950/90 backdrop-blur-md px-1.5 py-0.5 rounded border border-neutral-800 font-mono text-[9px] text-neutral-400 pointer-events-none">
+              ART_CR51_02.PNG
+            </div>
+
+            <div class="w-full h-full p-3 pt-6 flex items-center justify-center bg-neutral-900/40">
+              <img
+                src="assets/images/CRA.webp"
+                alt="Dinoco Livery CRS Coupe"
+                class="lightbox-trigger max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105 cursor-zoom-in"
+                data-caption="Dinoco Livery - Modelo oficial con pintura amarilla Carrera #51."
+                loading="lazy"
+              />
+            </div>
+
+            <div class="p-2 bg-neutral-950 border-t border-neutral-800/80 flex justify-between items-center z-10">
+              <p class="font-mono text-[10px] text-neutral-300 font-bold group-hover:text-brand-yellow transition-colors">[ DINOCO LIVERY ]</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FASE 5: CURIOSIDADES & TRIVIA -->
   <section id="curiosidades" class="relative bg-brand-dark text-white border-b border-neutral-800 py-24 px-6 md:px-12">
 
-    <!-- Encabezado de Sección -->
     <div class="mb-16 border-b border-neutral-800 pb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
       <div>
         <span class="text-xs font-mono text-brand-yellow uppercase tracking-widest block mb-2">// 04. ARCHIVE TRIVIA & EASTER EGGS</span>
@@ -614,10 +595,8 @@
       <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">[ PRESS 'K' TO REV ENGINE ]</span>
     </div>
 
-    <!-- Grilla de Tarjetas de Trivia -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      <!-- Card Trivia 01 -->
       <div class="trivia-card bg-neutral-950 border border-neutral-800 rounded-2xl p-6 relative overflow-hidden group hover:border-brand-red transition-all">
         <span class="font-mono text-xs text-brand-red font-bold block mb-3">// TRIVIA_01</span>
         <h3 class="text-xl font-editorial font-bold text-white uppercase mb-3">Inspiración Real en Voz</h3>
@@ -627,7 +606,6 @@
         <span class="inline-block font-mono text-[10px] text-neutral-500 bg-neutral-900 px-2 py-1 rounded">VOICE & STORY</span>
       </div>
 
-      <!-- Card Trivia 02 -->
       <div class="trivia-card bg-neutral-950 border border-neutral-800 rounded-2xl p-6 relative overflow-hidden group hover:border-brand-yellow transition-all">
         <span class="font-mono text-xs text-brand-yellow font-bold block mb-3">// TRIVIA_02</span>
         <h3 class="text-xl font-editorial font-bold text-white uppercase mb-3">Modelo 2017 CRS Coupe</h3>
@@ -637,7 +615,6 @@
         <span class="inline-block font-mono text-[10px] text-neutral-500 bg-neutral-900 px-2 py-1 rounded">AERODYNAMIC DESIGN</span>
       </div>
 
-      <!-- Card Trivia 03 -->
       <div class="trivia-card bg-neutral-950 border border-neutral-800 rounded-2xl p-6 relative overflow-hidden group hover:border-white transition-all">
         <span class="font-mono text-xs text-neutral-400 font-bold block mb-3">// TRIVIA_03</span>
         <h3 class="text-xl font-editorial font-bold text-white uppercase mb-3">El Simbolismo del #51</h3>
@@ -651,27 +628,36 @@
 
   </section>
 
-  <!-- SOUND HUD & HUD FLOTANTE (COMPONENTE INTERACTIVO DE AUDIO) -->
-<div id="sound-hud" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-neutral-900/90 border border-neutral-700/80 p-2 pr-4 rounded-full backdrop-blur-md shadow-2xl transition-all hover:border-yellow-500/40">
+  <!-- SOUND HUD FLOTANTE -->
+  <div id="sound-hud" class="fixed bottom-6 right-6 z-40 flex items-center gap-3 bg-neutral-900/90 border border-neutral-700/80 p-2 pr-4 rounded-full backdrop-blur-md shadow-2xl transition-all hover:border-yellow-500/40">
+    <button id="btn-engine-rev" aria-label="Acelerar Motor" class="h-10 px-3 rounded-full bg-neutral-800 text-yellow-400 border border-neutral-700/80 flex items-center gap-2 shadow-lg hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors focus:outline-none">
+      <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+      <span class="engine-text font-mono text-xs font-bold">REV ENGINE</span>
+    </button>
 
-  <!-- Botón HUD Expandible -->
-  <button id="btn-engine-rev" class="h-10 rounded-full bg-neutral-800 text-yellow-400 border border-neutral-700/80 flex items-center justify-start shadow-lg hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-colors focus:outline-none">
-    <!-- Icono del motor o rayo -->
-    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-    </svg>
-    <!-- Texto revelado al expandir -->
-    <span class="engine-text">REV ENGINE</span>
-  </button>
-
-  <!-- Etiqueta del HUD -->
-  <div class="font-mono text-xs text-left select-none">
-    <span class="block text-white font-bold tracking-wider">ENGINE HUD</span>
-    <span class="block text-[10px] text-neutral-400">CLICK O 'K' PARA ACELERAR</span>
+    <div class="font-mono text-xs text-left select-none hidden sm:block">
+      <span class="block text-white font-bold tracking-wider">ENGINE HUD</span>
+      <span class="block text-[10px] text-neutral-400">CLICK O 'K' PARA ACELERAR</span>
+    </div>
   </div>
-</div>
 
-  <!-- FOOTER EDITORIAL -->
+  <!-- MODAL LIGHTBOX -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true">
+    <button id="lightbox-close" aria-label="Cerrar Imagen" class="absolute top-6 right-6 text-neutral-400 hover:text-white bg-neutral-900/80 border border-neutral-700 p-3 rounded-full transition-all hover:scale-110 focus:outline-none z-50">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="relative max-w-5xl max-h-[80vh] w-full flex flex-col items-center justify-center">
+      <img id="lightbox-img" src="" alt="Imagen ampliada" class="max-w-full max-h-[75vh] object-contain rounded-xl border border-neutral-800 shadow-2xl transition-transform duration-300 scale-95" />
+      <p id="lightbox-caption" class="mt-4 font-mono text-xs text-neutral-300 bg-neutral-900/90 border border-neutral-800 px-4 py-2 rounded-full text-center max-w-lg"></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer class="bg-neutral-950 text-neutral-500 py-12 px-6 md:px-12 font-mono text-xs border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-6">
     <div>
       <p class="text-neutral-300 font-bold mb-1">TOISRamirez EDITORIAL ARCHIVE © 2026</p>
@@ -679,18 +665,18 @@
     </div>
 
     <div class="flex items-center gap-6">
-      <button id="back-to-top" class="text-brand-yellow hover:underline uppercase tracking-widest">
+      <button id="back-to-top" class="text-brand-yellow hover:underline uppercase tracking-widest focus:outline-none">
         ↑ VOLVER AL INICIO
       </button>
     </div>
   </footer>
 
-  <!-- Librerías JS: GSAP + ScrollTrigger + Lenis Smooth Scroll -->
+  <!-- Librerías JS Externas -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-  <!-- JS del Proyecto -->
+  <!-- Scripts del Proyecto -->
   <script src="js/main.js"></script>
   <script src="js/animation.js"></script>
 </body>
