@@ -8,7 +8,6 @@ const lenis = new Lenis({
                         smoothWheel: true,
 });
 
-// Exportar globalmente para que main.js la utilice
 window.lenis = lenis;
 
 function raf(time) {
@@ -27,7 +26,7 @@ gsap.ticker.lagSmoothing(0);
 // Ejecutar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
 
-    // A) Revelado suave para elementos individuales
+    // A) Revelado suave para elementos individuales (Excluye tarjetas de trofeos)
     gsap.utils.toArray('.reveal-on-scroll').forEach((el) => {
         gsap.fromTo(
             el,
@@ -70,66 +69,57 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     });
 
-    // C) MACRO-TRANSICIONES FLUIDAS ENTRE SECCIONES
-    const sections = gsap.utils.toArray('section');
-    sections.forEach((section, i) => {
-        if (i < sections.length - 1) {
-            gsap.to(section, {
-                opacity: 0.25,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'bottom 60%',
-                    end: 'bottom top',
-                    scrub: true,
-                },
-            });
-        }
-
+    // C) Encabezados H2 de secciones (Entrada cinematográfica limpia)
+    gsap.utils.toArray('section').forEach((section) => {
         const header = section.querySelector('h2');
         if (header) {
             gsap.fromTo(
                 header,
-                { y: 50, opacity: 0 },
+                { y: 40, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 1,
+                    duration: 0.8,
                     ease: 'power3.out',
                     scrollTrigger: {
                         trigger: section,
                         start: 'top 85%',
-                        end: 'top 35%',
-                        scrub: 0.5,
+                        toggleActions: 'play none none reverse',
                     },
                 }
             );
         }
     });
 
-    // D) FASE 3: Scroll Horizontal de Trofeos (Pin fluido)
+    // D) FASE 3: PINNING HORIZONTAL DE LA SALA DE TROFEOS (DISTANCIA AJUSTADA)
+    const trophySection = document.getElementById('trofeos') || document.getElementById('trofies-section');
     const trophyTrack = document.querySelector('.trophy-track');
-    if (trophyTrack) {
-        const getScrollAmount = () => -(trophyTrack.scrollWidth - window.innerWidth + 96);
+
+    if (trophySection && trophyTrack) {
+        // Asegurar visibilidad total e inmediata de las tarjetas
+        gsap.set('.trophy-card', { opacity: 1, y: 0 });
+
+        const getScrollAmount = () => -(trophyTrack.scrollWidth - window.innerWidth + 64);
 
         gsap.to(trophyTrack, {
             x: getScrollAmount,
             ease: 'none',
             scrollTrigger: {
-                trigger: '#trofeos',
+                trigger: trophySection,
                 start: 'top top',
-                end: () => `+=${trophyTrack.scrollWidth}`,
+                // Reducimos la distancia vertical de scroll para des-pinnear más rápido
+                end: () => `+=${Math.min(trophyTrack.scrollWidth * 0.6, 800)}`,
                 pin: true,
-                scrub: 0.8,
+                scrub: 0.5, // Scrub más responsivo para evitar sensación de pesadez
                 invalidateOnRefresh: true,
                 anticipatePin: 1,
             },
         });
     }
 
-    // E) ANIMACIÓN UNIFICADA DE COMPONENTES Y TARJETAS
-    // Agrupa .card, .stat-card, .blueprint-card, .container-box y .timeline-item sin solapamientos
-    const interactiveCards = gsap.utils.toArray('.card, .stat-card, .blueprint-card, .container-box, .timeline-item');
+    // E) ANIMACIÓN UNIFICADA DE TARJETAS GENERALES (Excluye estrictamente .trophy-card y #trofeos)
+    const interactiveCards = gsap.utils.toArray('.card, .stat-card, .blueprint-card, .container-box, .timeline-item')
+    .filter(card => !card.closest('#trofeos') && !card.closest('#trofies-section'));
 
     if (interactiveCards.length > 0) {
         const cardGroups = new Set(interactiveCards.map(card => card.parentElement));
@@ -162,8 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Recalcular posiciones de ScrollTrigger al cargar todo correctamente
+    // Refrescar cálculo de posiciones de GSAP al terminar la carga de la página
     setTimeout(() => {
         ScrollTrigger.refresh();
-    }, 100);
+    }, 200);
 });
