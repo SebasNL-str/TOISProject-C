@@ -279,114 +279,146 @@
 
   </section>
 
-  <!-- FASE 3: SALA DE TROFEOS - PIT LANE HORIZONTAL SLIDER -->
-  <section id="trofies-section" class="relative bg-neutral-950 text-white overflow-hidden py-20 border-b border-neutral-800">
+ <!-- FASE 3: SALA DE TROFEOS - PIT LANE HORIZONTAL SLIDER -->
+<section id="trofeos" class="relative bg-neutral-950 text-white overflow-hidden py-20 border-b border-neutral-800">
 
-    <!-- Encabezado de Sección -->
-    <div class="px-6 md:px-12 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
-      <div>
-        <span class="text-xs font-mono text-brand-yellow uppercase tracking-widest block mb-2">// 02. PALMARÉS & VICTORIAS</span>
-        <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
-          SALA DE TROFEOS
-        </h2>
-      </div>
-      <div class="flex items-center gap-2 font-mono text-xs text-neutral-400 bg-neutral-900 px-4 py-2 rounded-full border border-neutral-800">
-        <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
-        <span>DESPLÁZATE HACIA ABAJO PARA RECORRER EL PIT LANE →</span>
-      </div>
+  <!-- Encabezado de Sección -->
+  <div class="px-6 md:px-12 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+    <div>
+      <span class="text-xs font-mono text-brand-yellow uppercase tracking-widest block mb-2">// 02. PALMARÉS & VICTORIAS</span>
+      <h2 class="text-4xl md:text-6xl font-editorial font-bold uppercase tracking-tight text-white">
+        SALA DE TROFEOS
+      </h2>
     </div>
-
-    <!-- Pista Horizontal (Track) para GSAP Pinning -->
-    <div class="trophy-wrapper relative w-full overflow-hidden">
-      <div class="trophy-track flex gap-8 px-6 md:px-12 w-max items-center py-6">
-
-        <!-- Card Trofeo 01 -->
-        <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
-          <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
-            <span>[ TROPHY #01 ]</span>
-            <span class="text-brand-yellow font-bold">2017</span>
-          </div>
-          <div class="h-48 w-full rounded-xl bg-neutral-900 border border-neutral-800 flex flex-col items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
-            <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2">#01</span>
-            <span class="text-4xl mb-2">🏆</span>
-            <p class="text-xs font-mono text-neutral-400 font-bold">[ PLACEHOLDER: FLORIDA 500 TROPHY ]</p>
-          </div>
-          <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Copa Florida 500</h3>
-          <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
-            Su primera victoria profesional como corredora oficial tras realizar el histórico rebase sobre Jackson Storm.
-          </p>
-          <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
-            <span>CIRCUITO: Florida Speedway</span>
-            <span>TIEMPO: RECORD</span>
-          </div>
-        </div>
-
-       <!-- Card Trofeo 02 -->
-        <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
-          <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
-            <span>[ TROPHY #02 ]</span>
-            <span class="text-brand-yellow font-bold">2017</span>
-          </div>
-          <div class="h-48 w-full rounded-xl bg-neutral-900 border border-neutral-800 flex flex-col items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
-            <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2">#51</span>
-            <span class="text-4xl mb-2">⚡</span>
-            <p class="text-xs font-mono text-neutral-400 font-bold">[ PLACEHOLDER: DINOCO DEBUT ]</p>
-          </div>
-          <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Consagración Dinoco #51</h3>
-          <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
-            Su debut oficial como la piloto titular de la escudería Dinoco, portando el legendario dorsal #51 con el aval de Tex Dinoco.
-          </p>
-          <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
-            <span>EQUIPO: Dinoco Racing</span>
-            <span>ESTATUS: Piloto Oficial</span>
-          </div>
-        </div>
-
-        <!-- Card Trofeo 03 -->
-        <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-red transition-all duration-300">
-          <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
-            <span>[ SPECIAL AWARD ]</span>
-            <span class="text-brand-red font-bold">2016</span>
-          </div>
-          <div class="h-48 w-full rounded-xl bg-neutral-900 border border-neutral-800 flex flex-col items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
-            <span class="text-6xl font-black text-brand-red/10 font-display absolute -bottom-2 -right-2">RRC</span>
-            <span class="text-4xl mb-2">💻</span>
-            <p class="text-xs font-mono text-neutral-400 font-bold">[ PLACEHOLDER: TELEMETRY AWARD ]</p>
-          </div>
-          <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Excelencia en Telemetría</h3>
-          <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
-            Reconocimiento en el Rust-eze Racing Center por lograr un 100% de optimización de rendimiento en simuladores virtuales.
-          </p>
-          <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
-            <span>ROL: Chief Trainer</span>
-            <span>TECNOLOGÍA: VirtualSim v4</span>
-          </div>
-        </div>
-
-        <!-- Card Trofeo 04 -->
-        <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
-          <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
-            <span>[ TROPHY #03 ]</span>
-            <span class="text-brand-yellow font-bold">2018</span>
-          </div>
-          <div class="h-48 w-full rounded-xl bg-neutral-900 border border-neutral-800 flex flex-col items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
-            <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2">ROOKIE</span>
-            <span class="text-4xl mb-2">🥇</span>
-            <p class="text-xs font-mono text-neutral-400 font-bold">[ PLACEHOLDER: PISTON CUP SEASON ]</p>
-          </div>
-          <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Novata del Año - Copa Pistón</h3>
-          <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
-            Dominio absoluto en circuitos ovalados y urbanos durante su primera temporada completa en la categoría profesional.
-          </p>
-          <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
-            <span>ESTATUS: Campeona Novata</span>
-            <span>PUNTOS: RECORD T3</span>
-          </div>
-        </div>
-
-      </div>
+    <div class="flex items-center gap-2 font-mono text-xs text-neutral-400 bg-neutral-900 px-4 py-2 rounded-full border border-neutral-800">
+      <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
+      <span>DESPLÁZATE HACIA ABAJO PARA RECORRER EL PIT LANE →</span>
     </div>
-  </section>
+  </div>
+
+  <!-- Pista Horizontal (Track) para GSAP Pinning -->
+  <div class="trophy-wrapper relative w-full overflow-hidden">
+    <div class="trophy-track flex gap-8 px-6 md:px-12 w-max items-center py-6">
+
+      <!-- Card Trofeo 01: Copa Florida 500 -->
+      <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
+        <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
+          <span>[ TROPHY #01 ]</span>
+          <span class="text-brand-yellow font-bold">2017</span>
+        </div>
+
+        <!-- Contenedor con Imagen -->
+        <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+          <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">#01</span>
+          <img
+            src="assets/images/Florida500.webp"
+            alt="Copa Florida 500"
+            class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
+            data-caption="Copa Florida 500 - Primer triunfo profesional en el circuito de Florida."
+            loading="lazy"
+          />
+        </div>
+
+        <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Copa Florida 500</h3>
+        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+          Su primera victoria profesional como corredora oficial tras realizar el histórico rebase sobre Jackson Storm.
+        </p>
+        <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
+          <span>CIRCUITO: Florida Speedway</span>
+          <span>TIEMPO: RECORD</span>
+        </div>
+      </div>
+
+      <!-- Card Trofeo 02: Consagración Dinoco #51 -->
+      <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
+        <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
+          <span>[ TROPHY #02 ]</span>
+          <span class="text-brand-yellow font-bold">2017</span>
+        </div>
+
+        <!-- Contenedor con Imagen -->
+        <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+          <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">#51</span>
+          <img
+            src="assets/images/Dinoco.jpg"
+            alt="Consagración Dinoco #51"
+            class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
+            data-caption="Consagración Dinoco #51 - Debut oficial portando el dorsal #51."
+            loading="lazy"
+          />
+        </div>
+
+        <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Consagración Dinoco #51</h3>
+        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+          Su debut oficial como la piloto titular de la escudería Dinoco, portando el legendario dorsal #51 con el aval de Tex Dinoco.
+        </p>
+        <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
+          <span>EQUIPO: Dinoco Racing</span>
+          <span>ESTATUS: Piloto Oficial</span>
+        </div>
+      </div>
+
+      <!-- Card Trofeo 03: Excelencia en Telemetría -->
+      <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-red transition-all duration-300">
+        <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
+          <span>[ SPECIAL AWARD ]</span>
+          <span class="text-brand-red font-bold">2016</span>
+        </div>
+
+        <!-- Contenedor con Imagen -->
+        <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+          <span class="text-6xl font-black text-brand-red/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">RRC</span>
+          <img
+            src="assets/images/Desnuda.webp"
+            alt="Excelencia en Telemetría"
+            class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
+            data-caption="Reconocimiento por optimización de rendimiento en simuladores RRC."
+            loading="lazy"
+          />
+        </div>
+
+        <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Excelencia en Telemetría</h3>
+        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+          Reconocimiento en el Rust-eze Racing Center por lograr un 100% de optimización de rendimiento en simuladores virtuales.
+        </p>
+        <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
+          <span>ROL: Chief Trainer</span>
+          <span>TECNOLOGÍA: VirtualSim v4</span>
+        </div>
+      </div>
+
+      <!-- Card Trofeo 04: Novata del Año -->
+      <div class="trophy-card w-[320px] md:w-[420px] shrink-0 rounded-2xl border border-neutral-800 bg-brand-dark/90 p-8 backdrop-blur-md relative group hover:border-brand-yellow transition-all duration-300">
+        <div class="flex justify-between items-start mb-6 font-mono text-xs text-neutral-500">
+          <span>[ TROPHY #03 ]</span>
+          <span class="text-brand-yellow font-bold">2018</span>
+        </div>
+
+        <!-- Contenedor con Imagen -->
+        <div class="h-48 w-full rounded-xl bg-neutral-900/80 border border-neutral-800/80 flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+          <span class="text-6xl font-black text-brand-yellow/10 font-display absolute -bottom-2 -right-2 select-none pointer-events-none">ROOKIE</span>
+          <img
+            src="assets/images/Copa.webp"
+            alt="Novata del Año - Copa Pistón"
+            class="lightbox-trigger max-w-full max-h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
+            data-caption="Premio Novata del Año - Copa Pistón."
+            loading="lazy"
+          />
+        </div>
+
+        <h3 class="text-xl font-editorial font-bold uppercase text-white mb-2">Novata del Año - Copa Pistón</h3>
+        <p class="text-neutral-400 font-sans text-xs leading-relaxed mb-4">
+          Dominio absoluto en circuitos ovalados y urbanos durante su primera temporada completa en la categoría profesional.
+        </p>
+        <div class="pt-4 border-t border-neutral-800/80 flex justify-between font-mono text-[11px] text-neutral-500">
+          <span>ESTATUS: Campeona Novata</span>
+          <span>PUNTOS: RECORD T3</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- FASE 4: MULTIMEDIA, BLUEPRINT & GALERÍA DE ARTWORK -->
 <section id="media-blueprint" class="relative min-h-screen bg-brand-dark text-white border-b border-neutral-800 overflow-hidden py-24 px-6 md:px-12">
@@ -444,7 +476,7 @@
 
           <!-- Imagen del Plano (object-contain para no cortar) -->
           <img
-            src="assets/images/CruzAC4.png"
+            src="assets/images/CruzAC.png"
             alt="Plano esquemático técnico CRS Sports Coupe"
             class="w-full h-full object-contain p-2 relative z-10 transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
             loading="lazy"
@@ -528,7 +560,7 @@
 
           <div class="w-full h-full p-3 pt-6 flex items-center justify-center bg-neutral-900/40">
             <img
-              src="assets/images/CruzAC.png"
+              src="assets/images/CruzAC5.png"
               alt="Concept Art CRS Coupe"
               class="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
               loading="lazy"
