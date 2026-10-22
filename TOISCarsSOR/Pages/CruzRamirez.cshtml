@@ -1,48 +1,61 @@
 @page
 @{
-    ViewData["Title"] = "TOISphera Says Kachow: Cruz Ramirez";
+    ViewData["Title"] = "TOISphera Says Ka-chow: Cruz Ramirez";
+
+    ViewData["BodyClass"] =
+        "bg-brand-dark text-brand-cream overflow-x-hidden antialiased selection:bg-brand-yellow selection:text-black";
 }
 
-<!DOCTYPE html>
-<html lang="es" class="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@ViewData["Title"]</title>
+@section Head {
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              red: '#0080C6',      /* Azul Dinoco (Color principal de acento) */
-              yellow: '#FFD100',   /* Amarillo Cruz Ramírez */
-              dark: '#070D14',     /* Azul Noche Profundo */
-              accent: '#0F1A24',   /* Azul Marino Grafito */
-              cream: '#F5F5F3',
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#0080C6',
+                            yellow: '#FFD100',
+                            dark: '#070D14',
+                            accent: '#0F1A24',
+                            cream: '#F5F5F3'
+                        }
+                    },
+                    fontFamily: {
+                        editorial: ['Oswald', 'sans-serif'],
+                        display: ['Bebas Neue', 'cursive'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
             }
-          },
-          fontFamily: {
-            editorial: ['Oswald', 'sans-serif'],
-            display: ['Bebas Neue', 'cursive'],
-            sans: ['Inter', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+        };
+    </script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap"
+          rel="stylesheet" />
+}
 
-  <!-- Estilos Custom -->
-  <link rel="stylesheet" href="css/CruzRamires-Main.css">
-</head>
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/CruzRamires-Main.css"
+          asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="~/js/CruzRamirez-Main.js"
+            asp-append-version="true"></script>
+    <script src="~/js/CruzRamirez-Animation.js"
+            asp-append-version="true"></script>
+}
+
 <body class="bg-brand-dark text-brand-cream overflow-x-hidden antialiased selection:bg-brand-yellow selection:text-black">
 
   <!-- Header Editorial Superior -->
@@ -643,14 +656,5 @@
       </button>
     </div>
   </footer>
-
-  <!-- Librerías JS: GSAP + ScrollTrigger + Lenis Smooth Scroll -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
-  <!-- JS del Proyecto -->
-  <script src="js/CruzRamirez-Main.js"></script>
-  <script src="js/CruzRamirez-Animation.js"></script>
 </body>
 </html>

@@ -1,21 +1,29 @@
 @page
 @{
-    ViewData["Title"] = "TOISphera Says Kachow: Doc Hudson";
+    ViewData["Title"] = "TOISphera Says Ka-chow: Doc Hudson";
+    ViewData["Description"] = "The Fabulous Hudson Hornet";
+    ViewData["ThemeColor"] = "#080d18";
 }
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <link rel="stylesheet" href="~/css/doch-main.css">
-  <link rel="stylesheet" href="~/css/doch-loader.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d18">
-  <meta
-    name="description"
-    content="Que vienen que vienen.">
-  <title>@ViewData["Title"]</title>
-</head>
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/doch-main.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/doch-loader.css"
+          asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.fog.min.js"></script>
+    <script type="module"
+            src="~/js/doch-main.js"
+            asp-append-version="true"></script>
+    <script type="module"
+            src="~/js/doch-vanta.js"
+            asp-append-version="true"></script>
+}
 
 <body>
   <script type="module" src="~/js/doch-main.js"></script>
@@ -69,8 +77,5 @@
       <!-- WIP -->
     </section>
   </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.fog.min.js"></script>
-  <script type="module" src="~/js/doch-vanta.js"></script>
 </body>
 </html>

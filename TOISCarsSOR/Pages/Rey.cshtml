@@ -1,101 +1,112 @@
 @page
+
 @{
-    ViewData["Title"] = "TOISphera Says Kachow: El Rey";
+    ViewData["Title"] = "TOISphera Says Ka-chow: El Rey";
+    ViewData["BodyClass"] = "mcq-test-page";
 }
 
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>@ViewData["Title"]</title>
+@section Head {
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Nunito", sans-serif;
-        background-color: #f0f9ff;
-        background-image: radial-gradient(#bae6fd 1px, transparent 1px);
-        background-size: 20px 20px;
-      }
-      .font-comic {
-        font-family: "Bangers", cursive;
-        letter-spacing: 2px;
-      }
-      .text-outline {
-        text-shadow:
-          2px 2px 0 #000,
-          -1px -1px 0 #000,
-          1px -1px 0 #000,
-          -1px 1px 0 #000,
-          1px 1px 0 #000;
-      }
-      /* Animación de ola vertical para las copas */
-      @@keyframes waveCup {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-      .cup-list {
-        display: inline-block;
-        animation: waveCup 1.5s infinite ease-in-out;
-        font-size: 1.8rem;
-        color: #facc15;
-        filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.4));
-      }
-      .delay-1 {
-        animation-delay: 0s;
-      }
-      .delay-2 {
-        animation-delay: 0.15s;
-      }
-      .delay-3 {
-        animation-delay: 0.3s;
-      }
-      .delay-4 {
-        animation-delay: 0.45s;
-      }
-      .delay-5 {
-        animation-delay: 0.6s;
-      }
-      .delay-6 {
-        animation-delay: 0.75s;
-      }
-      .delay-7 {
-        animation-delay: 0.9s;
-      }
+}
 
-      /* Animaciones para la Presentación (Splash Screen) */
-      @@keyframes fadeInSeq {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
+@section Styles {
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap"
+          rel="stylesheet" />
+
+    <style>
+        .site-body.mcq-test-page {
+            font-family: "Nunito", sans-serif;
+            background-color: #f0f9ff;
+            background-image: radial-gradient(#bae6fd 1px, transparent 1px);
+            background-size: 20px 20px;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+
+        .font-comic {
+            font-family: "Bangers", cursive;
+            letter-spacing: 2px;
         }
-      }
-      .animate-fade-in {
-        animation: fadeInSeq 1s ease-out forwards;
-      }
-      .delay-1000 {
-        animation-delay: 1s;
-        opacity: 0;
-      }
+
+        .text-outline {
+            text-shadow:
+                2px 2px 0 #000,
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        /* Animación de ola vertical para las copas */
+        @@keyframes waveCup {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .cup-list {
+            display: inline-block;
+            animation: waveCup 1.5s infinite ease-in-out;
+            font-size: 1.8rem;
+            color: #facc15;
+            filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.4));
+        }
+
+        .delay-1 {
+            animation-delay: 0s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.15s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.45s;
+        }
+
+        .delay-5 {
+            animation-delay: 0.6s;
+        }
+
+        .delay-6 {
+            animation-delay: 0.75s;
+        }
+
+        .delay-7 {
+            animation-delay: 0.9s;
+        }
+        
+        @@keyframes fadeInSeq {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInSeq 1s ease-out forwards;
+        }
+
+        .delay-1000 {
+            animation-delay: 1s;
+            opacity: 0;
+        }
     </style>
-  </head>
+}
+
   <body class="text-gray-800 relative overflow-x-hidden">
     <!-- ============================================== -->
     <!-- PRESENTACIÓN INICIAL AUTOMÁTICA (SPLASH SCREEN) -->
