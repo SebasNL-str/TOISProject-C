@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cruz Ramirez
+* source:	https://sketchfab.com/3d-models/cruz-ramirez-0c5c209b1c6d4c1db3dda9c8cfdf7efb
+* author:	DinseyPixarCarsModels (https://sketchfab.com/DinseyPixarCarsModels)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cruz Ramirez" (https://sketchfab.com/3d-models/cruz-ramirez-0c5c209b1c6d4c1db3dda9c8cfdf7efb) by DinseyPixarCarsModels (https://sketchfab.com/DinseyPixarCarsModels) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

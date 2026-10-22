@@ -108,4 +108,39 @@ document.addEventListener('DOMContentLoaded', () => {
             setActiveChapter(index);
         });
     });
+
+    const modelViewer = document.getElementById('cruz-3d-model');
+    const btnRusteze = document.getElementById('btn-livery-rusteze');
+    const btnDinoco = document.getElementById('btn-livery-dinoco');
+    const glowBg = document.getElementById('hero-3d-glow');
+
+    if (modelViewer && btnRusteze && btnDinoco) {
+        // Cambiar a versión Rust-eze
+        btnRusteze.addEventListener('click', () => {
+            modelViewer.setAttribute('src', 'assets/models/cruz-rusteze.glb');
+
+            // Actualizar clases de los botones
+            btnRusteze.className = 'px-3 py-1 rounded-full bg-brand-yellow text-black font-bold shadow-lg transition-all focus:outline-none';
+            btnDinoco.className = 'px-3 py-1 rounded-full text-neutral-400 hover:text-white transition-all font-bold focus:outline-none';
+
+            // Cambiar brillo y color del glow de fondo
+            if (glowBg) {
+                glowBg.className = 'absolute inset-0 bg-gradient-to-t from-brand-yellow/30 via-neutral-800/20 to-transparent rounded-full blur-3xl opacity-70 pointer-events-none transition-all duration-700';
+            }
+        });
+
+        // Cambiar a versión Dinoco #51
+        btnDinoco.addEventListener('click', () => {
+            modelViewer.setAttribute('src', 'assets/models/cruz-dinoco.glb');
+
+            // Actualizar clases de los botones
+            btnDinoco.className = 'px-3 py-1 rounded-full bg-brand-yellow text-black font-bold shadow-lg transition-all focus:outline-none';
+            btnRusteze.className = 'px-3 py-1 rounded-full text-neutral-400 hover:text-white transition-all font-bold focus:outline-none';
+
+            // Cambiar brillo y color del glow de fondo
+            if (glowBg) {
+                glowBg.className = 'absolute inset-0 bg-gradient-to-t from-brand-red/30 via-brand-yellow/10 to-transparent rounded-full blur-3xl opacity-70 pointer-events-none transition-all duration-700';
+            }
+        });
+    }
 });

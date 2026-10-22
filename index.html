@@ -35,6 +35,8 @@
       }
     }
   </script>
+  <!-- Google <model-viewer> para objetos 3D -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
   <!-- Estilos Personalizados -->
   <link rel="stylesheet" href="css/styles.css">
@@ -87,8 +89,8 @@
       </div>
     </div>
 
-    <!-- Composición Tipográfica + Render Placeholder -->
-    <div class="relative my-auto py-12 z-0 flex flex-col justify-center items-center select-none">
+   <!-- Composición Tipográfica + Visor 3D Interactivo -->
+    <div class="relative my-auto py-12 z-10 flex flex-col justify-center items-center select-none w-full">
       <h1 class="hero-title text-[15vw] leading-[0.8] font-display font-black tracking-tighter uppercase text-center text-neutral-800/80">
         CRUZ
       </h1>
@@ -96,39 +98,39 @@
         RAMÍREZ
       </h2>
 
-      <!-- Tarjeta Flotante -->
-      <div class="hero-image-wrapper absolute inset-0 m-auto w-[90%] md:w-[65%] max-w-[850px] h-[280px] md:h-[420px] flex items-center justify-center z-10 pointer-events-none">
-        <div class="relative w-full h-full flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-red/30 via-brand-yellow/10 to-transparent rounded-full blur-3xl opacity-60"></div>
+      <!-- Contenedor del Modelo 3D Flotante -->
+      <div class="hero-image-wrapper absolute inset-0 m-auto w-[90%] md:w-[75%] max-w-[950px] h-[320px] md:h-[480px] flex items-center justify-center pointer-events-auto z-10">
+        <div class="relative w-full h-full flex flex-col items-center justify-center">
 
-          <div class="w-full h-full rounded-2xl border border-neutral-700/60 bg-brand-accent/80 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center shadow-2xl relative overflow-hidden">
-            <span class="text-7xl font-black text-brand-yellow/20 absolute font-display tracking-widest scale-150">#51</span>
-            <p class="text-brand-yellow font-mono text-sm relative z-10 mb-2 font-bold">[ PLACEHOLDER: RENDER DEL AUTO ]</p>
-            <p class="text-xs text-neutral-400 font-sans max-w-sm relative z-10">
-              Aquí irá la imagen recortada (PNG/WebP) de Cruz Ramírez Dinoco #51. En la versión final flotará con animación 3D / Parallax al hacer scroll.
-            </p>
+          <!-- Efecto Glow de fondo dinámico -->
+          <div id="hero-3d-glow" class="absolute inset-0 bg-gradient-to-t from-brand-yellow/20 via-brand-red/10 to-transparent rounded-full blur-3xl opacity-70 pointer-events-none transition-all duration-700"></div>
+
+          <!-- Visor 3D de Google -->
+          <model-viewer
+            id="cruz-3d-model"
+            src="assets/models/cruz-dinoco.glb"
+            alt="Modelo 3D de Cruz Ramírez"
+            auto-rotate
+            camera-controls
+            touch-action="pan-y"
+            shadow-intensity="1.5"
+            exposure="1"
+            camera-orbit="45deg 75deg 105%"
+            field-of-view="30deg"
+            class="w-full h-full cursor-grab active:cursor-grabbing z-10 bg-transparent"
+          >
+          </model-viewer>
+
+          <!-- Selector HUD de Livrea (Rust-eze vs Dinoco) -->
+          <div class="absolute bottom-2 z-20 flex items-center gap-2 bg-neutral-950/90 border border-neutral-800 p-1.5 rounded-full backdrop-blur-md font-mono text-[11px]">
+            <button id="btn-livery-rusteze" class="px-3 py-1 rounded-full text-neutral-400 hover:text-white transition-all font-bold focus:outline-none">
+              [ RUST-EZE #06 ]
+            </button>
+            <button id="btn-livery-dinoco" class="px-3 py-1 rounded-full bg-brand-yellow text-black font-bold shadow-lg transition-all focus:outline-none">
+              [ DINOCO #51 ]
+            </button>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Footer Hero -->
-    <div class="hero-footer z-10 flex flex-col md:flex-row justify-between items-end gap-6 pt-6 border-t border-neutral-800/80">
-      <div class="max-w-md">
-        <p class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-1">// INTRODUCCIÓN EDITORIAL</p>
-        <p class="text-sm font-sans text-neutral-300 leading-relaxed">
-          "El simulador no te enseña lo que hay en la pista." Una retrospectiva sobre la entrenadora de elite que redefinió el futuro de la Copa Pistón.
-        </p>
-      </div>
-
-      <div class="flex items-center gap-8 font-mono text-xs">
-        <div class="text-right">
-          <span class="block text-neutral-500">MAX SPEED</span>
-          <span class="text-brand-yellow font-bold text-sm">210 MPH</span>
-        </div>
-        <div class="text-right">
-          <span class="block text-neutral-500">TITLES</span>
-          <span class="text-brand-red font-bold text-sm">FLORIDA 500</span>
         </div>
       </div>
     </div>
