@@ -26,6 +26,7 @@ function splitTextIntoLetters(element) {
                     charSpan.textContent = char;
                     charSpan.style.display = "inline-block";
                     charSpan.style.willChange = "transform, opacity";
+                    charSpan.style.opacity = "1";
                     wordSpan.appendChild(charSpan);
                 });
                 fragment.appendChild(wordSpan);
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const overviewTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: overview,
-                    start: "top 60%",
+                    start: "top 75%",
                     end: "center center",
                     scrub: 2, 
                     invalidateOnRefresh: true,
@@ -112,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         scale: 1, 
                         filter: "brightness(1) contrast(1)",
                         ease: "none",
-                        clearProps: "filter"
+                        clearProps: "clipPath,filter"
                     }, 
                     0
                 );
@@ -140,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const historyTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: historySection,
-                    start: "top 60%",
+                    start: "top 40%",
                     end: "center center",
                     scrub: 2,
                     invalidateOnRefresh: true,
@@ -198,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     scale: 1,
                     filter: "brightness(1)",
                     ease: "none",
-                    clearProps: "filter",
+                    clearProps: "clipPath,filter",
                     scrollTrigger: {
                         trigger: historySection,
                         start: "top bottom",
@@ -232,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const technicalTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: technicalSection,
-                    start: "top 60%",
+                    start: "top 40%",
                     end: "center center",
                     scrub: 2,
                     invalidateOnRefresh: true,
@@ -277,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         scale: 1,
                         filter: "brightness(1) contrast(1)",
                         ease: "power2.out",
-                        clearProps: "filter"
+                        clearProps: "clipPath,filter"
                     },
                     0
                 );
@@ -304,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const compTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: compSection,
-                    start: "top 60%",
+                    start: "top 40%",
                     end: "center center",
                     scrub: 2,
                     invalidateOnRefresh: true,
@@ -335,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         filter: "brightness(1) blur(0px)",
                         rotateX: 0,
                         ease: "power2.out",
-                        clearProps: "filter"
+                        clearProps: "clipPath,filter"
                     },
                     0
                 )
@@ -371,7 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const culturaTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: culturaSection,
-                    start: "top 60%",
+                    start: "top 40%",
                     end: "center center",
                     scrub: 2,
                     invalidateOnRefresh: true,
@@ -407,7 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         scale: 1,
                         filter: "brightness(1) contrast(1)",
                         ease: "power2.out",
-                        clearProps: "filter"
+                        clearProps: "clipPath,filter"
                     },
                     0
                 );
@@ -434,7 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const legadoTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: legadoSection,
-                    start: "top 60%",
+                    start: "top 40%",
                     end: "center center",
                     scrub: 2,
                     invalidateOnRefresh: true,
@@ -470,7 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         scale: 1,
                         filter: "brightness(1) contrast(1)",
                         ease: "power2.out",
-                        clearProps: "filter"
+                        clearProps: "clipPath,filter"
                     },
                     0
                 );
@@ -505,7 +506,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const tributeTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: tributeSection,
-                    start: "top 60%",
+                    start: "top 40%",
                     end: "bottom 85%", 
                     scrub: 1.5,        
                     invalidateOnRefresh: true,
@@ -542,7 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         scale: 1,
                         filter: "brightness(1) contrast(1)",
                         ease: "power2.out",
-                        clearProps: "filter"
+                        clearProps: "clipPath,filter"
                     },
                     0
                 );

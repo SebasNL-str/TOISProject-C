@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
-
 html {
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -23,7 +22,6 @@ html::-webkit-scrollbar {
 
   --page-padding: clamp(1.25rem, 5vw, 5rem);
 
-  /* Identidad visual AFTER DARK */
   --film-text: #f1f5ff;
   --film-muted: #a9b5cb;
   --film-blue: #85adff;
@@ -340,7 +338,7 @@ main {
 }
 
 .film-description {
-  max-width: 450px;
+  max-width: 850px;
   margin: 1.5rem 0 0;
   color: var(--film-muted);
   font-family: var(--font-body);
@@ -349,6 +347,7 @@ main {
   letter-spacing: 0;
   line-height: 1.9;
   text-wrap: pretty;
+  text-align: justify;
 }
 
 .film-description + .film-description {
@@ -788,7 +787,6 @@ main {
   max-width: 470px;
 }
 
-/* Media Queries */
 @media (max-width: 900px) {
   :root {
     --film-title-size: clamp(2.7rem, 7vw, 4.5rem);
@@ -952,11 +950,6 @@ main {
     text-align: left;
   }
 
-  .silhouette-note-right {
-    align-self: flex-end;
-    text-align: right;
-  }
-
   .history-bottom-copy {
     position: relative;
     inset: auto;
@@ -1116,4 +1109,17 @@ body.site-body.is-mono::after {
     opacity: 1;
 }
 
+.film-image, 
+.overview-image, 
+.competition-vehicle, 
+.technical-image, 
+.silhouette-image,
+.legacy-vehicle,
+.tribute-image {
+  overflow: visible !important;
+}
 
+.film-title span {
+  display: inline-block;
+  opacity: 1;
+}
