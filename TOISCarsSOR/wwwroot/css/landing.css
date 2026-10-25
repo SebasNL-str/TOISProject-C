@@ -163,7 +163,7 @@ img {
 .sections {
     display: grid;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
 
     gap: var(--banner-gap);
 
@@ -206,7 +206,7 @@ img {
     min-width: 0;
     min-height: 600px;
 
-    padding: 35px;
+    padding: 22px;
 
     background-color: var(--surface);
     background-size: cover;
@@ -240,6 +240,10 @@ img {
 
 .banner-4 {
     background-image: url("../assets/images/inutilramirez-bannerR.jpg");
+}
+
+.banner-5 {
+    background-image: url("../assets/images/en-carrera.jpg");
 }
 
 .banner::before {
@@ -311,7 +315,7 @@ img {
 .banner h2 {
     color: var(--text);
 
-    font-size: clamp(1.05rem, 1.5vw, 1.55rem);
+    font-size: clamp(0.95rem, 1.25vw, 1.45rem);
     font-weight: 750;
     line-height: 1.25;
 
@@ -324,7 +328,7 @@ img {
 
     color: #f0e5d3;
 
-    font-size: 0.875rem;
+    font-size: 0.82rem;
     line-height: 1.7;
 
     text-shadow:
@@ -455,6 +459,27 @@ img {
     font-weight: 800;
     letter-spacing: -0.055em;
     line-height: 1.08;
+}
+
+@media (max-width: 1199.98px) {
+
+    .sections {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+    .banner {
+        padding: 26px;
+    }
+
+    .banner h2 {
+        font-size: clamp(1.1rem, 2vw, 1.45rem);
+    }
+
+    .banner p {
+        font-size: 0.875rem;
+    }
 }
 
 @media (max-width: 1000px) {

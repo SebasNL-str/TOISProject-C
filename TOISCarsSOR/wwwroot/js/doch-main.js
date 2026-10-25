@@ -1,5 +1,6 @@
 // Vibe-code mi pasion deosssss
-import { gsap } from "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js";
+import { gsap } from "./gsap-cdn.js";
+import "./doch-mainV2.js"
 
 const loader = document.querySelector(".loader");
 const glow = document.querySelector(".loader-glow");
@@ -11,10 +12,13 @@ const heroCar = document.querySelector(".hero-car");
 if (loader && glow && beam && flash && car && heroCar) {
   document.documentElement.classList.add("is-loading");
 
-  // Elimina el loader y desbloquea el scroll
-  const removeLoader = () => {
+const removeLoader = () => {
     loader.remove();
     document.documentElement.classList.remove("is-loading");
+    
+    if (typeof ScrollTrigger !== "undefined") {
+      ScrollTrigger.refresh();
+    }
   };
 
   const reducedMotion = window.matchMedia(
@@ -44,18 +48,29 @@ if (loader && glow && beam && flash && car && heroCar) {
       }
 
       gsap.set(car, {
+        x: 0,
+        y: 0,
         xPercent: -50,
         yPercent: -50,
         scale: 0.97,
       });
 
-      // El hero no necesita el resplandor del loader
+      const carStart = car.getBoundingClientRect();
+
+      const targetCenterX = target.left + target.width / 2;
+      const targetCenterY = target.top + target.height / 2;
+
+      const deltaX =
+        targetCenterX - (carStart.left + carStart.width / 2);
+
+      const deltaY =
+        targetCenterY - (carStart.top + carStart.height / 2);
+
       gsap.set(heroCar, {
         filter: "none",
       });
 
       const timeline = gsap.timeline({
-        // El scroll se desbloquea al terminar toda la secuencia
         onComplete: removeLoader,
       });
 
@@ -110,8 +125,8 @@ if (loader && glow && beam && flash && car && heroCar) {
       timeline.to(
         car,
         {
-          left: target.left + target.width / 2,
-          top: target.top + target.height / 2,
+          x: deltaX,
+          y: deltaY,
           width: target.width,
           scale: 1,
           duration: 1.4,
@@ -193,14 +208,3 @@ if (loader && glow && beam && flash && car && heroCar) {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-

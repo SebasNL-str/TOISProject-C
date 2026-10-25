@@ -23,10 +23,14 @@
     <script type="module"
             src="~/js/doch-vanta.js"
             asp-append-version="true"></script>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
 }
 
 <body>
-  <script type="module" src="~/js/doch-main.js"></script>
   <div id="vanta-bg" aria-hidden="true"></div> 
 
   <div class="loader" aria-hidden="true">
@@ -65,17 +69,365 @@
       </div>
     </section>
 
-    <section id="xo (ella tiene un concepto)" aria-label="no se historia de doc o algo asi">
-      <!-- WIP -->
-    </section>
+<section
+    id="resumen"
+    class="film-scene overview-scene"
+    aria-labelledby="overview-title"
+>
+    <div class="film-layout overview-layout">
 
-    <section id="detalles" aria-label="vehiculo real literal">
-      <!-- WIP -->
-    </section>
+        <div class="film-copy" data-reveal>
 
-    <section id="galeria" aria-label="Galeria en vivo y a todo color">
-      <!-- WIP -->
-    </section>
+            <h2 id="overview-title" class="film-title">
+                El campeon
+                <span class="film-title-outline">de todos los tiempos.</span>
+            </h2>
+
+            <p class="film-description">
+                El Fabuloso Hudson Hornet, o simplemente conocido como Doc o Hud
+                fue un corredor de terraceria, 3 veces campeon consecutivo de la Copa Piston,
+                y brindo sus servicios como juez y doctor a Radiator Springs, previamente a su muerte, 
+                antes de los eventos de Cars 2, 2009.
+            </p>
+
+            <p class="film-description">
+                Doc era muy conocido por sus unicas estrategias y habilidades.
+                El demostro el dominio del derrape, 
+                el cual lo ayudo a moverse de forma fluida en las curvas.
+                Una vez, cuando un rival intento forzar a Doc contra una pared, 
+                Doc uso un truco de voltereta para adelantar al rival, 
+                permitiendole asi su victoria.
+            </p>
+        </div>
+
+        <figure class="film-image overview-image" data-parallax>
+            <img
+                src="~/assets/images/dochudson-bannerv5R.jpg"
+                alt="La cabra, no?"
+                decoding="async"
+            >
+        </figure>
+
+    </div>
+</section>
+
+<section
+    id="historia"
+    class="film-scene history-scene silhouette-scene"
+    aria-labelledby="history-title"
+>
+    <div class="silhouette-stage">
+
+        <header class="film-copy silhouette-heading" data-reveal>
+
+            <h2 id="history-title" class="film-title">
+                Del auge
+                <span class="film-title-outline">a un futuro incierto.</span>
+            </h2>
+
+            <p class="film-description">
+                Doc gano la copa piston 3 veces consecutivas en 1951, 1952 y 1953, 
+                manteniendo todavia el record de victorias en una sola temporada.
+            </p>
+        </header>
+
+        <figure class="silhouette-image">
+            <img
+                src="~/assets/images/rip.jpg"
+                alt="Literal"
+                decoding="async"
+            >
+        </figure>
+
+        <p
+            class="film-description silhouette-note silhouette-note-left"
+            data-reveal
+        >
+                Sin embargo, su carrera como corredor toma un giro inesperado 
+                despues de verse involucrado en un devastador accidente 
+                en la ultima vuelta de Fireball Beach 500, en 1954, 
+                dejando su futuro previsto incierto.
+                
+        </p>
+
+        <p
+            class="film-description silhouette-note silhouette-note-right"
+            data-reveal
+        >
+          Despues de un largo periodo de recuperacion, Doc regresa al circuito, 
+          solo para darse cuenta que las carreras se habian ido sin el, 
+          siendo reemplazado por un novato.
+          Molesto, Doc decide buscar otro lugar en el que vivir.
+        </p>
+
+        <div class="history-bottom-copy" data-reveal>
+            <p class="film-description">
+                En su busqueda, se encuentra a distintos viajeros que lo reconocen,
+                por lo que, para mitigar esto, decide quitar sus pegatinas y llantas,
+                sin embargo, no tuvo exito. En esa misma jornada, Doc ayuda a Philip, 
+                un joven auto britanico que se encontraba varado.
+                Despues de reparar su motor, Doc se da cuenta que podria tomar una carrera medica, por lo que
+                decide presentarse a la universidad medica para un doctorado en combustion interna.
+                Posterior a eso, se convirtio en un residente del pueblo cercano, Radiator Springs.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section
+    id="tecnica"
+    class="film-scene technical-scene"
+    aria-labelledby="technical-title"
+>
+    <div class="film-layout technical-layout">
+
+        <div class="film-copy technical-copy" data-reveal>
+
+            <h2 id="technical-title" class="film-title">
+                El Fabuloso Hudson Hornet
+                <span class="film-title-outline">en el mundo real.</span>
+            </h2>
+
+            <p class="film-description">
+                El Hudson Hornet dominó al inicio de la NASCAR gracias a su innovador chasis Step-Down 
+                de centro de gravedad ultra bajo y su motor de 6 cilindros Twin H-Power. 
+                Bautizado por Marshall Teague como el "Fabulous Hudson Hornet", 
+                supero a los pesados rivales V8 de la epoca al ofrecer 
+                una estabilidad y un paso por curva imbatibles, 
+                sobre todo en pistas de tierra.
+            </p>
+
+            <p class="film-description">
+                Conquisto tres titulos consecutivos de NASCAR Grand National en 1952 a 1954 
+                y arraso con 66 victorias en tres años, incluyendo 27 de 34 carreras en 1952. 
+                Su era dorada concluyó hacia 1955 con la llegada de 
+                los nuevos y potentes motores V8 de Chevrolet y Ford.
+            </p>
+
+            <dl class="technical-specs">
+                <div class="technical-spec">
+                    <dt>Motor</dt>
+                    <dd>H-145 de 6 cilindros en línea de 5.0 litros</dd>
+                </div>
+
+                <div class="technical-spec">
+                    <dt>Alimentación</dt>
+                    <dd>Twin H-Power</dd>
+                </div>
+
+                <div class="technical-spec">
+                    <dt>Potencia declarada</dt>
+                    <dd>170 hp a 210 hp con kit de carreras 7X de fábrica</dd>
+                </div>
+
+                <div class="technical-spec">
+                    <dt>Torque</dt>
+                    <dd>373 Nm</dd>
+                </div>
+
+                <div class="technical-spec">
+                    <dt>Transmisión</dt>
+                    <dd>Manual de 3 velocidades</dd>
+                </div>
+
+                <div class="technical-spec">
+                    <dt>Tracción</dt>
+                    <dd>Trasera</dd>
+                </div>
+            </dl>
+
+            <p class="technical-footnote">
+                Cifras publicadas para el modelo de competicion de la NASCAR.
+            </p>
+        </div>
+
+        <figure class="film-image technical-image" data-parallax>
+            <img
+                src="~/assets/images/envivoyatodocolor3.png"
+                alt="Hudson Hornet en vivo y a todo color"
+                loading="lazy"
+                decoding="async"
+            >
+        </figure>
+
+    </div>
+</section>
+
+<section
+    id="competicion"
+    class="film-scene competition-scene"
+    aria-labelledby="competition-title"
+>
+    <div class="competition-inner">
+
+<header class="film-copy competition-heading" data-reveal>
+
+            <h2 id="competition-title" class="film-title">
+                Doc
+                <span class="film-title-outline">versus McQueen.</span>
+            </h2>
+        </header>
+
+        <figure class="competition-vehicle" data-parallax>
+            <img
+                src="~/assets/images/versus.webp"
+                alt="oh my lord no puede serrrr"
+                loading="lazy"
+                decoding="async"
+            >
+        </figure>
+
+        <div class="competition-copy" data-reveal>
+            <p class="film-description">
+                Despues de que McQueen destroza la calle principal de Radiator Springs,
+                es llevado a la corte, donde Doc, deseando sacar a McQueen lo mas rapido del pueblo,
+                sentencia a McQueen a servicio comunitario. McQueen confronta a Doc y lo reta a una carrera, 
+                para decidir si McQueen sera libre, o si tendra que rehacer toda la calle de nuevo. 
+                McQueen pierde la carrera, cumpliendo asi la voluntad de Doc.
+            </p>
+
+            <p class="film-description">
+                Al amanecer siguiente, McQueen se encuentra practicando en el circuito de tierra;
+                Doc observa que este esta teniendo problemas en las curvas, por lo que
+                decide ayudarlo dandole un consejo, sin embargo, 
+                McQueen se burla, pero toma la palabra de Doc,
+                no obstante, no le funciona y McQueen termina impactando contra un cactus.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section
+    id="cultura"
+    class="film-scene culture-scene"
+    aria-labelledby="culture-title"
+>
+    <div class="film-layout culture-layout">
+
+        <figure class="film-image culture-image" data-parallax>
+            <img
+                src="~/assets/images/DochV0.jpg"
+                alt="habria que ver"
+                loading="lazy"
+                decoding="async"
+            >
+        </figure>
+
+        <div class="film-copy culture-copy" data-reveal>
+
+            <h2 id="culture-title" class="film-title">
+                Un secreto
+                <span class="film-title-outline">descubierto.</span>
+            </h2>
+
+            <p class="film-description">
+                Poco despues, McQueen termina encontrando el garaje de Doc,
+                descubriendo que el es un tri-campeon de la Copa Piston, debido
+                a los trofeos y periodicos que demostraban los logros de Doc.
+                No obstante, Doc atrapa a McQueen husmeando en su garaje, y lo echa.
+            </p>
+
+            <p class="film-description">
+                Despues de tal descubrimiento, McQueen le cuenta a los habitantes lo que sabia de Doc,
+                pero, ellos no le creen, para alivio de Doc.
+                Posteriormente, McQueen logro observar a Doc practicando, 
+                quedando este anonadado por el talento de Doc.
+                McQueen le pide a Doc que sea su tutor, pero este se va, sin embargo, McQueen lo sigue, hasta que
+                Doc le revela que el no abandono las carreras, las carreras lo abandonaron a el. 
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section
+    id="legado"
+    class="film-scene legacy-scene"
+    aria-labelledby="legacy-title"
+>
+    <div class="legacy-inner">
+
+        <header class="film-copy legacy-heading" data-reveal>
+            <h2 id="legacy-title" class="film-title">
+                El maestro
+                <span class="film-title-outline">y el aprendiz.</span>
+            </h2>
+        </header>
+
+        <figure class="legacy-vehicle" data-parallax>
+            <img
+                src="~/assets/images/oml2.webp"
+                alt="tengo demasiado cansancio ya aiuda"
+                loading="lazy"
+                decoding="async"
+            >
+        </figure>
+
+        <div class="legacy-copy" data-reveal>
+            <p class="film-description">
+                Doc Hudson en algun momento tambien fue un aprendiz,
+                aprendiz de Smokey. La historia se repetia, pero ahora Doc 
+                siendo el mentor, y McQueen el aprendiz.
+                Para la Copa Piston de Los Angeles, Doc se presento como jefe
+                del grupo de McQueen. Durante la carrera, la audiencia y camaras
+                notan su presencia, dandole asi su clamorosa bienvenida por su retorno.
+            </p>
+
+            <p class="film-description">
+                En la ultima vuelta de la carrera,
+                McQueen es expulsado a la fuerza de la pista por Chick Hicks, 
+                pero McQueen pone en practica el consejo dado por Doc, manteniendo asi el control y adelantando a sus rivales. 
+                Doc sonrie ya que sabe que McQueen aprendio algo de el. Sin embargo, 
+                la sonrisa se le desvanece cuando observa que Chick deja a Strip fuera de juego. 
+                En cambio, vuelve a sonreir cuando McQueen deja de lado la carrera para ayudar a Strip a cruzar la linea de meta.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section
+    id="tributos"
+    class="film-scene tribute-scene"
+    aria-labelledby="tribute-title">
+    <div class="film-layout tribute-layout">
+
+        <div class="film-copy tribute-copy" data-reveal>
+
+            <h2 id="tribute-title" class="film-title">
+                Un tributo
+                <span class="film-title-outline">a Doc, y Newman.</span>
+            </h2>
+
+            <p class="film-description">
+                Despues de los eventos de Cars, y antes de Cars 2, Doc Hudson fallecio por circunstancias aun desconocidas.
+                Cabe mencionar que, Nathan Stanton, supervisor de la historia, dijo que,
+                con el fallecimiento de Paul Newman en 2008, su personaje tambien debia pasar a mejor vida. 
+                Para Cars 3, se usaron grabaciones guardadas de Newman,
+                presentadas como una serie de flashbacks a McQueen.
+            </p>
+
+            <p class="film-description">
+                En memoria a Doc, la Serie de Carreras Copa Piston 
+                se renombro a la Copa Piston de Hudson Hornet, y el
+                Museo de Carreras ahora contiene recuerdos de Doc,
+                incluyendo sus periodicos y trofeos.
+            </p>
+        </div>
+
+        <figure class="film-image tribute-image" data-parallax>
+            <img
+                src="~/assets/images/alertameh.webp"
+                alt="a estas alturas cualquier cosa"
+                loading="lazy"
+                decoding="async"
+            >
+        </figure>
+
+    </div>
+</section>
   </main>
 </body>
 </html>
